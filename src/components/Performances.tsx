@@ -108,8 +108,8 @@ const Performances = () => {
               Ready to Experience Live Saxophone Music?
             </h3>
             <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Each performance is tailored to your event's unique atmosphere and requirements. 
-              Let's create an unforgettable musical experience together.
+              Each performance is tailored to your event&apos;s unique atmosphere and requirements. 
+              Let&apos;s create an unforgettable musical experience together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
