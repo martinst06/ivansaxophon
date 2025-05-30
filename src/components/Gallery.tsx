@@ -1,33 +1,39 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Gallery = () => {
+  const { t } = useLanguage();
+
   const galleryItems = [
     {
-      title: "Jazz Club Performance",
-      description: "Intimate evening at Blue Note",
+      title: t.gallery.items.jazzClub.title,
+      description: t.gallery.items.jazzClub.description,
       category: "Jazz"
     },
     {
-      title: "Wedding Ceremony",
-      description: "Romantic ceremony music",
+      title: t.gallery.items.wedding.title,
+      description: t.gallery.items.wedding.description,
       category: "Wedding"
     },
     {
-      title: "Concert Hall Solo",
-      description: "Classical recital performance",
+      title: t.gallery.items.concert.title,
+      description: t.gallery.items.concert.description,
       category: "Classical"
     },
     {
-      title: "Corporate Event",
-      description: "Background music for gala",
+      title: t.gallery.items.corporate.title,
+      description: t.gallery.items.corporate.description,
       category: "Corporate"
     },
     {
-      title: "Studio Recording",
-      description: "Latest album session",
+      title: t.gallery.items.studio.title,
+      description: t.gallery.items.studio.description,
       category: "Studio"
     },
     {
-      title: "Outdoor Festival",
-      description: "Summer jazz festival",
+      title: t.gallery.items.festival.title,
+      description: t.gallery.items.festival.description,
       category: "Festival"
     }
   ];
@@ -38,12 +44,11 @@ const Gallery = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-charcoal mb-6">
-            Performance <span className="text-bronze">Gallery</span>
+            {t.gallery.title} <span className="text-bronze">{t.gallery.titleAccent}</span>
           </h2>
           <div className="w-24 h-1 bg-bronze mx-auto mb-6"></div>
           <p className="text-xl text-charcoal/80 max-w-3xl mx-auto">
-            A glimpse into the world of professional saxophone performances across 
-            various venues and occasions.
+            {t.gallery.subtitle}
           </p>
         </div>
 
@@ -88,7 +93,7 @@ const Gallery = () => {
         {/* Bottom text */}
         <div className="text-center mt-16">
           <p className="text-charcoal/60 mb-6">
-            Want to see more? Follow Ivan on social media for the latest performances and updates.
+            {t.gallery.followText}
           </p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-bronze hover:text-bronze-dark transition-colors duration-300">

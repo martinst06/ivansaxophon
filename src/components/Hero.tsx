@@ -1,20 +1,26 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-beige to-bronze-light/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-charcoal mb-6">
-            Ivan
-            <span className="block text-bronze mt-2">Saxophone</span>
+            {t.hero.title}
+            <span className="block text-bronze mt-2">{t.hero.subtitle}</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-charcoal/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Professional saxophonist bringing soulful melodies to life through 
-            <span className="text-bronze font-medium"> jazz</span>, 
-            <span className="text-bronze font-medium"> classical</span>, and 
-            <span className="text-bronze font-medium"> contemporary</span> performances
+            {t.hero.description}{' '}
+            <span className="text-bronze font-medium">{t.hero.jazz}</span>, 
+            <span className="text-bronze font-medium"> {t.hero.classical}</span>, and 
+            <span className="text-bronze font-medium"> {t.hero.contemporary}</span> {t.hero.performances}
           </p>
 
           {/* CTA Buttons */}
@@ -23,13 +29,13 @@ const Hero = () => {
               href="#performances"
               className="bg-bronze hover:bg-bronze-dark text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              View Performances
+              {t.hero.viewPerformances}
             </a>
             <a
               href="#contact"
               className="border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
             >
-              Book a Performance
+              {t.hero.bookPerformance}
             </a>
           </div>
 

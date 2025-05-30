@@ -1,24 +1,24 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 const Performances = () => {
+  const { t } = useLanguage();
+
   const performances = [
     {
-      title: "Jazz Ensembles",
-      description: "Smooth jazz performances for intimate venues, restaurants, and private events. Featuring classic standards and contemporary jazz pieces.",
-      features: ["Solo performances", "Small ensembles", "Background music", "Interactive sets"],
+      title: t.performances.jazz.title,
+      description: t.performances.jazz.description,
+      features: t.performances.jazz.features,
+      videoId: "kxopViU98Xo", // Example jazz saxophone video
+      color: "from-amber-50 to-orange-100"
     },
     {
-      title: "Classical Concerts",
-      description: "Formal concert performances featuring classical saxophone repertoire and chamber music collaborations.",
-      features: ["Concert halls", "Chamber music", "Orchestral solos", "Recitals"],
-    },
-    {
-      title: "Wedding & Events",
-      description: "Elegant musical accompaniment for weddings, corporate events, and special celebrations.",
-      features: ["Ceremony music", "Cocktail hour", "Reception entertainment", "Custom arrangements"],
-    },
-    {
-      title: "Contemporary & Fusion",
-      description: "Modern interpretations blending jazz, classical, and contemporary styles for unique musical experiences.",
-      features: ["Original compositions", "Genre fusion", "Collaborative projects", "Studio recordings"],
+      title: t.performances.contemporary.title,
+      description: t.performances.contemporary.description,
+      features: t.performances.contemporary.features,
+      videoId: "DGL6eN2x3TU", // Example contemporary saxophone video
+      color: "from-emerald-50 to-green-100"
     }
   ];
 
@@ -28,65 +28,104 @@ const Performances = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Performance <span className="text-bronze">Types</span>
+            {t.performances.title} <span className="text-bronze">{t.performances.titleAccent}</span>
           </h2>
           <div className="w-24 h-1 bg-bronze mx-auto mb-6"></div>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            From intimate jazz sessions to grand classical performances, 
-            discover the perfect musical experience for your event.
+            {t.performances.subtitle}
           </p>
         </div>
 
         {/* Performance Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {performances.map((performance, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden flex flex-col"
             >
-              <div className="p-8">
+              {/* Video Section */}
+              <div className="relative aspect-video bg-gradient-to-br from-beige to-bronze-light/30">
+                <iframe
+                  src={`https://www.youtube.com/embed/${performance.videoId}?rel=0&modestbranding=1`}
+                  title={performance.title}
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              {/* Content Section */}
+              <div className={`p-8 bg-gradient-to-br ${performance.color} relative overflow-hidden flex-1 flex flex-col`}>
                 <h3 className="text-2xl font-serif font-bold text-charcoal mb-4">
                   {performance.title}
                 </h3>
-                <p className="text-charcoal/80 mb-6 leading-relaxed">
+                <p className="text-charcoal/80 mb-6 leading-relaxed flex-1">
                   {performance.description}
                 </p>
                 
                 {/* Features */}
-                <ul className="space-y-2">
-                  {performance.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-charcoal/70">
-                      <div className="w-2 h-2 bg-bronze rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-charcoal/70 mb-3 uppercase tracking-wide">
+                    Featured Services
+                  </h4>
+                  <div className="grid grid-cols-2 gap-4 relative">
+                    {performance.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-charcoal/70 text-sm h-8">
+                        <div className="w-1.5 h-1.5 bg-bronze rounded-full mr-2 flex-shrink-0"></div>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 {/* CTA */}
-                <div className="mt-6">
+                <div className="flex items-center justify-between mt-auto">
                   <a 
                     href="#contact"
-                    className="inline-flex items-center text-bronze hover:text-bronze-dark font-medium transition-colors duration-300"
+                    className="inline-flex items-center text-bronze hover:text-bronze-dark font-medium transition-colors duration-300 group"
                   >
-                    Learn more
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {t.performances.learnMore}
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </a>
+                  
+                  {/* Performance Type Badge */}
+                  <div className="bg-bronze/10 text-bronze px-3 py-1 rounded-full text-xs font-medium">
+                    {index === 0 ? 'Jazz' : index === 1 ? 'Classical' : index === 2 ? 'Events' : 'Contemporary'}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <a
-            href="#contact"
-            className="bg-bronze hover:bg-bronze-dark text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            Book Your Performance
-          </a>
+        {/* Bottom Section */}
+        <div className="mt-20 text-center">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <h3 className="text-2xl font-serif font-bold text-white mb-4">
+              Ready to Experience Live Saxophone Music?
+            </h3>
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+              Each performance is tailored to your event's unique atmosphere and requirements. 
+              Let's create an unforgettable musical experience together.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#contact"
+                className="bg-bronze hover:bg-bronze-dark text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                {t.performances.bookYourPerformance}
+              </a>
+              <a
+                href="#gallery"
+                className="border-2 border-white/30 text-white hover:bg-white hover:text-charcoal px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                View Gallery
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

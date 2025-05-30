@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Crimson_Text } from "next/font/google";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${crimsonText.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
