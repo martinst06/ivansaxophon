@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Crimson_Text } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
@@ -9,10 +9,10 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const crimsonText = Crimson_Text({
-  variable: "--font-crimson",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${crimsonText.variable} antialiased`}
+        className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}
       >
         <LanguageProvider>
           {children}

@@ -19,7 +19,7 @@
   --color-beige: var(--beige);
   --color-charcoal: var(--charcoal);
   --font-sans: var(--font-poppins);
-  --font-serif: var(--font-crimson);
+  --font-serif: var(--font-playfair);
 }
 
 @media (prefers-color-scheme: dark) {
