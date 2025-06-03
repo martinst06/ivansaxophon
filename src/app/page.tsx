@@ -15,6 +15,14 @@ export default function Home() {
       <Performances />
       <Gallery />
       <Contact />
+      
+      {/* Page Break */}
+      <div className="bg-charcoal py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full border-t border-white/10"></div>
+        </div>
+      </div>
+      
       <Footer />
     </main>
   );
