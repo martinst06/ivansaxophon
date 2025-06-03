@@ -27,11 +27,11 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 sm:gap-8">
-              <div className="text-center p-4 rounded-lg bg-beige/30">
+              <div className="text-center p-4 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">100+</div>
                 <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.about.performances}</div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-beige/30">
+              <div className="text-center p-4 rounded-lg">
                 <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">15+</div>
                 <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.about.experience}</div>
               </div>

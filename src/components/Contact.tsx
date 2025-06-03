@@ -124,14 +124,21 @@ const Contact = () => {
                 <label htmlFor="eventDate" className="block text-sm font-medium text-white mb-2">
                   {t.contact.form.eventDate}
                 </label>
-                <input
-                  type="date"
-                  id="eventDate"
-                  name="eventDate"
-                  value={formData.eventDate}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px]"
-                />
+                <div className="relative">
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    value={formData.eventDate}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 pr-12 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0"
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <svg className="w-5 h-5 text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               <div>
@@ -170,7 +177,7 @@ const Contact = () => {
                 <div className="flex items-start space-x-4">
                   <div className="bg-bronze p-3 rounded-lg flex-shrink-0 min-h-[48px] min-w-[48px] flex items-center justify-center">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div className="min-h-[48px] flex flex-col justify-center">
@@ -224,7 +231,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-medium mb-2 flex items-center text-sm sm:text-base">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-bronze mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a4 4 0 118 0v4m-4 8a4 4 0 11-8 0v-1a4 4 0 014-4h4a4 4 0 014 4v1a4 4 0 11-8 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                     {t.contact.info.availability}
                   </h4>

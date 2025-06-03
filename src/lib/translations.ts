@@ -15,8 +15,8 @@ export const translations = {
       classical: 'classical',
       contemporary: 'contemporary',
       performances: 'performances',
-      viewPerformances: 'View Performances',
-      bookPerformance: 'Book a Performance'
+      viewPerformances: 'Book Lesson',
+      bookPerformance: 'Book Events'
     },
     about: {
       title: 'About',
@@ -118,7 +118,7 @@ export const translations = {
         email: 'Email',
         phone: 'Phone',
         location: 'Location',
-        locationText: 'Studio in Bubendorf, Baselland, Switzerland',
+        locationText: 'Studio in Füllinsdorf, Baselland, Switzerland',
         quickResponse: 'Quick Response',
         quickResponseText: 'I typically respond to inquiries within 24 hours. For urgent requests, please call directly for the fastest response.',
         availability: 'Availability',
@@ -152,8 +152,8 @@ export const translations = {
       classical: 'Klassik',
       contemporary: 'zeitgenössische',
       performances: 'Aufführungen zum Leben erweckt',
-      viewPerformances: 'Auftritte ansehen',
-      bookPerformance: 'Auftritt buchen'
+      viewPerformances: 'Unterricht buchen',
+      bookPerformance: 'Auftritte buchen'
     },
     about: {
       title: 'Über',
@@ -255,7 +255,7 @@ export const translations = {
         email: 'E-Mail',
         phone: 'Telefon',
         location: 'Standort',
-        locationText: 'Studio in Bubendorf, Baselland, Schweiz',
+        locationText: 'Studio in Füllinsdorf, Baselland, Schweiz',
         quickResponse: 'Schnelle Antwort',
         quickResponseText: 'Ich antworte normalerweise innerhalb von 24 Stunden auf Anfragen. Für dringende Anfragen rufen Sie bitte direkt an.',
         availability: 'Verfügbarkeit',

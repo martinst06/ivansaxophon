@@ -26,7 +26,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 sm:space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/ivan.saxophon/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-bronze p-3 rounded-full transition-all duration-300 transform hover:scale-110 min-h-[44px] min-w-[44px] flex items-center justify-center"

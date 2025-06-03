@@ -97,7 +97,9 @@ const Gallery = () => {
           </p>
           <div className="flex justify-center space-x-4 sm:space-x-6">
             <a 
-              href="#" 
+              href="https://www.instagram.com/ivan.saxophon/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-bronze hover:text-bronze-dark transition-colors duration-300 p-2 rounded-full hover:bg-bronze/10 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Instagram"
             >

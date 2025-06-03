@@ -110,7 +110,7 @@ const Performances = () => {
             <p className="text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
               {t.performances.ctaDescription}
             </p>
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="#contact"
                 className="bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[48px] flex items-center justify-center text-sm sm:text-base"

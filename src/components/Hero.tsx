@@ -24,16 +24,16 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center items-center px-4 xs:px-0">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
             <a
               href="#performances"
-              className="w-full xs:w-auto bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center min-h-[48px] flex items-center justify-center"
+              className="bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center min-h-[48px] flex items-center justify-center"
             >
               {t.hero.viewPerformances}
             </a>
             <a
               href="#contact"
-              className="w-full xs:w-auto border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 text-center min-h-[48px] flex items-center justify-center"
+              className="border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 text-center min-h-[48px] flex items-center justify-center"
             >
               {t.hero.bookPerformance}
             </a>
