@@ -105,11 +105,10 @@ const Performances = () => {
         <div className="mt-16 sm:mt-20 text-center">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8">
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4">
-              Ready to Experience Live Saxophone Music?
+              {t.performances.ctaTitle}
             </h3>
             <p className="text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              Each performance is tailored to your event&apos;s unique atmosphere and requirements. 
-              Let&apos;s create an unforgettable musical experience together.
+              {t.performances.ctaDescription}
             </p>
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
               <a
@@ -122,7 +121,7 @@ const Performances = () => {
                 href="#gallery"
                 className="border-2 border-white/30 text-white hover:bg-white hover:text-charcoal px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
               >
-                View Gallery
+                {t.performances.viewGallery}
               </a>
             </div>
           </div>

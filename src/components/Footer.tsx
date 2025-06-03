@@ -72,11 +72,11 @@ const Footer = () => {
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-bronze">{t.footer.connect}</h4>
             <div className="space-y-3">
               <p className="text-white/80 text-sm sm:text-base">
-                <span className="block font-medium">Email:</span>
+                <span className="block font-medium">{t.footer.email}:</span>
                 <span className="break-all">info@ivansaxophon.ch</span>
               </p>
               <p className="text-white/80 text-sm sm:text-base">
-                <span className="block font-medium">Phone:</span>
+                <span className="block font-medium">{t.footer.phone}:</span>
                 +41 (76) 376 19 06
               </p>
             </div>

@@ -21,7 +21,7 @@ export const translations = {
     about: {
       title: 'About',
       titleAccent: 'Ivan',
-      description1: 'I’m Ivan — a professional saxophonist passionate about live events and personalized teaching. Whether elegant music for your wedding or personal support in learning the saxophone — I help you create unforgettable musical moments.',
+      description1: 'I\'m Ivan — a professional saxophonist passionate about live events and personalized teaching. Whether elegant music for your wedding or personal support in learning the saxophone — I help you create unforgettable musical moments.',
       description2: 'From intimate jazz clubs to grand concert halls, Ivan\'s versatile style and technical mastery have captivated audiences worldwide. His repertoire includes classical masterpieces, smooth jazz standards, and contemporary compositions.',
       performances: 'Performances',
       experience: 'Years Experience'
@@ -51,7 +51,10 @@ export const translations = {
         features: ['Original compositions', 'Genre fusion', 'Collaborative projects', 'Studio recordings']
       },
       learnMore: 'Learn more',
-      bookYourPerformance: 'Book Your Performance'
+      bookYourPerformance: 'Book Your Performance',
+      ctaTitle: 'Ready to Experience Live Saxophone Music?',
+      ctaDescription: 'Each performance is tailored to your event\'s unique atmosphere and requirements. Let\'s create an unforgettable musical experience together.',
+      viewGallery: 'View Gallery'
     },
     gallery: {
       title: 'Performance',
@@ -99,7 +102,7 @@ export const translations = {
         message: 'Message',
         namePlaceholder: 'Your name',
         emailPlaceholder: 'your@email.com',
-        phonePlaceholder: '(555) 123-4567',
+        phonePlaceholder: '+41 76 123 45 67',
         messagePlaceholder: 'Tell me about your event, venue, and any specific requirements...',
         selectEventType: 'Select event type',
         wedding: 'Wedding',
@@ -126,6 +129,8 @@ export const translations = {
       description: 'Professional saxophonist bringing soulful melodies to life through jazz, classical, and contemporary performances.',
       quickLinks: 'Quick Links',
       connect: 'Connect',
+      email: 'Email',
+      phone: 'Phone',
       copyright: 'Ivan Saxophon. All rights reserved.',
       privacyPolicy: 'Privacy Policy',
       termsOfService: 'Terms of Service'
@@ -154,14 +159,14 @@ export const translations = {
       title: 'Über',
       titleAccent: 'Ivan',
       description1: 'Mit über 15 Jahren professioneller Erfahrung bringt Ivan Leidenschaft und Präzision in jede Aufführung ein. Seine Reise mit dem Saxophon begann in der Kindheit und hat sich zu einer angesehenen Karriere entwickelt, die mehrere Genres und Veranstaltungsorte umfasst.',
-      description2: 'Von intimen Jazzclubs bis hin zu großen Konzertsälen haben Ivans vielseitiger Stil und technische Meisterschaft Publikum weltweit begeistert. Sein Repertoire umfasst klassische Meisterwerke, sanfte Jazz-Standards und zeitgenössische Kompositionen.',
+      description2: 'Von intimen Jazzclubs bis hin zu grossen Konzertsälen haben Ivans vielseitiger Stil und technische Meisterschaft Publikum weltweit begeistert. Sein Repertoire umfasst klassische Meisterwerke, sanfte Jazz-Standards und zeitgenössische Kompositionen.',
       performances: 'Auftritte',
       experience: 'Jahre Erfahrung'
     },
     performances: {
-      title: 'Auftritts',
-      titleAccent: 'arten',
-      subtitle: 'Von intimen Jazz-Sessions bis hin zu großen klassischen Aufführungen - entdecken Sie das perfekte Musikerlebnis für Ihre Veranstaltung.',
+      title: 'Auftritte',
+      titleAccent: 'Arten',
+      subtitle: 'Von intimen Jazz-Sessions bis hin zu grossen klassischen Aufführungen - entdecken Sie das perfekte Musikerlebnis für Ihre Veranstaltung.',
       jazz: {
         title: 'Jazz-Ensembles',
         description: 'Sanfte Jazz-Aufführungen für intime Veranstaltungsorte, Restaurants und private Events. Mit klassischen Standards und zeitgenössischen Jazz-Stücken.',
@@ -175,7 +180,7 @@ export const translations = {
       wedding: {
         title: 'Hochzeiten & Events',
         description: 'Elegante musikalische Begleitung für Hochzeiten, Firmenveranstaltungen und besondere Feiern.',
-        features: ['Zeremonienmusik', 'Cocktailstunde', 'Empfangs-Entertainment', 'Maßgeschneiderte Arrangements']
+        features: ['Zeremonienmusik', 'Cocktailstunde', 'Empfangs-Entertainment', 'Massgeschneiderte Arrangements']
       },
       contemporary: {
         title: 'Zeitgenössisch & Fusion',
@@ -183,11 +188,14 @@ export const translations = {
         features: ['Eigene Kompositionen', 'Genre-Fusion', 'Kollaborative Projekte', 'Studio-Aufnahmen']
       },
       learnMore: 'Mehr erfahren',
-      bookYourPerformance: 'Ihren Auftritt buchen'
+      bookYourPerformance: 'Ihren Auftritt buchen',
+      ctaTitle: 'Bereit für Live-Saxophonmusik?',
+      ctaDescription: 'Jede Aufführung wird auf die einzigartige Atmosphäre und die Anforderungen Ihrer Veranstaltung zugeschnitten. Lassen Sie uns gemeinsam ein unvergessliches Musikerlebnis schaffen.',
+      viewGallery: 'Galerie ansehen'
     },
     gallery: {
-      title: 'Auftritts',
-      titleAccent: 'galerie',
+      title: 'Auftritte',
+      titleAccent: 'Galerie',
       subtitle: 'Ein Einblick in die Welt professioneller Saxophon-Aufführungen in verschiedenen Veranstaltungsorten und Anlässen.',
       followText: 'Möchten Sie mehr sehen? Folgen Sie Ivan in den sozialen Medien für die neuesten Auftritte und Updates.',
       items: {
@@ -230,8 +238,8 @@ export const translations = {
         eventDate: 'Veranstaltungsdatum',
         message: 'Nachricht',
         namePlaceholder: 'Ihr Name',
-        emailPlaceholder: 'ihre@email.de',
-        phonePlaceholder: '(030) 123-4567',
+        emailPlaceholder: 'ihre@email.ch',
+        phonePlaceholder: '+41 76 123 45 67',
         messagePlaceholder: 'Erzählen Sie mir von Ihrer Veranstaltung, dem Veranstaltungsort und besonderen Anforderungen...',
         selectEventType: 'Veranstaltungsart auswählen',
         wedding: 'Hochzeit',
@@ -255,9 +263,11 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Professioneller Saxophonist, der gefühlvolle Melodien durch Jazz, Klassik und zeitgenössische Aufführungen zum Leben erweckt.',
-      quickLinks: 'Schnelllinks',
+      description: 'Professioneller Saxophonist, der gefühlvolle Melodien durch Jazz-, Klassik- und zeitgenössische Aufführungen zum Leben erweckt.',
+      quickLinks: 'Schnelle Links',
       connect: 'Verbinden',
+      email: 'E-Mail',
+      phone: 'Telefon',
       copyright: 'Ivan Saxophon. Alle Rechte vorbehalten.',
       privacyPolicy: 'Datenschutzrichtlinie',
       termsOfService: 'Nutzungsbedingungen'
