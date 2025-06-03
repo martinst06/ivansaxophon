@@ -20,6 +20,9 @@
   --color-charcoal: var(--charcoal);
   --font-sans: var(--font-poppins);
   --font-serif: var(--font-crimson);
+  
+  /* Custom breakpoints */
+  --breakpoint-xs: 375px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +36,53 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  /* Improved mobile text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Better mobile scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom responsive breakpoint for extra small screens */
+@media (min-width: 375px) {
+  .xs\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  .xs\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+  
+  .xs\:w-auto {
+    width: auto;
+  }
+  
+  .xs\:px-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .xs\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .xs\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+  
+  .xs\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
 }
 
 /* Custom scrollbar */
@@ -51,4 +101,57 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bronze-dark);
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  /* Ensure touch targets are at least 44px */
+  button, 
+  a, 
+  input, 
+  textarea, 
+  select {
+    min-height: 44px;
+  }
+  
+  /* Better mobile form styling */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Improve mobile tap highlighting */
+  * {
+    -webkit-tap-highlight-color: rgba(205, 127, 50, 0.2);
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 2px;
+}
+
+/* Better mobile video embeds */
+@media (max-width: 768px) {
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better mobile image handling */
+img {
+  max-width: 100%;
+  height: auto;
 }

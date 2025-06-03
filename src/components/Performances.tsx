@@ -23,21 +23,21 @@ const Performances = () => {
   ];
 
   return (
-    <section id="performances" className="py-20 bg-charcoal">
+    <section id="performances" className="py-16 sm:py-20 bg-charcoal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4 sm:mb-6 leading-tight">
             {t.performances.title} <span className="text-bronze">{t.performances.titleAccent}</span>
           </h2>
-          <div className="w-24 h-1 bg-bronze mx-auto mb-6"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <div className="w-16 sm:w-24 h-1 bg-bronze mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto px-2">
             {t.performances.subtitle}
           </p>
         </div>
 
         {/* Performance Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {performances.map((performance, index) => (
             <div 
               key={index}
@@ -56,34 +56,34 @@ const Performances = () => {
               </div>
 
               {/* Content Section */}
-              <div className={`p-8 bg-gradient-to-br ${performance.color} relative overflow-hidden flex-1 flex flex-col`}>
-                <h3 className="text-2xl font-serif font-bold text-charcoal mb-4">
+              <div className={`p-6 sm:p-8 bg-gradient-to-br ${performance.color} relative overflow-hidden flex-1 flex flex-col`}>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal mb-3 sm:mb-4">
                   {performance.title}
                 </h3>
-                <p className="text-charcoal/80 mb-6 leading-relaxed flex-1">
+                <p className="text-charcoal/80 mb-4 sm:mb-6 leading-relaxed flex-1 text-sm sm:text-base">
                   {performance.description}
                 </p>
                 
                 {/* Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-charcoal/70 mb-3 uppercase tracking-wide">
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="text-xs sm:text-sm font-semibold text-charcoal/70 mb-3 uppercase tracking-wide">
                     Featured Services
                   </h4>
-                  <div className="grid grid-cols-2 gap-4 relative">
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-4 relative">
                     {performance.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center text-charcoal/70 text-sm h-8">
+                      <div key={featureIndex} className="flex items-center text-charcoal/70 text-xs sm:text-sm min-h-[32px]">
                         <div className="w-1.5 h-1.5 bg-bronze rounded-full mr-2 flex-shrink-0"></div>
-                        {feature}
+                        <span className="leading-tight">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* CTA */}
-                <div className="flex items-center justify-between mt-auto">
+                <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3 mt-auto">
                   <a 
                     href="#contact"
-                    className="inline-flex items-center text-bronze hover:text-bronze-dark font-medium transition-colors duration-300 group"
+                    className="inline-flex items-center text-bronze hover:text-bronze-dark font-medium transition-colors duration-300 group min-h-[44px] text-sm sm:text-base"
                   >
                     {t.performances.learnMore}
                     <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ const Performances = () => {
                   </a>
                   
                   {/* Performance Type Badge */}
-                  <div className="bg-bronze/10 text-bronze px-3 py-1 rounded-full text-xs font-medium">
+                  <div className="bg-bronze/10 text-bronze px-3 py-1 rounded-full text-xs font-medium flex-shrink-0">
                     {index === 0 ? 'Jazz' : index === 1 ? 'Classical' : index === 2 ? 'Events' : 'Contemporary'}
                   </div>
                 </div>
@@ -102,25 +102,25 @@ const Performances = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-serif font-bold text-white mb-4">
+        <div className="mt-16 sm:mt-20 text-center">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 mb-6 sm:mb-8">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mb-3 sm:mb-4">
               Ready to Experience Live Saxophone Music?
             </h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            <p className="text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
               Each performance is tailored to your event&apos;s unique atmosphere and requirements. 
               Let&apos;s create an unforgettable musical experience together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="#contact"
-                className="bg-bronze hover:bg-bronze-dark text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[48px] flex items-center justify-center text-sm sm:text-base"
               >
                 {t.performances.bookYourPerformance}
               </a>
               <a
                 href="#gallery"
-                className="border-2 border-white/30 text-white hover:bg-white hover:text-charcoal px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-white/30 text-white hover:bg-white hover:text-charcoal px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
               >
                 View Gallery
               </a>

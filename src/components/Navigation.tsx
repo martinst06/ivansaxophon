@@ -34,25 +34,25 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-beige">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 sm:h-16">
           {/* Logo - Clickable */}
           <div className="flex-shrink-0">
             <button 
               onClick={scrollToTop}
-              className="text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300"
+              className="text-xl sm:text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center"
             >
               Ivan <span className="text-bronze">Saxophon</span>
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <div className="flex items-baseline space-x-6 lg:space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium"
+                  className="text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium min-h-[44px] flex items-center"
                 >
                   {item.name}
                 </a>
@@ -63,7 +63,7 @@ const Navigation = () => {
             <div className="relative">
               <button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium border border-charcoal/20 rounded-lg hover:border-bronze"
+                className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium border border-charcoal/20 rounded-lg hover:border-bronze min-h-[44px]"
               >
                 <span>{language.toUpperCase()}</span>
                 <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ const Navigation = () => {
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code.toLowerCase() as Language)}
-                      className={`w-full text-left px-4 py-2 text-sm hover:bg-beige/50 transition-colors duration-200 flex items-center justify-between ${
+                      className={`w-full text-left px-4 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 flex items-center justify-between min-h-[44px] ${
                         language === lang.code.toLowerCase() ? 'text-bronze font-medium' : 'text-charcoal'
                       }`}
                     >
@@ -96,12 +96,12 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button and language switcher */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
             {/* Mobile Language Switcher */}
             <div className="relative">
               <button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 text-sm font-medium"
+                className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 text-sm font-medium min-h-[44px] px-2"
               >
                 <span>{language.toUpperCase()}</span>
                 <svg className={`w-3 h-3 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,12 +111,12 @@ const Navigation = () => {
 
               {/* Mobile Language Dropdown */}
               {isLanguageOpen && (
-                <div className="absolute right-0 mt-2 w-28 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
+                <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang.code.toLowerCase() as Language)}
-                      className={`w-full text-left px-3 py-2 text-sm hover:bg-beige/50 transition-colors duration-200 ${
+                      className={`w-full text-left px-3 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 min-h-[44px] ${
                         language === lang.code.toLowerCase() ? 'text-bronze font-medium' : 'text-charcoal'
                       }`}
                     >
@@ -130,7 +130,7 @@ const Navigation = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-charcoal hover:text-bronze focus:outline-none focus:text-bronze transition-colors duration-300"
+              className="text-charcoal hover:text-bronze focus:outline-none focus:text-bronze transition-colors duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -146,12 +146,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-beige">
+            <div className="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-beige">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-charcoal hover:text-bronze block px-3 py-2 text-base font-medium transition-colors duration-300"
+                  className="text-charcoal hover:text-bronze block px-4 py-3 text-base font-medium transition-colors duration-300 rounded-lg hover:bg-beige/30 min-h-[48px] flex items-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
