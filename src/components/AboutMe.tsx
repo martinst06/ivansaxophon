@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutMe = () => {
@@ -49,21 +50,23 @@ const AboutMe = () => {
           {/* Image */}
           <div className="order-1 lg:order-2">
             <div className="relative">
-              {/* Image placeholder */}
-              <div className="aspect-[3/4] bg-gradient-to-br from-bronze-light/30 via-beige/20 to-bronze/30 rounded-2xl shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white/40">
-                    <svg className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    <p className="text-sm sm:text-base font-medium">Ivan Saxophon</p>
-                    <p className="text-xs sm:text-sm">Professional Saxophonist</p>
-                  </div>
-                </div>
+              {/* Ivan's Image */}
+              <div className="aspect-[3/4] relative rounded-2xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/ivan.png"
+                  alt="Ivan Saxophon - Professional Saxophonist"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                  priority
+                />
+                
+                {/* Decorative overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent"></div>
                 
                 {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-bronze/30 rounded-full"></div>
-                <div className="absolute bottom-4 left-4 w-8 h-8 bg-bronze/20 rounded-full"></div>
+                <div className="absolute top-4 right-4 w-12 h-12 border-2 border-bronze/50 rounded-full backdrop-blur-sm"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 bg-bronze/30 rounded-full backdrop-blur-sm"></div>
               </div>
 
               {/* Stats overlay */}
