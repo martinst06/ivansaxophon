@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Language } from '@/lib/translations';
 
@@ -10,11 +11,10 @@ const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: t.nav.home, href: '#home' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.performances, href: '#performances' },
-    { name: t.nav.gallery, href: '#gallery' },
-    { name: t.nav.contact, href: '#contact' },
+    { name: t.nav.lessons, href: '/lessons' },
+    { name: t.nav.performances, href: '/performances' },
+    { name: t.nav.aboutMe, href: '/about-me' },
+    { name: t.nav.contact, href: '/#contact' },
   ];
 
   const languages = [
@@ -37,25 +37,25 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16 sm:h-16">
           {/* Logo - Clickable */}
           <div className="flex-shrink-0">
-            <button 
-              onClick={scrollToTop}
+            <Link 
+              href="/"
               className="text-xl sm:text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center"
             >
               Ivan <span className="text-bronze">Saxophon</span>
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div className="flex items-baseline space-x-6 lg:space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium min-h-[44px] flex items-center"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -148,14 +148,14 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-4 space-y-1 bg-white border-t border-beige">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-charcoal hover:text-bronze block px-4 py-3 text-base font-medium transition-colors duration-300 rounded-lg hover:bg-beige/30 min-h-[48px] flex items-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

@@ -1,10 +1,9 @@
 export const translations = {
   en: {
     nav: {
-      home: 'Home',
-      about: 'About',
+      lessons: 'Lessons',
       performances: 'Performances',
-      gallery: 'Gallery',
+      aboutMe: 'About Me',
       contact: 'Contact'
     },
     hero: {
@@ -18,13 +17,104 @@ export const translations = {
       viewPerformances: 'Book Lesson',
       bookPerformance: 'Book Events'
     },
-    about: {
+    aboutMe: {
       title: 'About',
-      titleAccent: 'Ivan',
-      description1: 'I\'m Ivan — a professional saxophonist passionate about live events and personalized teaching. Whether elegant music for your wedding or personal support in learning the saxophone — I help you create unforgettable musical moments.',
-      description2: 'From intimate jazz clubs to grand concert halls, Ivan\'s versatile style and technical mastery have captivated audiences worldwide. His repertoire includes classical masterpieces, smooth jazz standards, and contemporary compositions.',
-      performances: 'Performances',
-      experience: 'Years Experience'
+      titleAccent: 'Me',
+      intro: "I'm Ivan, a passionate saxophonist with over 15 years of professional experience. My journey with music began in childhood, and since then, I've dedicated my life to mastering the saxophone and sharing its beautiful sound with the world.",
+      education: "I earned my Bachelor's degree in Music Performance from the University \"Hl. Kyrill and Method\" in Skopje, where I studied with renowned artists including Baptiste Herbin, Nikita Zimin, Nikola Arsenijevic, and Derek Brown through international masterclasses.",
+      current: "Now based in Switzerland, I operate my private teaching studio in Baselland while performing at diverse events across Europe. Whether it's teaching the next generation of saxophonists or bringing music to your special moments, I approach every performance with heart, skill, and personality.",
+      startLearning: "Start Learning",
+      bookPerformance: "Book Performance",
+      professionalBackground: {
+        title: "Professional",
+        titleAccent: "Background",
+        education: {
+          title: "Education & Training",
+          items: [
+            "Bachelor in Music Performance",
+            "International masterclasses", 
+            "Studies with renowned artists",
+            "Classical & contemporary training"
+          ]
+        },
+        performance: {
+          title: "Performance Experience",
+          items: [
+            "500+ live performances",
+            "\"Saxocoustics Unplugged\" band",
+            "European jazz festivals",
+            "Macedonian Opera & Philharmonic"
+          ]
+        },
+        teaching: {
+          title: "Teaching Experience", 
+          items: [
+            "10+ years teaching",
+            "Private studio in Baselland",
+            "200+ students taught",
+            "All skill levels welcome"
+          ]
+        },
+        focus: {
+          title: "Current Focus",
+          items: [
+            "Wedding & corporate events",
+            "Private lesson instruction",
+            "Jazz, classical & contemporary",
+            "Switzerland-based performances" 
+          ]
+        }
+      },
+      quote: "Music is the universal language that connects hearts. Through the saxophone, I strive to tell stories, evoke emotions, and create unforgettable moments that resonate with every audience.",
+      quoteName: "— Ivan",
+      yearsExperience: "Years Experience",
+      performances: "Performances"
+    },
+    lessons: {
+      title: "Saxophone",
+      titleAccent: "Lessons",
+      subtitle: "Learn from a professional saxophonist with personalized instruction tailored to your skill level and musical goals.",
+      types: {
+        beginner: {
+          title: "Beginner Lessons",
+          description: "Perfect for those just starting their saxophone journey. Learn proper breathing, posture, and basic techniques.",
+          features: ["Instrument basics", "Reading music", "First songs", "Proper technique"],
+          duration: "45 minutes",
+          price: "From €50"
+        },
+        intermediate: {
+          title: "Intermediate Lessons", 
+          description: "For students ready to expand their skills and explore different musical styles and techniques.",
+          features: ["Advanced techniques", "Jazz improvisation", "Music theory", "Performance skills"],
+          duration: "60 minutes",
+          price: "From €60"
+        },
+        advanced: {
+          title: "Advanced Lessons",
+          description: "Professional-level instruction for serious musicians looking to master the saxophone.",
+          features: ["Master techniques", "Performance coaching", "Recording preparation", "Career guidance"],
+          duration: "60 minutes", 
+          price: "From €80"
+        }
+      },
+      whatYoullLearn: "What You'll Learn",
+      duration: "Duration",
+      price: "Price",
+      bookNow: "Book Now",
+      whyChoose: {
+        title: "Why Choose My Lessons?",
+        reasons: [
+          "15+ years of professional performance experience",
+          "Personalized curriculum for each student", 
+          "Multiple genres: Jazz, Classical, Contemporary",
+          "Flexible scheduling and location options"
+        ]
+      },
+      cta: {
+        title: "Ready to Start?",
+        subtitle: "Book your first lesson today",
+        button: "Contact Me"
+      }
     },
     performances: {
       title: 'Performance',
@@ -138,10 +228,9 @@ export const translations = {
   },
   de: {
     nav: {
-      home: 'Startseite',
-      about: 'Über mich',
+      lessons: 'Unterricht',
       performances: 'Auftritte',
-      gallery: 'Galerie',
+      aboutMe: 'Über mich',
       contact: 'Kontakt'
     },
     hero: {
@@ -155,13 +244,104 @@ export const translations = {
       viewPerformances: 'Unterricht buchen',
       bookPerformance: 'Auftritte buchen'
     },
-    about: {
+    aboutMe: {
       title: 'Über',
-      titleAccent: 'Ivan',
-      description1: 'Mit über 15 Jahren professioneller Erfahrung bringt Ivan Leidenschaft und Präzision in jede Aufführung ein. Seine Reise mit dem Saxophon begann in der Kindheit und hat sich zu einer angesehenen Karriere entwickelt, die mehrere Genres und Veranstaltungsorte umfasst.',
-      description2: 'Von intimen Jazzclubs bis hin zu grossen Konzertsälen haben Ivans vielseitiger Stil und technische Meisterschaft Publikum weltweit begeistert. Sein Repertoire umfasst klassische Meisterwerke, sanfte Jazz-Standards und zeitgenössische Kompositionen.',
-      performances: 'Auftritte',
-      experience: 'Jahre Erfahrung'
+      titleAccent: 'mich',
+      intro: "Ich bin Ivan, ein leidenschaftlicher Saxophonist mit über 15 Jahren professioneller Erfahrung. Meine musikalische Reise begann in der Kindheit, und seitdem habe ich mein Leben der Beherrschung des Saxophons und dem Teilen seines wunderschönen Klangs mit der Welt gewidmet.",
+      education: "Ich erwarb meinen Bachelor-Abschluss in Musikaufführung an der Universität \"Hl. Kyrill and Method\" in Skopje, wo ich bei renommierten Künstlern wie Baptiste Herbin, Nikita Zimin, Nikola Arsenijevic und Derek Brown durch internationale Meisterklassen studierte.",
+      current: "Jetzt in der Schweiz ansässig, betreibe ich mein privates Unterrichtsstudio im Baselland und trete bei verschiedenen Veranstaltungen in ganz Europa auf. Ob beim Unterrichten der nächsten Generation von Saxophonisten oder beim Bringen von Musik zu Ihren besonderen Momenten - ich nähere mich jeder Aufführung mit Herz, Können und Persönlichkeit.",
+      startLearning: "Unterricht beginnen",
+      bookPerformance: "Auftritt buchen",
+      professionalBackground: {
+        title: "Professioneller",
+        titleAccent: "Hintergrund",
+        education: {
+          title: "Ausbildung & Training",
+          items: [
+            "Bachelor in Musikaufführung",
+            "Internationale Meisterklassen",
+            "Studium bei renommierten Künstlern",
+            "Klassische & zeitgenössische Ausbildung"
+          ]
+        },
+        performance: {
+          title: "Aufführungserfahrung",
+          items: [
+            "500+ Live-Auftritte",
+            "\"Saxocoustics Unplugged\" Band",
+            "Europäische Jazz-Festivals",
+            "Mazedonische Oper & Philharmonie"
+          ]
+        },
+        teaching: {
+          title: "Unterrichtserfahrung",
+          items: [
+            "10+ Jahre Unterrichtserfahrung",
+            "Privates Studio im Baselland",
+            "200+ unterrichtete Schüler",
+            "Alle Spielniveaus willkommen"
+          ]
+        },
+        focus: {
+          title: "Aktueller Fokus",
+          items: [
+            "Hochzeiten & Firmenveranstaltungen",
+            "Privater Musikunterricht",
+            "Jazz, Klassik & Zeitgenössisches",
+            "Schweizer Auftritte"
+          ]
+        }
+      },
+      quote: "Musik ist die universelle Sprache, die Herzen verbindet. Durch das Saxophon strebe ich danach, Geschichten zu erzählen, Emotionen zu wecken und unvergessliche Momente zu schaffen, die bei jedem Publikum Resonanz finden.",
+      quoteName: "— Ivan",
+      yearsExperience: "Jahre Erfahrung",
+      performances: "Auftritte"
+    },
+    lessons: {
+      title: "Saxophon",
+      titleAccent: "Unterricht",
+      subtitle: "Lernen Sie von einem professionellen Saxophonisten mit personalisiertem Unterricht, der auf Ihr Spielniveau und Ihre musikalischen Ziele zugeschnitten ist.",
+      types: {
+        beginner: {
+          title: "Anfänger-Unterricht",
+          description: "Perfekt für diejenigen, die gerade ihre Saxophon-Reise beginnen. Lernen Sie richtige Atmung, Haltung und grundlegende Techniken.",
+          features: ["Instrument-Grundlagen", "Notenlesen", "Erste Lieder", "Richtige Technik"],
+          duration: "45 Minuten",
+          price: "Ab €50"
+        },
+        intermediate: {
+          title: "Fortgeschrittenen-Unterricht",
+          description: "Für Schüler, die bereit sind, ihre Fähigkeiten zu erweitern und verschiedene musikalische Stile und Techniken zu erkunden.",
+          features: ["Erweiterte Techniken", "Jazz-Improvisation", "Musiktheorie", "Aufführungsfähigkeiten"],
+          duration: "60 Minuten",
+          price: "Ab €60"
+        },
+        advanced: {
+          title: "Profi-Unterricht",
+          description: "Unterricht auf professionellem Niveau für ernsthafte Musiker, die das Saxophon meistern möchten.",
+          features: ["Meister-Techniken", "Aufführungs-Coaching", "Aufnahme-Vorbereitung", "Karriere-Beratung"],
+          duration: "60 Minuten",
+          price: "Ab €80"
+        }
+      },
+      whatYoullLearn: "Was Sie lernen werden",
+      duration: "Dauer",
+      price: "Preis",
+      bookNow: "Jetzt buchen",
+      whyChoose: {
+        title: "Warum meinen Unterricht wählen?",
+        reasons: [
+          "15+ Jahre professionelle Aufführungserfahrung",
+          "Personalisierter Lehrplan für jeden Schüler",
+          "Mehrere Genres: Jazz, Klassik, Zeitgenössisch",
+          "Flexible Terminplanung und Standortoptionen"
+        ]
+      },
+      cta: {
+        title: "Bereit anzufangen?",
+        subtitle: "Buchen Sie heute Ihre erste Stunde",
+        button: "Kontaktieren Sie mich"
+      }
     },
     performances: {
       title: 'Auftritte',

@@ -1,8 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Performances from '@/components/Performances';
-import Gallery from '@/components/Gallery';
+import Overview from '@/components/Overview';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -11,9 +9,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <About />
-      <Performances />
-      <Gallery />
+      <Overview />
       <Contact />
       
       {/* Page Break */}

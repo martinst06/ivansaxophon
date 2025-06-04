@@ -1,15 +1,15 @@
 'use client';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { name: t.nav.home, href: '#home' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.performances, href: '#performances' },
-    { name: t.nav.gallery, href: '#gallery' },
-    { name: t.nav.contact, href: '#contact' },
+    { name: t.nav.lessons, href: '/lessons' },
+    { name: t.nav.performances, href: '/performances' },
+    { name: t.nav.aboutMe, href: '/about-me' },
+    { name: t.nav.contact, href: '/#contact' },
   ];
 
   return (
@@ -56,12 +56,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-white/80 hover:text-bronze transition-colors duration-300 text-sm sm:text-base py-1 block min-h-[32px] flex items-center"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
