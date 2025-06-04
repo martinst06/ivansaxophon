@@ -1,25 +1,47 @@
+import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Overview from '@/components/Overview';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import StructuredData from '@/components/StructuredData';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Professional Saxophonist in Switzerland - Ivan Saxophon',
+  description: 'Professional saxophonist based in Basel, Switzerland. Live performances for weddings and events, saxophone lessons for all levels. Jazz, classical, and contemporary music across Switzerland.',
+  keywords: [
+    'saxophonist Switzerland',
+    'Basel musician',
+    'wedding music Switzerland',
+    'saxophone lessons Basel',
+    'professional musician',
+    'jazz saxophonist',
+    'classical saxophone',
+    'live music Switzerland',
+    'event musician Basel'
+  ],
+  openGraph: {
+    title: 'Professional Saxophonist in Switzerland - Ivan Saxophon',
+    description: 'Professional saxophonist based in Basel, Switzerland. Live performances and saxophone lessons.',
+    url: '/',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/',
+  },
+};
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <>
+      <StructuredData />
       <Navigation />
-      <Hero />
-      <Overview />
-      <Contact />
-      
-      {/* Page Break */}
-      <div className="bg-charcoal py-6 sm:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full border-t border-white/10"></div>
-        </div>
-      </div>
-      
+      <main>
+        <Hero />
+        <Overview />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

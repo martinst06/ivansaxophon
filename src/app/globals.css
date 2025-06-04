@@ -1,54 +1,128 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --bronze: #cd7f32;
-  --bronze-light: #e6a85c;
-  --bronze-dark: #b8722c;
-  --beige: #f5f5dc;
-  --charcoal: #1a1a1a;
-}
+/* Critical above-the-fold styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-bronze: var(--bronze);
-  --color-bronze-light: var(--bronze-light);
-  --color-bronze-dark: var(--bronze-dark);
-  --color-beige: var(--beige);
-  --color-charcoal: var(--charcoal);
-  --font-sans: var(--font-poppins);
-  --font-serif: var(--font-playfair);
-}
+  body {
+    font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
 
-@media (prefers-color-scheme: dark) {
+  /* Font variables for better performance */
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --font-sans: var(--font-poppins);
+    --font-serif: var(--font-playfair);
+    
+    /* Color variables for consistency */
+    --color-bronze: #D4AF37;
+    --color-bronze-dark: #B8941F;
+    --color-bronze-light: #E6C554;
+    --color-charcoal: #2C3E50;
+    --color-beige: #F5F5DC;
+  }
+
+  /* Improved focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 2px;
+  }
+
+  /* Optimize images for performance */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Smooth scrolling for navigation links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+/* Component layer for reusable patterns */
+@layer components {
+  .btn-primary {
+    @apply bg-bronze hover:bg-bronze-dark text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-bronze-light) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Loading animation */
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Utility layer for custom utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--beige);
-}
+  .backdrop-blur-safari {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--bronze);
-  border-radius: 4px;
-}
+  /* Performance utilities */
+  .will-change-transform {
+    will-change: transform;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bronze-dark);
+  .contain-layout {
+    contain: layout;
+  }
+
+  .contain-paint {
+    contain: paint;
+  }
 }

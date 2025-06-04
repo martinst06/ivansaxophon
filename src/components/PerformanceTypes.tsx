@@ -54,10 +54,11 @@ const PerformanceTypes = () => {
               {/* Video Section */}
               <div className="relative aspect-video bg-gradient-to-br from-beige to-bronze-light/30">
                 <iframe
-                  src={`https://www.youtube.com/embed/${performance.videoId}?rel=0&modestbranding=1`}
+                  src={`https://www.youtube.com/embed/${performance.videoId}?rel=0&modestbranding=1&preload=none`}
                   title={performance.title}
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
