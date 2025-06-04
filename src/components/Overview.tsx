@@ -106,30 +106,6 @@ const Overview = () => {
             </div>
           </div>
         </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-12 sm:mt-16">
-          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-charcoal mb-4">
-            Ready to Create Unforgettable Musical Moments?
-          </h3>
-          <p className="text-charcoal/80 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
-            Whether you're planning a special event or want to learn the saxophone, let's discuss how we can bring beautiful music into your life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/#contact"
-              className="bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
-            >
-              Book Performance
-            </Link>
-            <Link
-              href="/lessons"
-              className="border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
-            >
-              Start Learning
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );
