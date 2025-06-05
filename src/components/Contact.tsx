@@ -108,7 +108,8 @@ const Contact = () => {
                     name="eventType"
                     value={formData.eventType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px]"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] h-[48px] appearance-none"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23cd7f32' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 0.75rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1rem' }}
                   >
                     <option value="" className="bg-charcoal">{t.contact.form.selectEventType}</option>
                     <option value="wedding" className="bg-charcoal">{t.contact.form.wedding}</option>
@@ -131,7 +132,7 @@ const Contact = () => {
                     name="eventDate"
                     value={formData.eventDate}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 pr-12 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0"
+                    className="w-full px-4 py-3 pr-12 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0 appearance-none"
                   />
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg className="w-5 h-5 text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24">
