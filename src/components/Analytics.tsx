@@ -51,6 +51,55 @@ export default function Analytics() {
           observer.observe({ entryTypes: ['longtask'] });
         } catch (e) {
           // Fallback for browsers that don't support longtask
+          console.log('Longtask monitoring not supported, falling back to alternative methods:', e);
+          
+          if ('requestIdleCallback' in window) {
+            let lastIdleTime = performance.now();
+            
+            const checkMainThreadBlocking = () => {
+              const now = performance.now();
+              const timeSinceLastIdle = now - lastIdleTime;
+              
+              // If more than 100ms have passed since last idle callback,
+              // the main thread was likely blocked
+              if (timeSinceLastIdle > 100) {
+                console.log('Main thread blocking detected (fallback):', {
+                  duration: timeSinceLastIdle,
+                  timestamp: now
+                });
+              }
+              
+              lastIdleTime = now;
+              requestIdleCallback(checkMainThreadBlocking);
+            };
+            
+            requestIdleCallback(checkMainThreadBlocking);
+          } else {
+            // Final fallback: basic timer-based detection
+            let lastCheckTime = performance.now();
+            
+            const checkWithTimer = () => {
+              const now = performance.now();
+              const expectedDelay = 50; // Expected 50ms delay
+              const actualDelay = now - lastCheckTime;
+              
+              // If actual delay is significantly more than expected,
+              // the main thread was likely blocked
+              if (actualDelay > expectedDelay + 30) {
+                console.log('Main thread blocking detected (timer fallback):', {
+                  expectedDelay,
+                  actualDelay,
+                  blocking: actualDelay - expectedDelay,
+                  timestamp: now
+                });
+              }
+              
+              lastCheckTime = now;
+              setTimeout(checkWithTimer, expectedDelay);
+            };
+            
+            setTimeout(checkWithTimer, 50);
+          }
         }
       }
 

@@ -8,37 +8,37 @@ const Overview = () => {
 
   const services = [
     {
-      title: "Professional Performances",
-      description: "Elegant live saxophone music for weddings, corporate events, and special occasions.",
+      title: t.overview.services.performances.title,
+      description: t.overview.services.performances.description,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
         </svg>
       ),
       link: "/#contact",
-      linkText: "Book Event"
+      linkText: t.overview.services.performances.linkText
     },
     {
-      title: "Saxophone Lessons",
-      description: "Personalized instruction for all skill levels, from beginner to advanced musicians.",
+      title: t.overview.services.lessons.title,
+      description: t.overview.services.lessons.description,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
       link: "/lessons",
-      linkText: "Learn More"
+      linkText: t.overview.services.lessons.linkText
     },
     {
-      title: "Multiple Genres",
-      description: "Expertise in jazz, classical, and contemporary styles to match any event atmosphere.",
+      title: t.overview.services.genres.title,
+      description: t.overview.services.genres.description,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
       link: "/about-me",
-      linkText: "About Ivan"
+      linkText: t.overview.services.genres.linkText
     }
   ];
 
@@ -48,11 +48,11 @@ const Overview = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-serif font-bold text-charcoal mb-4 sm:mb-6 leading-tight">
-            Professional <span className="text-bronze">Saxophone Services</span>
+            {t.overview.title} <span className="text-bronze">{t.overview.titleAccent}</span>
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-bronze mx-auto mb-4 sm:mb-6"></div>
           <p className="text-lg sm:text-xl text-charcoal/80 max-w-3xl mx-auto px-2">
-            Bringing exceptional saxophone music to your most important moments
+            {t.overview.subtitle}
           </p>
         </div>
 
@@ -90,19 +90,19 @@ const Overview = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">15+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">Years Experience</div>
+              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.experience}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">500+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">Performances</div>
+              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.performances}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">200+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">Students Taught</div>
+              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.students}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">3</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">Musical Genres</div>
+              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.genres}</div>
             </div>
           </div>
         </div>

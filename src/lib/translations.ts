@@ -178,6 +178,34 @@ export const translations = {
         }
       }
     },
+    overview: {
+      title: 'Professional',
+      titleAccent: 'Saxophone Services',
+      subtitle: 'Bringing exceptional saxophone music to your most important moments',
+      services: {
+        performances: {
+          title: 'Professional Performances',
+          description: 'Elegant live saxophone music for weddings, corporate events, and special occasions.',
+          linkText: 'Book Event'
+        },
+        lessons: {
+          title: 'Saxophone Lessons',
+          description: 'Personalized instruction for all skill levels, from beginner to advanced musicians.',
+          linkText: 'Learn More'
+        },
+        genres: {
+          title: 'Multiple Genres',
+          description: 'Expertise in jazz, classical, and contemporary styles to match any event atmosphere.',
+          linkText: 'About Ivan'
+        }
+      },
+      stats: {
+        experience: 'Years Experience',
+        performances: 'Performances',
+        students: 'Students Taught',
+        genres: 'Musical Genres'
+      }
+    },
     contact: {
       title: 'Get In',
       titleAccent: 'Touch',
@@ -403,6 +431,34 @@ export const translations = {
           title: 'Outdoor-Festival',
           description: 'Sommer-Jazz-Festival'
         }
+      }
+    },
+    overview: {
+      title: 'Professionelle',
+      titleAccent: 'Saxophon-Dienstleistungen',
+      subtitle: 'Außergewöhnliche Saxophonmusik für Ihre wichtigsten Momente',
+      services: {
+        performances: {
+          title: 'Professionelle Auftritte',
+          description: 'Elegante Live-Saxophonmusik für Hochzeiten, Firmenveranstaltungen und besondere Anlässe.',
+          linkText: 'Event buchen'
+        },
+        lessons: {
+          title: 'Saxophon-Unterricht',
+          description: 'Persönlicher Unterricht für alle Spielniveaus, von Anfängern bis hin zu fortgeschrittenen Musikern.',
+          linkText: 'Mehr erfahren'
+        },
+        genres: {
+          title: 'Mehrere Genres',
+          description: 'Expertise in Jazz, Klassik und zeitgenössischen Stilen, passend zu jeder Veranstaltungsatmosphäre.',
+          linkText: 'Über Ivan'
+        }
+      },
+      stats: {
+        experience: 'Jahre Erfahrung',
+        performances: 'Auftritte',
+        students: 'Unterrichtete Schüler',
+        genres: 'Musikgenres'
       }
     },
     contact: {
