@@ -14,7 +14,6 @@ const Navigation = () => {
     { name: t.nav.lessons, href: '/lessons' },
     { name: t.nav.performances, href: '/performances' },
     { name: t.nav.aboutMe, href: '/about-me' },
-    { name: t.nav.contact, href: '/#contact' },
   ];
 
   const languages = [
