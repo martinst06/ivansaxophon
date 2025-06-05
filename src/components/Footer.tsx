@@ -89,7 +89,7 @@ const Footer = () => {
             <p className="text-white/60 text-xs sm:text-sm text-center sm:text-left">
               © 2025 {t.footer.copyright}
             </p>
-            <div className="flex flex-col xs:flex-row space-y-2 xs:space-y-0 xs:space-x-6">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
               <a 
                 href="#" 
                 className="text-white/60 hover:text-bronze text-xs sm:text-sm transition-colors duration-300 text-center min-h-[32px] flex items-center justify-center"
