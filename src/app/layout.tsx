@@ -102,7 +102,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preload" href="/fonts" as="font" crossOrigin="" />
         <meta name="theme-color" content="#D4AF37" />
         <meta name="msapplication-TileColor" content="#D4AF37" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
