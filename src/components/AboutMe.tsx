@@ -13,8 +13,54 @@ const AboutMe = () => {
       <div className="pt-20 pb-8 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 xl:pt-36 xl:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            {/* Image Section - Mobile First */}
-            <div className="lg:col-span-5 order-1">
+            {/* Text Content - Now on the Left */}
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+                  {t.aboutMe.title} <span className="text-bronze">{t.aboutMe.titleAccent}</span>
+                </h1>
+                <div className="w-12 h-1 bg-gradient-to-r from-bronze to-bronze-light mb-6 mx-auto lg:mx-0"></div>
+                
+                <div className="space-y-4 text-white/90 leading-relaxed">
+                  <p className="text-lg text-white font-light">
+                    {t.aboutMe.intro}
+                  </p>
+                  
+                  <p className="text-lg">
+                    {t.aboutMe.education}
+                  </p>
+
+                  <p className="text-lg">
+                    {t.aboutMe.current}
+                  </p>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col xs:flex-row gap-3 mt-8">
+                  <Link
+                    href="/lessons"
+                    className="group bg-bronze hover:bg-bronze-dark text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center min-h-[48px] flex items-center justify-center text-lg"
+                  >
+                    <span className="mr-2">{t.aboutMe.startLearning}</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/#contact"
+                    className="group border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-7 py-3.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center min-h-[48px] flex items-center justify-center text-lg"
+                  >
+                    <span className="mr-2">{t.aboutMe.bookPerformance}</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Image Section - Now on the Right */}
+            <div className="lg:col-span-5 order-1 lg:order-2">
               <div className="relative max-w-[280px] xs:max-w-[320px] sm:max-w-md lg:max-w-lg mx-auto">
                 {/* Main Image */}
                 <div className="aspect-[4/5] relative rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
@@ -49,52 +95,6 @@ const AboutMe = () => {
                 {/* Decorative elements - Subtle on mobile */}
                 <div className="absolute top-1/4 -left-1 xs:-left-2 sm:-left-3 w-6 h-6 xs:w-8 xs:h-8 sm:w-12 sm:h-12 border-2 border-bronze/20 rounded-full backdrop-blur-sm"></div>
                 <div className="absolute bottom-1/4 -right-1 xs:-right-2 sm:-right-3 w-4 h-4 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-bronze/15 rounded-full backdrop-blur-sm"></div>
-              </div>
-            </div>
-
-            {/* Text Content */}
-            <div className="lg:col-span-7 order-2">
-              <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-3 xs:mb-4 sm:mb-6 leading-tight">
-                  {t.aboutMe.title} <span className="text-bronze">{t.aboutMe.titleAccent}</span>
-                </h1>
-                <div className="w-12 xs:w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-bronze to-bronze-light mb-4 xs:mb-6 sm:mb-8 mx-auto lg:mx-0"></div>
-                
-                <div className="space-y-3 xs:space-y-4 sm:space-y-5 text-white/90 leading-relaxed">
-                  <p className="text-base xs:text-lg sm:text-xl lg:text-2xl text-white font-light">
-                    {t.aboutMe.intro}
-                  </p>
-                  
-                  <p className="text-sm xs:text-base sm:text-lg lg:text-xl">
-                    {t.aboutMe.education}
-                  </p>
-
-                  <p className="text-sm xs:text-base sm:text-lg lg:text-xl">
-                    {t.aboutMe.current}
-                  </p>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col xs:flex-row gap-3 mt-6 xs:mt-8 sm:mt-10">
-                  <Link
-                    href="/lessons"
-                    className="group bg-bronze hover:bg-bronze-dark text-white px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] flex items-center justify-center text-sm xs:text-base sm:text-lg"
-                  >
-                    <span className="mr-2">{t.aboutMe.startLearning}</span>
-                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                  <Link
-                    href="/#contact"
-                    className="group border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center min-h-[44px] xs:min-h-[48px] sm:min-h-[52px] flex items-center justify-center text-sm xs:text-base sm:text-lg"
-                  >
-                    <span className="mr-2">{t.aboutMe.bookPerformance}</span>
-                    <svg className="w-4 h-4 xs:w-4 xs:h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
