@@ -7,10 +7,10 @@ export default function StructuredData() {
     "alternateName": "Ivan Saxophon",
     "description": "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus.",
     "image": [
-      "https://ivansaxophon.ch/og-image.jpg",
-      "https://ivansaxophon.ch/ivan-saxophon-performance.jpg"
+      "https://ivansaxophon.ch/ivan.png"
+      // "https://ivansaxophon.ch/ivan-saxophon-performance.jpg" // TODO: Add when photo available
     ],
-    "logo": "https://ivansaxophon.ch/logo.png",
+    // "logo": "https://ivansaxophon.ch/logo.png", // TODO: Add when logo available
     "url": "https://ivansaxophon.ch",
     "telephone": "+41763761906",
     "email": "info@ivansaxophon.ch",
@@ -169,13 +169,12 @@ export default function StructuredData() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://ivansaxophon.ch/#person",
+    "@id": "https://ivansaxophon.ch/about-me",
     "name": "Ivan Saxophon",
     "givenName": "Ivan",
-    "familyName": "Saxophon",
     "jobTitle": "Professioneller Saxophonist & Musiklehrer",
-    "description": "Preisgekrönter professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa.",
-    "image": "https://ivansaxophon.ch/ivan-profile.jpg",
+    "description": "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa.",
+    "image": "https://ivansaxophon.ch/ivan.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Baselland",
@@ -186,12 +185,12 @@ export default function StructuredData() {
     "email": "info@ivansaxophon.ch",
     "url": "https://ivansaxophon.ch",
     "sameAs": [
-      "https://www.instagram.com/ivan.saxophon/",
-      "https://www.facebook.com/ivansaxophon",
-      "https://www.linkedin.com/in/ivan-saxophon"
+      "https://www.instagram.com/ivan.saxophon/"
     ],
     "knowsAbout": [
       "Saxophone Performance",
+      "Saxophone Teaching",
+      "Music Teaching",
       "Jazz Music",
       "Classical Music", 
       "Contemporary Music",
@@ -202,7 +201,7 @@ export default function StructuredData() {
     ],
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Professional Saxophonist",
+      "name": "Professioneller Saxophonist",
       "occupationLocation": {
         "@type": "City",
         "name": "Baselland, Switzerland"
@@ -227,9 +226,9 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://ivansaxophon.ch/#service",
-    "name": "Professional Saxophone Services",
-    "serviceType": "Music Performance and Education",
-    "description": "Premium saxophone performances and professional music instruction services throughout Switzerland",
+    "name": "Professionelle Saxophon-Dienstleistungen",
+    "serviceType": "Musik-Auftritte und -Unterricht",
+    "description": "Premium Saxophon Musik und Saxophon Unterricht in der ganzen Schweiz",
     "provider": {
       "@type": "Person",
       "name": "Ivan Saxophon",
@@ -250,8 +249,7 @@ export default function StructuredData() {
             "@type": "Service",
             "name": "Wedding Saxophone Performance",
             "description": "Elegant saxophone music for wedding ceremonies, cocktail hours, and receptions"
-          },
-          "availability": "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Offer", 
@@ -260,8 +258,7 @@ export default function StructuredData() {
             "name": "Private Saxophone Lessons",
             "description": "One-on-one saxophone instruction tailored to your skill level and musical goals",
             "educationalLevel": ["Beginner", "Intermediate", "Advanced"]
-          },
-          "availability": "https://schema.org/InStock"
+          }
         }
       ]
     }

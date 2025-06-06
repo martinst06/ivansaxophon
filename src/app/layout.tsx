@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/ivan.png',
         width: 1200,
         height: 630,
         alt: 'Ivan Saxophon - Professional Saxophonist in Baselland, Switzerland',
@@ -149,7 +149,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Ivan Saxophon - Professional Saxophonist in Baselland, Switzerland",
     description: "Professional saxophonist in Baselland, Switzerland. Premium live performances & saxophone lessons across Switzerland.",
-    images: ['/og-image.jpg'],
+    images: ['/ivan.png'],
     creator: '@ivan_saxophon',
   },
   robots: {
@@ -222,7 +222,7 @@ export default function RootLayout({
         <meta name="ICBM" content="47.5596, 7.5886" />
         
         {/* Preload Critical Resources */}
-        <link rel="preload" href="/og-image.jpg" as="image" />
+        <link rel="preload" href="/ivan.png" as="image" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         
