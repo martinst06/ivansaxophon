@@ -80,21 +80,21 @@ export const translations = {
           description: "Perfect for those just starting their saxophone journey. Learn proper breathing, posture, and basic techniques.",
           features: ["Instrument basics", "Reading music", "First songs", "Proper technique"],
           duration: "45 minutes",
-          price: "From €50"
+          price: "From 50 CHF"
         },
         intermediate: {
           title: "Intermediate Lessons", 
           description: "For students ready to expand their skills and explore different musical styles and techniques.",
           features: ["Advanced techniques", "Jazz improvisation", "Music theory", "Performance skills"],
           duration: "60 minutes",
-          price: "From €60"
+          price: "From 60 CHF"
         },
         advanced: {
           title: "Advanced Lessons",
           description: "Professional-level instruction for serious musicians looking to master the saxophone.",
           features: ["Master techniques", "Performance coaching", "Recording preparation", "Career guidance"],
           duration: "60 minutes", 
-          price: "From €80"
+          price: "From 80 CHF"
         }
       },
       whatYoullLearn: "What You'll Learn",

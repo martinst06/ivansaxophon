@@ -4,23 +4,23 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Saxophone Lessons in Basel, Switzerland',
-  description: 'Professional saxophone lessons for all skill levels in Basel, Switzerland. Learn jazz, classical, and contemporary saxophone techniques with experienced instructor Ivan. Beginner to advanced lessons available.',
+  title: 'Saxophone Lessons in Baselland, Switzerland | Basel Music Instruction',
+  description: 'Professional saxophone lessons for all skill levels in Baselland, Switzerland. Learn jazz, classical, and contemporary saxophone techniques with experienced instructor Ivan. Beginner to advanced lessons available.',
   keywords: [
+    'saxophone lessons Baselland',
     'saxophone lessons Basel',
-    'saxophone teacher Switzerland',
-    'learn saxophone Basel',
+    'learn saxophone Baselland',
+    'saxophone teacher Baselland',
+    'saxophone instructor Basel',
+    'music lessons Baselland',
     'jazz saxophone lessons',
-    'classical saxophone instruction',
+    'classical saxophone lessons',
     'beginner saxophone lessons',
-    'advanced saxophone coaching',
-    'music lessons Basel',
-    'saxophone instruction Switzerland'
+    'advanced saxophone lessons'
   ],
   openGraph: {
-    title: 'Saxophone Lessons in Basel, Switzerland | Ivan Saxophon',
-    description: 'Professional saxophone lessons for all skill levels. Learn from experienced instructor Ivan in Basel, Switzerland.',
-    url: '/lessons',
+    title: 'Saxophone Lessons in Baselland, Switzerland | Ivan Saxophon',
+    description: 'Professional saxophone lessons for all skill levels. Learn from experienced instructor Ivan in Baselland, Switzerland.',
     type: 'website',
   },
   alternates: {

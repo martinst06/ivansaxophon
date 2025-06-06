@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@id": "https://ivansaxophon.ch/#business",
     "name": "Ivan Saxophon - Professional Saxophonist",
     "alternateName": "Ivan Saxophon",
-    "description": "Professional saxophonist based in Basel, Switzerland, offering premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all skill levels.",
+    "description": "Professional saxophonist based in Baselland, Switzerland, offering premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all skill levels.",
     "image": [
       "https://ivansaxophon.ch/og-image.jpg",
       "https://ivansaxophon.ch/ivan-saxophon-performance.jpg"
@@ -16,9 +16,9 @@ export default function StructuredData() {
     "email": "info@ivansaxophon.ch",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Basel",
-      "addressLocality": "Basel",
-      "addressRegion": "Basel-Stadt", 
+      "streetAddress": "Baselland",
+      "addressLocality": "Baselland",
+      "addressRegion": "Basel-Landschaft", 
       "postalCode": "4000",
       "addressCountry": "CH"
     },
@@ -34,7 +34,15 @@ export default function StructuredData() {
       },
       {
         "@type": "State", 
+        "name": "Basel-Landschaft"
+      },
+      {
+        "@type": "State", 
         "name": "Basel-Stadt"
+      },
+      {
+        "@type": "City",
+        "name": "Baselland"
       },
       {
         "@type": "City",
@@ -60,9 +68,8 @@ export default function StructuredData() {
             "name": "Wedding Saxophone Performance",
             "description": "Premium live saxophone performances for weddings and ceremonies throughout Switzerland",
             "category": "Entertainment Services"
-          },
-          "priceRange": "500-1500 CHF",
-          "priceCurrency": "CHF"
+            // wedding pricing was here
+          }
         },
         {
           "@type": "Offer", 
@@ -71,9 +78,7 @@ export default function StructuredData() {
             "name": "Corporate Event Music",
             "description": "Professional saxophone entertainment for corporate events, conferences, and business gatherings",
             "category": "Corporate Entertainment"
-          },
-          "priceRange": "400-1200 CHF",
-          "priceCurrency": "CHF"
+          }
         },
         {
           "@type": "Offer",
@@ -84,17 +89,17 @@ export default function StructuredData() {
             "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
             "category": "Music Education"
           },
-          "priceRange": "80-120 CHF",
+          "priceRange": "50-80 CHF",
           "priceCurrency": "CHF"
         }
       ]
     },
     "openingHours": [
-      "Mo-Fr 09:00-20:00",
-      "Sa 10:00-18:00"
+      "Mo-Fr 18:00-21:00",
+      "Sa 10:00-16:00"
     ],
-    "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
-    "currenciesAccepted": "CHF",
+    // "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
+    // "currenciesAccepted": "CHF",
     "serviceArea": {
       "@type": "GeoCircle",
       "geoMidpoint": {
@@ -105,32 +110,31 @@ export default function StructuredData() {
       "geoRadius": "100000"
     },
     "sameAs": [
-      "https://www.instagram.com/ivan.saxophon/",
-      "https://www.facebook.com/ivansaxophon",
-      "https://www.linkedin.com/in/ivan-saxophon"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "27",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Maria Schmidt"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "reviewBody": "Ivan's saxophone performance at our wedding was absolutely magical. His music created the perfect atmosphere for our special day. Highly professional and talented musician!"
-      }
+      "https://www.instagram.com/ivan.saxophon/"
     ]
+    // TODO: Add real reviews after setting up Google Business Profile
+    // "aggregateRating": {
+    //   "@type": "AggregateRating",
+    //   "ratingValue": "4.9",
+    //   "reviewCount": "27",
+    //   "bestRating": "5",
+    //   "worstRating": "1"
+    // },
+    // "review": [
+    //   {
+    //     "@type": "Review",
+    //     "author": {
+    //       "@type": "Person",
+    //       "name": "Real Customer Name"
+    //     },
+    //     "reviewRating": {
+    //       "@type": "Rating",
+    //       "ratingValue": "5",
+    //       "bestRating": "5"
+    //     },
+    //     "reviewBody": "Real customer review here..."
+    //   }
+    // ]
   };
 
   const personSchema = {
@@ -141,12 +145,12 @@ export default function StructuredData() {
     "givenName": "Ivan",
     "familyName": "Saxophon",
     "jobTitle": "Professional Saxophonist & Music Teacher",
-    "description": "Award-winning professional saxophonist specializing in jazz, classical, and contemporary music. Based in Basel, Switzerland, performing across Europe.",
+    "description": "Award-winning professional saxophonist specializing in jazz, classical, and contemporary music. Based in Baselland, Switzerland, performing across Europe.",
     "image": "https://ivansaxophon.ch/ivan-profile.jpg",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Basel",
-      "addressRegion": "Basel-Stadt", 
+      "addressLocality": "Baselland",
+      "addressRegion": "Basel-Landschaft", 
       "addressCountry": "CH"
     },
     "telephone": "+41763761906",
@@ -172,7 +176,7 @@ export default function StructuredData() {
       "name": "Professional Saxophonist",
       "occupationLocation": {
         "@type": "City",
-        "name": "Basel, Switzerland"
+        "name": "Baselland, Switzerland"
       }
     },
     "alumniOf": {
@@ -240,7 +244,7 @@ export default function StructuredData() {
     "@id": "https://ivansaxophon.ch/#website",
     "name": "Ivan Saxophon - Professional Saxophonist Switzerland",
     "url": "https://ivansaxophon.ch",
-    "description": "Professional saxophonist in Basel, Switzerland offering premium live performances and expert saxophone lessons",
+    "description": "Professional saxophonist in Baselland, Switzerland offering premium live performances and expert saxophone lessons",
     "publisher": {
       "@type": "Person",
       "name": "Ivan Saxophon",
