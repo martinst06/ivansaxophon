@@ -29,13 +29,32 @@
   }
 }
 
+html {
+  background: #ffffff;
+  background-color: #ffffff;
+}
+
 body {
   background: var(--background);
+  background-color: #ffffff;
   color: var(--foreground);
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Safari mobile background fix */
+@supports (-webkit-appearance: none) {
+  html {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+  
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
 }
 
 /* Custom scrollbar - Desktop only */
