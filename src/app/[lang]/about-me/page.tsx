@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Language, translations } from '@/lib/translations';
@@ -61,10 +62,13 @@ export default async function AboutMePage({ params }: Props) {
               {/* Ivan's Image */}
               <div className="flex justify-center mb-8">
                 <div className="relative">
-                  <img 
+                  <Image 
                     src="/ivan.png" 
                     alt="Ivan playing saxophone"
+                    width={320}
+                    height={320}
                     className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-white"
+                    priority
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-t from-bronze/20 to-transparent"></div>
                 </div>
@@ -194,7 +198,7 @@ export default async function AboutMePage({ params }: Props) {
         {/* Quote Section */}
         <div className="bg-gradient-to-r from-bronze/5 to-bronze-light/5 py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="text-4xl text-bronze mb-6">"</div>
+            <div className="text-4xl text-bronze mb-6">&quot;</div>
             <blockquote className="text-xl md:text-2xl font-serif text-charcoal/80 leading-relaxed mb-6">
               {t.aboutMe.quote}
             </blockquote>

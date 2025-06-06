@@ -4,14 +4,19 @@ interface StructuredDataProps {
   lang: Language;
 }
 
-export default function StructuredData({ lang: _lang }: StructuredDataProps) {
+export default function StructuredData({ lang }: StructuredDataProps) {
+  // Localized content based on language
+  const isGerman = lang === 'de';
+  
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MusicTeacher",
     "@id": "https://ivansaxophon.ch/#business",
     "name": "Ivan Saxophon - Professional Saxophonist",
     "alternateName": "Ivan Saxophon",
-    "description": "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus.",
+    "description": isGerman 
+      ? "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus."
+      : "Professional saxophonist in Baselland, Switzerland. Premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all levels.",
     "image": [
       "https://ivansaxophon.ch/ivan.png"
       // "https://ivansaxophon.ch/ivan-saxophon-performance.jpg" // TODO: Add when photo available
@@ -178,8 +183,10 @@ export default function StructuredData({ lang: _lang }: StructuredDataProps) {
     "@id": "https://ivansaxophon.ch/about-me",
     "name": "Ivan Saxophon",
     "givenName": "Ivan",
-    "jobTitle": "Professioneller Saxophonist & Musiklehrer",
-    "description": "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa.",
+    "jobTitle": isGerman ? "Professioneller Saxophonist & Musiklehrer" : "Professional Saxophonist & Music Teacher",
+    "description": isGerman 
+      ? "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa."
+      : "Professional saxophonist specializing in jazz, classical, and contemporary music. Based in Baselland, Switzerland, with performances across Europe.",
     "image": "https://ivansaxophon.ch/ivan.png",
     "address": {
       "@type": "PostalAddress",
