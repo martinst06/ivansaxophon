@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@id": "https://ivansaxophon.ch/#business",
     "name": "Ivan Saxophon - Professional Saxophonist",
     "alternateName": "Ivan Saxophon",
-    "description": "Professional saxophonist based in Baselland, Switzerland, offering premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all skill levels.",
+    "description": "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus.",
     "image": [
       "https://ivansaxophon.ch/og-image.jpg",
       "https://ivansaxophon.ch/ivan-saxophon-performance.jpg"
@@ -42,19 +42,48 @@ export default function StructuredData() {
       },
       {
         "@type": "City",
-        "name": "Baselland"
+        "name": "Basel",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "4000",
+          "addressCountry": "CH"
+        }
       },
       {
         "@type": "City",
-        "name": "Basel"
+        "name": "Baselland",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "4410",
+          "addressCountry": "CH"
+        }
       },
       {
         "@type": "City",
-        "name": "Zurich"
+        "name": "Liestal",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "4410",
+          "addressCountry": "CH"
+        }
       },
       {
         "@type": "City",
-        "name": "Bern"
+        "name": "Füllinsdorf",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "4414",
+          "addressCountry": "CH"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Frenkendorf",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "4402",
+          "addressCountry": "CH"
+        }
       }
     ],
     "hasOfferCatalog": {
@@ -65,8 +94,8 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Wedding Saxophone Performance",
-            "description": "Premium live saxophone performances for weddings and ceremonies throughout Switzerland",
+            "name": "Hochzeits-Saxophon Auftritte",
+            "description": "Elegante Saxophon-Musik für Hochzeitszeremonien, Cocktailstunden und Empfänge in der ganzen Schweiz",
             "category": "Entertainment Services"
             // wedding pricing was here
           }
@@ -75,8 +104,8 @@ export default function StructuredData() {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "Service",
-            "name": "Corporate Event Music",
-            "description": "Professional saxophone entertainment for corporate events, conferences, and business gatherings",
+            "name": "Firmenveranstaltung Musik",
+            "description": "Professionelle Saxophon-Unterhaltung für Firmenveranstaltungen, Konferenzen und Geschäftstreffen",
             "category": "Corporate Entertainment"
           }
         },
@@ -84,9 +113,9 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "EducationalService",
-            "name": "Professional Saxophone Lessons",
-            "description": "Expert saxophone instruction for all skill levels from beginner to advanced",
-            "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
+            "name": "Professioneller Saxophon-Unterricht",
+            "description": "Expertensaxophon-Unterricht für alle Niveaus von Anfänger bis Fortgeschritten",
+            "educationalLevel": ["Anfänger", "Mittelstufe", "Fortgeschritten"],
             "category": "Music Education"
           },
           "priceRange": "50-80 CHF",
@@ -144,8 +173,8 @@ export default function StructuredData() {
     "name": "Ivan Saxophon",
     "givenName": "Ivan",
     "familyName": "Saxophon",
-    "jobTitle": "Professional Saxophonist & Music Teacher",
-    "description": "Award-winning professional saxophonist specializing in jazz, classical, and contemporary music. Based in Baselland, Switzerland, performing across Europe.",
+    "jobTitle": "Professioneller Saxophonist & Musiklehrer",
+    "description": "Preisgekrönter professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa.",
     "image": "https://ivansaxophon.ch/ivan-profile.jpg",
     "address": {
       "@type": "PostalAddress",
@@ -242,9 +271,9 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://ivansaxophon.ch/#website",
-    "name": "Ivan Saxophon - Professional Saxophonist Switzerland",
+    "name": "Ivan Saxophon - Professioneller Saxophonist Schweiz",
     "url": "https://ivansaxophon.ch",
-    "description": "Professional saxophonist in Baselland, Switzerland offering premium live performances and expert saxophone lessons",
+    "description": "Professioneller Saxophonist in Baselland, Schweiz bietet Premium Live-Auftritte und Expertensaxophon-Unterricht",
     "publisher": {
       "@type": "Person",
       "name": "Ivan Saxophon",
