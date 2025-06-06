@@ -67,7 +67,7 @@ const Navigation = ({ lang }: NavigationProps) => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-beige">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-16">
             {/* Logo - Clickable */}
@@ -204,7 +204,7 @@ const Navigation = ({ lang }: NavigationProps) => {
       >
         {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-beige/40 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/30 transition-opacity duration-300 ease-in-out"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -257,30 +257,7 @@ const Navigation = ({ lang }: NavigationProps) => {
             ))}
           </div>
 
-          {/* Mobile Language Switcher in Menu */}
-          <div className="px-6 py-4 border-t border-beige mt-auto">
-            <div className="space-y-2">
-              <p className="text-sm font-medium text-charcoal/70 px-4">Language</p>
-              <div className="grid grid-cols-2 gap-2">
-                {languages.map((langOption) => (
-                  <button
-                    key={langOption.code}
-                    onClick={() => {
-                      handleLanguageChange(langOption.code);
-                      closeMenu();
-                    }}
-                    className={`flex items-center justify-center px-4 py-3 text-sm font-medium rounded-lg border transition-all duration-200 min-h-[48px] ${
-                      lang === langOption.code
-                        ? 'bg-bronze text-white border-bronze shadow-sm'
-                        : 'text-charcoal border-charcoal/20 hover:border-bronze hover:text-bronze hover:bg-bronze/5'
-                    }`}
-                  >
-                    {langOption.code}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </>
