@@ -38,22 +38,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Custom scrollbar - Desktop only */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--beige);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--beige);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--bronze);
-  border-radius: 4px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--bronze);
+    border-radius: 4px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bronze-dark);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--bronze-dark);
+  }
 }
 
 /* Performance optimizations */
