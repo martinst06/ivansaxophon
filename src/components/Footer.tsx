@@ -1,15 +1,19 @@
 'use client';
 import Link from 'next/link';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { translations, Language } from '@/lib/translations';
 
-const Footer = () => {
-  const { t } = useLanguage();
+interface FooterProps {
+  lang: Language;
+}
+
+const Footer = ({ lang }: FooterProps) => {
+  const t = translations[lang];
 
   const quickLinks = [
-    { name: t.nav.lessons, href: '/lessons' },
-    { name: t.nav.performances, href: '/performances' },
-    { name: t.nav.aboutMe, href: '/about-me' },
-    { name: t.nav.contact, href: '/#contact' },
+    { name: t.nav.lessons, href: `/${lang}/lessons` },
+    { name: t.nav.performances, href: `/${lang}/performances` },
+    { name: t.nav.aboutMe, href: `/${lang}/about-me` },
+    { name: t.nav.contact, href: `/${lang}#contact` },
   ];
 
   return (

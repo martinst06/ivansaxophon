@@ -1,4 +1,10 @@
-export default function StructuredData() {
+import { Language } from '@/lib/translations';
+
+interface StructuredDataProps {
+  lang: Language;
+}
+
+export default function StructuredData({ lang: _lang }: StructuredDataProps) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MusicTeacher",

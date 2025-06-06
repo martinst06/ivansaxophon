@@ -2,27 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Language } from '@/lib/translations';
+import { useRouter, usePathname } from 'next/navigation';
+import { translations, Language } from '@/lib/translations';
 
-const Navigation = () => {
+interface NavigationProps {
+  lang: Language;
+}
+
+const Navigation = ({ lang }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
+  const t = translations[lang];
 
   const navItems = [
-    { name: t.nav.lessons, href: '/lessons' },
-    { name: t.nav.performances, href: '/performances' },
-    { name: t.nav.aboutMe, href: '/about-me' },
+    { name: t.nav.lessons, href: `/${lang}/lessons` },
+    { name: t.nav.performances, href: `/${lang}/performances` },
+    { name: t.nav.aboutMe, href: `/${lang}/about-me` },
   ];
 
   const languages = [
-    { code: 'EN' as Language, name: 'English' },
-    { code: 'DE' as Language, name: 'Deutsch' },
+    { code: 'en' as Language, name: 'English' },
+    { code: 'de' as Language, name: 'Deutsch' },
   ];
 
   const handleLanguageChange = (langCode: Language) => {
-    setLanguage(langCode);
+    // Get the current route without the language prefix
+    const currentRoute = pathname.replace(/^\/[a-z]{2}/, '') || '';
+    // Navigate to the same route in the new language
+    router.push(`/${langCode}${currentRoute}`);
     setIsLanguageOpen(false);
   };
 
@@ -64,7 +73,7 @@ const Navigation = () => {
             {/* Logo - Clickable */}
             <div className="flex-shrink-0">
               <Link 
-                href="/"
+                href={`/${lang}`}
                 className="text-xl sm:text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center"
               >
                 Ivan <span className="text-bronze">Saxophon</span>
@@ -93,7 +102,7 @@ const Navigation = () => {
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
-                  <span>{language.toUpperCase()}</span>
+                  <span>{lang.toUpperCase()}</span>
                   <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -102,16 +111,16 @@ const Navigation = () => {
                 {/* Language Dropdown */}
                 {isLanguageOpen && (
                   <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
-                    {languages.map((lang) => (
+                    {languages.map((langOption) => (
                       <button
-                        key={lang.code}
-                        onClick={() => handleLanguageChange(lang.code.toLowerCase() as Language)}
+                        key={langOption.code}
+                        onClick={() => handleLanguageChange(langOption.code)}
                         className={`w-full text-left px-4 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 flex items-center justify-between min-h-[44px] ${
-                          language === lang.code.toLowerCase() ? 'text-bronze font-medium' : 'text-charcoal'
+                          lang === langOption.code ? 'text-bronze font-medium' : 'text-charcoal'
                         }`}
                       >
-                        <span>{lang.name}</span>
-                        {language === lang.code.toLowerCase() && (
+                        <span>{langOption.name}</span>
+                        {lang === langOption.code && (
                           <svg className="w-4 h-4 text-bronze" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -133,7 +142,7 @@ const Navigation = () => {
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
-                  <span>{language.toUpperCase()}</span>
+                  <span>{lang.toUpperCase()}</span>
                   <svg className={`w-3 h-3 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -142,15 +151,15 @@ const Navigation = () => {
                 {/* Mobile Language Dropdown */}
                 {isLanguageOpen && (
                   <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
-                    {languages.map((lang) => (
+                    {languages.map((langOption) => (
                       <button
-                        key={lang.code}
-                        onClick={() => handleLanguageChange(lang.code.toLowerCase() as Language)}
+                        key={langOption.code}
+                        onClick={() => handleLanguageChange(langOption.code)}
                         className={`w-full text-left px-3 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 min-h-[44px] ${
-                          language === lang.code.toLowerCase() ? 'text-bronze font-medium' : 'text-charcoal'
+                          lang === langOption.code ? 'text-bronze font-medium' : 'text-charcoal'
                         }`}
                       >
-                        {lang.code}
+                        {langOption.code}
                       </button>
                     ))}
                   </div>
@@ -253,20 +262,20 @@ const Navigation = () => {
             <div className="space-y-2">
               <p className="text-sm font-medium text-charcoal/70 px-4">Language</p>
               <div className="grid grid-cols-2 gap-2">
-                {languages.map((lang) => (
+                {languages.map((langOption) => (
                   <button
-                    key={lang.code}
+                    key={langOption.code}
                     onClick={() => {
-                      handleLanguageChange(lang.code.toLowerCase() as Language);
+                      handleLanguageChange(langOption.code);
                       closeMenu();
                     }}
                     className={`flex items-center justify-center px-4 py-3 text-sm font-medium rounded-lg border transition-all duration-200 min-h-[48px] ${
-                      language === lang.code.toLowerCase()
+                      lang === langOption.code
                         ? 'bg-bronze text-white border-bronze shadow-sm'
                         : 'text-charcoal border-charcoal/20 hover:border-bronze hover:text-bronze hover:bg-bronze/5'
                     }`}
                   >
-                    {lang.code}
+                    {langOption.code}
                   </button>
                 ))}
               </div>

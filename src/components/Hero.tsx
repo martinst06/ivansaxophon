@@ -1,10 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { translations, Language } from '@/lib/translations';
 
-const Hero = () => {
-  const { t } = useLanguage();
+interface HeroProps {
+  lang: Language;
+}
+
+const Hero = ({ lang }: HeroProps) => {
+  const t = translations[lang];
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-beige to-bronze-light/20">
@@ -27,13 +31,13 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
             <Link
-              href="/lessons"
+              href={`/${lang}/lessons`}
               className="bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-center min-h-[48px] flex items-center justify-center"
             >
               {t.hero.viewPerformances}
             </Link>
             <Link
-              href="/#contact"
+              href={`/${lang}#contact`}
               className="border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 text-center min-h-[48px] flex items-center justify-center"
             >
               {t.hero.bookPerformance}

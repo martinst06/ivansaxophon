@@ -1,10 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { translations, Language } from '@/lib/translations';
 
-const Contact = () => {
-  const { t } = useLanguage();
+interface ContactProps {
+  lang: Language;
+}
+
+const Contact = ({ lang }: ContactProps) => {
+  const t = translations[lang];
   const [formData, setFormData] = useState({
     name: '',
     email: '',
