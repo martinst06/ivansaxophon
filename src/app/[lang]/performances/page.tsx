@@ -166,27 +166,6 @@ export default async function PerformancesPage({ params }: Props) {
         {/* Performance Gallery */}
         <PerformanceGallery lang={typedLang} />
 
-        {/* Call to Action */}
-        <div className="bg-gradient-to-br from-white via-beige/30 to-bronze-light/10 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center bg-gradient-to-r from-bronze/5 to-bronze/10 rounded-2xl p-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">
-                {t.performances.ctaTitle}
-              </h2>
-              <p className="text-lg text-charcoal/70 max-w-3xl mx-auto mb-8">
-                {t.performances.ctaDescription}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-bronze text-white px-8 py-3 rounded-full font-medium hover:bg-bronze-dark transition-colors">
-                  {t.performances.bookYourPerformance}
-                </button>
-                <button className="border-2 border-bronze text-bronze px-8 py-3 rounded-full font-medium hover:bg-bronze hover:text-white transition-colors">
-                  {t.performances.viewGallery}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
       <Footer lang={typedLang} />
     </>
