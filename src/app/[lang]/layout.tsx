@@ -1,24 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins, Playfair_Display } from "next/font/google";
 import Analytics from "@/components/Analytics";
 import { redirect } from "next/navigation";
-import "../globals.css";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-  preload: true,
-});
 
 type Props = {
   params: Promise<{ lang: string }>
@@ -56,6 +38,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'website',
         images: [{ url: '/ivan.png', width: 1200, height: 630, alt: 'Ivan Saxophon - Professioneller Saxophonist in Baselland, Schweiz' }],
       },
+      other: {
+        'geo.region': 'CH-BL',
+        'geo.placename': 'Baselland',
+        'geo.position': '47.5596;7.5886',
+        'ICBM': '47.5596, 7.5886',
+        'content-language': 'de',
+        'language': 'German',
+        'rating': 'General',
+        'distribution': 'global',
+        'revisit-after': '7 days',
+        'expires': 'never',
+        'HandheldFriendly': 'True',
+        'MobileOptimized': '320',
+        'contact': 'info@ivansaxophon.ch',
+        'reply-to': 'info@ivansaxophon.ch',
+        'owner': 'Ivan Saxophon',
+        'coverage': 'Worldwide',
+        'target': 'all',
+        'audience': 'all',
+      },
     };
   }
 
@@ -83,6 +85,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [{ url: '/ivan.png', width: 1200, height: 630, alt: 'Ivan Saxophon - Professional Saxophonist in Baselland, Switzerland' }],
     },
+    other: {
+      'geo.region': 'CH-BL',
+      'geo.placename': 'Baselland',
+      'geo.position': '47.5596;7.5886',
+      'ICBM': '47.5596, 7.5886',
+      'content-language': 'en',
+      'language': 'English',
+      'rating': 'General',
+      'distribution': 'global',
+      'revisit-after': '7 days',
+      'expires': 'never',
+      'HandheldFriendly': 'True',
+      'MobileOptimized': '320',
+      'contact': 'info@ivansaxophon.ch',
+      'reply-to': 'info@ivansaxophon.ch',
+      'owner': 'Ivan Saxophon',
+      'coverage': 'Worldwide',
+      'target': 'all',
+      'audience': 'all',
+    },
   };
 }
 
@@ -99,64 +121,6 @@ export default async function LangLayout({
   if (lang !== 'en' && lang !== 'de') {
     redirect('/en');
   }
-  
-  const isGerman = lang === 'de';
 
-  return (
-    <html lang={lang} prefix="og: http://ogp.me/ns#">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        
-        {/* Additional SEO Meta Tags */}
-        <meta httpEquiv="content-language" content={lang} />
-        <meta name="language" content={isGerman ? "German" : "English"} />
-        <meta name="rating" content="General" />
-        <meta name="distribution" content="global" />
-        <meta name="revisit-after" content="7 days" />
-        <meta name="expires" content="never" />
-        <meta name="HandheldFriendly" content="True" />
-        <meta name="MobileOptimized" content="320" />
-        
-        {/* Business Information */}
-        <meta name="contact" content="info@ivansaxophon.ch" />
-        <meta name="reply-to" content="info@ivansaxophon.ch" />
-        <meta name="owner" content="Ivan Saxophon" />
-        <meta name="coverage" content="Worldwide" />
-        <meta name="target" content="all" />
-        <meta name="audience" content="all" />
-        
-        {/* Local Business Meta Tags */}
-        <meta name="geo.region" content="CH-BL" />
-        <meta name="geo.placename" content="Baselland" />
-        <meta name="geo.position" content="47.5596;7.5886" />
-        <meta name="ICBM" content="47.5596, 7.5886" />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/ivan.png" as="image" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        
-        {/* Canonical and Alternative Languages */}
-        <link rel="canonical" href={`https://ivansaxophon.ch/${lang}`} />
-        <link rel="alternate" hrefLang="en" href="https://ivansaxophon.ch/en" />
-        <link rel="alternate" hrefLang="de" href="https://ivansaxophon.ch/de" />
-        <link rel="alternate" hrefLang="x-default" href="https://ivansaxophon.ch/en" />
-      </head>
-      <body
-        className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}
-      >
-        <Analytics />
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 } 

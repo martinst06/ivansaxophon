@@ -183,8 +183,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfairDisplay.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${poppins.variable} ${playfairDisplay.variable}`} prefix="og: http://ogp.me/ns#">
+      <body className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}>
         {children}
         <Analytics />
       </body>
