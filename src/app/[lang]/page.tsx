@@ -5,7 +5,7 @@ import Overview from '@/components/Overview';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
-import { translations, Language } from '@/lib/translations';
+import { Language } from '@/lib/translations';
 
 type Props = {
   params: Promise<{ lang: string }>

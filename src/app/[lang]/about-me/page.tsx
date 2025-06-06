@@ -91,7 +91,7 @@ export default async function AboutMePage({ params }: Props) {
                 <div className="text-sm text-charcoal font-medium">{t.aboutMe.yearsExperience}</div>
               </div>
               <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
-                <div className="text-3xl md:text-4xl font-bold text-bronze mb-2">500+</div>
+                <div className="text-3xl md:text-4xl font-bold text-bronze mb-2">100+</div>
                 <div className="text-sm text-charcoal font-medium">{t.aboutMe.performances}</div>
               </div>
               <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
@@ -208,12 +208,12 @@ export default async function AboutMePage({ params }: Props) {
         <div className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-8">
-              {lang === 'de' ? 'Lassen Sie uns zusammenarbeiten' : 'Let\'s Work Together'}
+              {lang === 'de' ? 'Lassen Sie uns zusammenarbeiten' : 'Let&apos;s Work Together'}
             </h2>
             <p className="text-lg text-charcoal/70 mb-8">
               {lang === 'de' 
                 ? 'Ob Sie Saxophonunterricht suchen oder Live-Musik für Ihre Veranstaltung benötigen - ich freue mich darauf, von Ihnen zu hören.'
-                : 'Whether you\'re looking for saxophone lessons or need live music for your event, I\'d love to hear from you.'
+                : 'Whether you&apos;re looking for saxophone lessons or need live music for your event, I&apos;d love to hear from you.'
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

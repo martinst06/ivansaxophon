@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import PerformanceGallery from '@/components/PerformanceGallery';
 import { Language, translations } from '@/lib/translations';
 
 type Props = {
@@ -159,8 +160,15 @@ export default async function PerformancesPage({ params }: Props) {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Call to Action */}
+        {/* Performance Gallery */}
+        <PerformanceGallery lang={typedLang} />
+
+        {/* Call to Action */}
+        <div className="bg-gradient-to-br from-white via-beige/30 to-bronze-light/10 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center bg-gradient-to-r from-bronze/5 to-bronze/10 rounded-2xl p-12">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-charcoal mb-4">
                 {t.performances.ctaTitle}

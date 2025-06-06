@@ -14,7 +14,7 @@ const Navigation = ({ lang }: NavigationProps) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const t = translations[lang];
+  const t = translations[lang] || translations.en; // Fallback to English if translation doesn't exist
 
   const navItems = [
     { name: t.nav.lessons, href: `/${lang}/lessons` },

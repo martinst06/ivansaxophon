@@ -8,7 +8,7 @@ interface OverviewProps {
 }
 
 const Overview = ({ lang }: OverviewProps) => {
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const services = [
     {
@@ -97,7 +97,7 @@ const Overview = ({ lang }: OverviewProps) => {
               <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.experience}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">500+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">100+</div>
               <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.performances}</div>
             </div>
             <div className="text-center">

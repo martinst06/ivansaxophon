@@ -7,7 +7,7 @@ interface FooterProps {
 }
 
 const Footer = ({ lang }: FooterProps) => {
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   const quickLinks = [
     { name: t.nav.lessons, href: `/${lang}/lessons` },

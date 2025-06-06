@@ -1,9 +1,13 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
+import { translations, Language } from '@/lib/translations';
 
-const PerformanceGallery = () => {
-  const { t } = useLanguage();
+interface PerformanceGalleryProps {
+  lang: Language;
+}
+
+const PerformanceGallery = ({ lang }: PerformanceGalleryProps) => {
+  const t = translations[lang] || translations.en;
 
   const galleryItems = [
     {
@@ -92,7 +96,7 @@ const PerformanceGallery = () => {
         <div className="mt-16 sm:mt-20 text-center">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 sm:p-12">
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">
-              Follow the Musical Journey
+              {lang === 'de' ? 'Folgen Sie der musikalischen Reise' : 'Follow the Musical Journey'}
             </h3>
             <p className="text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
               {t.gallery.followText}

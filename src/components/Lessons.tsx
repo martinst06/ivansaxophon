@@ -36,53 +36,55 @@ const Lessons = () => {
         </div>
 
         {/* Lesson Types */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 items-stretch">
           {lessonTypes.map((lesson, index) => {
             const lessonData = t.lessons.types[lesson.key as keyof typeof t.lessons.types];
             return (
               <div 
                 key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden border border-gray-100"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden border border-gray-100 h-full"
               >
-                <div className={`p-6 sm:p-8 bg-gradient-to-br ${lesson.color} relative overflow-hidden`}>
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal mb-3 sm:mb-4">
-                    {lessonData.title}
-                  </h3>
-                  <p className="text-charcoal/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    {lessonData.description}
-                  </p>
-                  
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="text-xs sm:text-sm font-semibold text-charcoal/70 mb-3 uppercase tracking-wide">
-                      {t.lessons.whatYoullLearn}
-                    </h4>
-                    <div className="space-y-2">
-                      {lessonData.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-charcoal/70 text-xs sm:text-sm">
-                          <div className="w-1.5 h-1.5 bg-bronze rounded-full mr-2 flex-shrink-0"></div>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
+                <div className={`p-6 sm:p-8 bg-gradient-to-br ${lesson.color} relative overflow-hidden flex flex-col h-full`}>
+                  <div className="flex-grow">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal mb-3 sm:mb-4">
+                      {lessonData.title}
+                    </h3>
+                    <p className="text-charcoal/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                      {lessonData.description}
+                    </p>
+                    
+                    {/* Features */}
+                    <div className="mb-6">
+                      <h4 className="text-xs sm:text-sm font-semibold text-charcoal/70 mb-3 uppercase tracking-wide">
+                        {t.lessons.whatYoullLearn}
+                      </h4>
+                      <div className="space-y-2">
+                        {lessonData.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center text-charcoal/70 text-xs sm:text-sm">
+                            <div className="w-1.5 h-1.5 bg-bronze rounded-full mr-2 flex-shrink-0"></div>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Pricing & Duration */}
-                  <div className="flex justify-between items-center mb-6 pt-4 border-t border-charcoal/10">
-                    <div>
-                      <p className="text-xs text-charcoal/60 uppercase tracking-wide">{t.lessons.duration}</p>
-                      <p className="text-sm font-semibold text-charcoal">{lessonData.duration}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-charcoal/60 uppercase tracking-wide">{t.lessons.price}</p>
-                      <p className="text-lg font-bold text-bronze">{lessonData.price}</p>
+                    {/* Pricing & Duration */}
+                    <div className="flex justify-between items-center pt-4 border-t border-charcoal/10">
+                      <div>
+                        <p className="text-xs text-charcoal/60 uppercase tracking-wide">{t.lessons.duration}</p>
+                        <p className="text-sm font-semibold text-charcoal">{lessonData.duration}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-xs text-charcoal/60 uppercase tracking-wide">{t.lessons.price}</p>
+                        <p className="text-lg font-bold text-bronze">{lessonData.price}</p>
+                      </div>
                     </div>
                   </div>
 
                   {/* CTA */}
                   <Link 
                     href="/#contact"
-                    className="w-full inline-flex items-center justify-center bg-bronze hover:bg-bronze-dark text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                    className="w-full inline-flex items-center justify-center bg-bronze hover:bg-bronze-dark text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 text-sm sm:text-base mt-6"
                   >
                     {t.lessons.bookNow}
                   </Link>

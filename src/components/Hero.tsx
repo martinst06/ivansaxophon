@@ -8,7 +8,7 @@ interface HeroProps {
 }
 
 const Hero = ({ lang }: HeroProps) => {
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-beige to-bronze-light/20">

@@ -8,7 +8,7 @@ interface ContactProps {
 }
 
 const Contact = ({ lang }: ContactProps) => {
-  const t = translations[lang];
+  const t = translations[lang] || translations.en;
   const [formData, setFormData] = useState({
     name: '',
     email: '',

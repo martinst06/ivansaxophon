@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
 import Analytics from "@/components/Analytics";
+import { redirect } from "next/navigation";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -93,6 +94,12 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  
+  // Validate language parameter - redirect invalid languages to English
+  if (lang !== 'en' && lang !== 'de') {
+    redirect('/en');
+  }
+  
   const isGerman = lang === 'de';
 
   return (

@@ -40,7 +40,7 @@ export const translations = {
         performance: {
           title: "Performance Experience",
           items: [
-            "500+ live performances",
+            "100+ live performances",
             "\"Saxocoustics Unplugged\" band",
             "European jazz festivals",
             "Macedonian Opera & Philharmonic"
@@ -295,7 +295,7 @@ export const translations = {
         performance: {
           title: "Aufführungserfahrung",
           items: [
-            "500+ Live-Auftritte",
+            "100+ Live-Auftritte",
             "\"Saxocoustics Unplugged\" Band",
             "Europäische Jazz-Festivals",
             "Mazedonische Oper & Philharmonie"

@@ -87,7 +87,7 @@ const AboutMe = () => {
 
                 <div className="absolute -top-3 -right-3 xs:-top-4 xs:-right-4 sm:-top-6 sm:-right-6 bg-bronze text-white rounded-xl sm:rounded-2xl shadow-xl p-3 xs:p-4 sm:p-5">
                   <div className="text-center">
-                    <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold mb-1">500+</div>
+                    <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold mb-1">100+</div>
                     <div className="text-white/90 font-medium text-xs xs:text-sm">{t.aboutMe.performances}</div>
                   </div>
                 </div>
