@@ -70,7 +70,7 @@ export default async function LessonsPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
               {/* Beginner Lessons */}
-              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -82,7 +82,7 @@ export default async function LessonsPage({ params }: Props) {
                 <p className="text-charcoal/80 mb-4 leading-relaxed text-sm sm:text-base">
                   {t.lessons.types.beginner.description}
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {t.lessons.types.beginner.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-charcoal/70 text-sm sm:text-base">
                       <svg className="w-4 h-4 text-bronze mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -104,20 +104,20 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
               </div>
 
               {/* Intermediate Lessons */}
-              <div className="bg-gradient-to-br from-bronze-light/20 to-bronze/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-bronze/20">
+              <div className="bg-gradient-to-br from-bronze-light/20 to-bronze/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-bronze/20 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                   </svg>
                 </div>
-                <div className="bg-bronze text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3">
+                <div className="bg-bronze text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3 self-start">
                   {lang === 'de' ? 'BELIEBT' : 'POPULAR'}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal mb-3 sm:mb-4">
@@ -126,7 +126,7 @@ export default async function LessonsPage({ params }: Props) {
                 <p className="text-charcoal/80 mb-4 leading-relaxed text-sm sm:text-base">
                   {t.lessons.types.intermediate.description}
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {t.lessons.types.intermediate.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-charcoal/70 text-sm sm:text-base">
                       <svg className="w-4 h-4 text-bronze mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -148,14 +148,14 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
               </div>
 
               {/* Advanced Lessons */}
-              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -167,7 +167,7 @@ export default async function LessonsPage({ params }: Props) {
                 <p className="text-charcoal/80 mb-4 leading-relaxed text-sm sm:text-base">
                   {t.lessons.types.advanced.description}
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-grow">
                   {t.lessons.types.advanced.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-charcoal/70 text-sm sm:text-base">
                       <svg className="w-4 h-4 text-bronze mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -189,7 +189,7 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
