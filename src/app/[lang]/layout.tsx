@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Analytics from "@/components/Analytics";
 import { redirect } from "next/navigation";
 
 type Props = {
