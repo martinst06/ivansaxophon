@@ -90,24 +90,22 @@ const Overview = ({ lang }: OverviewProps) => {
         </div>
 
         {/* Key Stats */}
-        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 sm:p-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">15+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.experience}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">100+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.performances}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">200+</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.students}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">3</div>
-              <div className="text-charcoal/70 font-medium text-sm sm:text-base">{t.overview.stats.genres}</div>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
+            <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">15+</div>
+            <div className="text-charcoal font-medium text-sm sm:text-base">{t.overview.stats.experience}</div>
+          </div>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
+            <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">100+</div>
+            <div className="text-charcoal font-medium text-sm sm:text-base">{t.overview.stats.performances}</div>
+          </div>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
+            <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">200+</div>
+            <div className="text-charcoal font-medium text-sm sm:text-base">{t.overview.stats.students}</div>
+          </div>
+          <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-bronze/20 hover:shadow-xl transition-shadow">
+            <div className="text-3xl sm:text-4xl font-bold text-bronze mb-2">3</div>
+            <div className="text-charcoal font-medium text-sm sm:text-base">{t.overview.stats.genres}</div>
           </div>
         </div>
       </div>
