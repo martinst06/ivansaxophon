@@ -13,7 +13,6 @@ const Footer = ({ lang }: FooterProps) => {
     { name: t.nav.lessons, href: `/${lang}/lessons` },
     { name: t.nav.performances, href: `/${lang}/performances` },
     { name: t.nav.aboutMe, href: `/${lang}/about-me` },
-    { name: t.nav.contact, href: `/${lang}#contact` },
   ];
 
   return (
