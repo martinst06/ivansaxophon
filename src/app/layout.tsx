@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: "Ivan Saxophon - Professional Saxophonist in Switzerland | Basel Musician",
     template: "%s | Ivan Saxophon - Professional Saxophonist Switzerland"
   },
-  description: "🎷 Professional saxophonist in Basel, Switzerland. Premium live music for weddings, corporate events & private parties. Expert saxophone lessons for all levels. Book Switzerland's top saxophonist today!",
+  description: "Professional saxophonist in Baselland, Switzerland. Premium live music for weddings, corporate events & private parties. Expert saxophone lessons for all levels. Book Switzerland's top saxophonist today!",
   keywords: [
     "professional saxophonist Switzerland",
     "Basel saxophonist musician",

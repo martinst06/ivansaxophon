@@ -67,11 +67,9 @@ body {
   body {
     background: #ffffff !important;
     background-color: #ffffff !important;
-    /* Ensure overscroll areas are white */
     overscroll-behavior: contain;
   }
   
-  /* Fix for dynamic island and safe areas */
   body::before {
     content: '';
     position: fixed;
@@ -85,7 +83,7 @@ body {
   }
 }
 
-/* Custom scrollbar - Desktop only */
+/* Custom scrollbar */
 @media (hover: hover) and (pointer: fine) {
   ::-webkit-scrollbar {
     width: 8px;
