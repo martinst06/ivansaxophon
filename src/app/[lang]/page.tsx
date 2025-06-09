@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import Overview from '@/components/Overview';
-import Contact from '@/components/Contact';
+import About from '@/components/About';
 import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
 import { Language } from '@/lib/translations';
@@ -80,8 +79,7 @@ export default async function HomePage({ params }: Props) {
       <Navigation lang={typedLang} />
       <main>
         <Hero lang={typedLang} />
-        <Overview lang={typedLang} />
-        <Contact lang={typedLang} />
+        <About lang={typedLang} />
       </main>
       <Footer lang={typedLang} />
     </>

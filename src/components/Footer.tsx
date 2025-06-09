@@ -9,12 +9,6 @@ interface FooterProps {
 const Footer = ({ lang }: FooterProps) => {
   const t = translations[lang] || translations.en;
 
-  const quickLinks = [
-    { name: t.nav.lessons, href: `/${lang}/lessons` },
-    { name: t.nav.performances, href: `/${lang}/performances` },
-    { name: t.nav.aboutMe, href: `/${lang}/about-me` },
-  ];
-
   return (
     <footer className="bg-charcoal text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,21 +47,23 @@ const Footer = ({ lang }: FooterProps) => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Partners */}
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-bronze">{t.footer.quickLinks}</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-white/80 hover:text-bronze transition-colors duration-300 text-sm sm:text-base py-1 block min-h-[32px] flex items-center"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-bronze">{t.footer.partners}</h4>
+            <div>
+              <a
+                href="https://deindj.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity duration-300"
+              >
+                <img
+                  src="https://deindj.ch/wp-content/uploads/2022/02/DeinDJ-Logo-Dark-2.svg"
+                  alt="DeinDJ"
+                  className="h-12 w-auto filter brightness-0 invert"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Connect */}

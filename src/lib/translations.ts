@@ -9,13 +9,16 @@ export const translations = {
     hero: {
       title: 'Ivan',
       subtitle: 'Saxophon',
-      description: 'Professional saxophonist bringing soulful melodies to life through',
-      jazz: 'jazz',
-      classical: 'classical',
-      contemporary: 'contemporary',
-      performances: 'performances',
-      viewPerformances: 'Book Lesson',
-      bookPerformance: 'Book Events'
+      description: 'Saxophonist for Events & Private Lessons',
+      viewPerformances: 'Book Lessons',
+      bookPerformance: 'Book Performance'
+    },
+    about: {
+      title: "I'm Ivan — a professional saxophonist passionate about live events and personalized teaching.",
+      subtitle: "Whether elegant music for your wedding or personal support in learning the saxophone — I help you create unforgettable musical moments.",
+      cta: "Book a free trial lesson or request a performance now!",
+      trialLessonBtn: "Free Trial Lesson",
+      performanceBtn: "Request Performance"
     },
     aboutMe: {
       title: 'About',
@@ -244,8 +247,9 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Professional saxophonist bringing soulful melodies to life through jazz, classical, and contemporary performances.',
+      description: 'Saxophonist for Events & Private Lessons',
       quickLinks: 'Quick Links',
+      partners: 'Partners',
       connect: 'Connect',
       email: 'Email',
       phone: 'Phone',
@@ -264,13 +268,20 @@ export const translations = {
     hero: {
       title: 'Ivan',
       subtitle: 'Saxophon',
-      description: 'Professioneller Saxophonist, der gefühlvolle Melodien durch',
+      description: 'Saxophonist für Events & Privatunterricht',
       jazz: 'Jazz',
       classical: 'Klassik',
       contemporary: 'zeitgenössische',
       performances: 'Aufführungen zum Leben erweckt',
       viewPerformances: 'Unterricht buchen',
       bookPerformance: 'Auftritte buchen'
+    },
+    about: {
+      title: "Ich bin Ivan — ein professioneller Saxophonist mit Leidenschaft für Live-Events und personalisierten Unterricht.",
+      subtitle: "Ob elegante Musik für Ihre Hochzeit oder persönliche Unterstützung beim Erlernen des Saxophons — ich helfe Ihnen dabei, unvergessliche musikalische Momente zu schaffen.",
+      cta: "Buchen Sie jetzt eine kostenlose Probestunde oder fordern Sie einen Auftritt an!",
+      trialLessonBtn: "Kostenlose Probestunde",
+      performanceBtn: "Auftritt anfragen"
     },
     aboutMe: {
       title: 'Über',
@@ -499,8 +510,9 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Professioneller Saxophonist, der gefühlvolle Melodien durch Jazz-, Klassik- und zeitgenössische Aufführungen zum Leben erweckt.',
+      description: 'Saxophonist für Events & Privatunterricht',
       quickLinks: 'Schnelle Links',
+      partners: 'Partner',
       connect: 'Verbinden',
       email: 'E-Mail',
       phone: 'Telefon',

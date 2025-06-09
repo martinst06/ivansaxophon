@@ -69,19 +69,9 @@ const Navigation = ({ lang }: NavigationProps) => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-16">
-            {/* Logo - Clickable */}
-            <div className="flex-shrink-0">
-              <Link 
-                href={`/${lang}`}
-                className="text-xl sm:text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center"
-              >
-                Ivan <span className="text-bronze">Saxophon</span>
-              </Link>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="flex items-center h-16 sm:h-20">
+            {/* Left Section - Desktop Navigation */}
+            <div className="hidden md:flex flex-1 items-center justify-start">
               <div className="flex items-baseline space-x-6 lg:space-x-8">
                 {navItems.map((item) => (
                   <Link
@@ -93,8 +83,20 @@ const Navigation = ({ lang }: NavigationProps) => {
                   </Link>
                 ))}
               </div>
+            </div>
 
-              {/* Language Switcher */}
+            {/* Center Section - Logo */}
+            <div className="flex-1 md:flex-initial flex justify-center md:justify-center">
+              <Link 
+                href={`/${lang}`}
+                className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center text-center"
+              >
+                Ivan <span className="text-bronze ml-1">Saxophon</span>
+              </Link>
+            </div>
+
+            {/* Right Section - Language Switcher (Desktop) */}
+            <div className="hidden md:flex flex-1 items-center justify-end">
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
@@ -133,7 +135,7 @@ const Navigation = ({ lang }: NavigationProps) => {
             </div>
 
             {/* Mobile menu button and language switcher */}
-            <div className="md:hidden flex items-center space-x-3">
+            <div className="md:hidden flex items-center space-x-3 absolute right-4">
               {/* Mobile Language Switcher */}
               <div className="relative">
                 <button
@@ -256,8 +258,6 @@ const Navigation = ({ lang }: NavigationProps) => {
               </Link>
             ))}
           </div>
-
-
         </div>
       </div>
     </>
