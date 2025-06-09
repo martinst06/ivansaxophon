@@ -61,19 +61,38 @@ const Footer = ({ lang }: FooterProps) => {
           {/* Partners */}
           <div className="text-center">
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-bronze">{t.footer.partners}</h4>
-            <div>
-              <a
-                href="https://deindj.ch"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block hover:opacity-80 transition-opacity duration-300"
-              >
-                <img
-                  src="https://deindj.ch/wp-content/uploads/2022/02/DeinDJ-Logo-Dark-2.svg"
-                  alt="DeinDJ"
-                  className="h-12 w-auto filter brightness-0 invert"
-                />
-              </a>
+            <div className="space-y-4 sm:space-y-6">
+              {/* DeinDJ */}
+              <div>
+                <a
+                  href="https://deindj.ch/saxophonist/ivan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity duration-300"
+                >
+                  <img
+                    src="https://deindj.ch/wp-content/uploads/2022/02/DeinDJ-Logo-Dark-2.svg"
+                    alt="DeinDJ"
+                    className="h-12 w-auto filter brightness-0 invert"
+                  />
+                </a>
+              </div>
+              
+              {/* Matchspace Music */}
+              <div>
+                <a
+                  href="https://matchspace-music.ch/ch-de/teachers/ivan-mojsoski"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity duration-300"
+                >
+                  <img
+                    src="/matchspace_music_logo.png"
+                    alt="Matchspace Music"
+                    className="h-8 w-auto filter brightness-0 invert"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
