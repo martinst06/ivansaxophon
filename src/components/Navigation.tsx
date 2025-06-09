@@ -14,13 +14,20 @@ const Navigation = ({ lang }: NavigationProps) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const t = translations[lang] || translations.en; // Fallback to English if translation doesn't exist
+  const t = translations[lang] || translations.en;
 
-  const navItems = [
-    { name: t.nav.lessons, href: `/${lang}/lessons` },
-    { name: t.nav.performances, href: `/${lang}/performances` },
-    { name: t.nav.aboutMe, href: `/${lang}/about-me` },
+  // Split navigation items for left and right sections
+  const leftNavItems = [
+    { name: 'About', href: `/${lang}/about` },
+    { name: 'Offer', href: `/${lang}/offer` },
   ];
+
+  const rightNavItems = [
+    { name: 'Teaching', href: `/${lang}/teaching` },
+    { name: 'Media', href: `/${lang}/media` },
+  ];
+
+  const allNavItems = [...leftNavItems, ...rightNavItems];
 
   const languages = [
     { code: 'en' as Language, name: 'English' },
@@ -28,35 +35,28 @@ const Navigation = ({ lang }: NavigationProps) => {
   ];
 
   const handleLanguageChange = (langCode: Language) => {
-    // Get the current route without the language prefix
     const currentRoute = pathname.replace(/^\/[a-z]{2}/, '') || '';
-    // Navigate to the same route in the new language
     router.push(`/${langCode}${currentRoute}`);
     setIsLanguageOpen(false);
   };
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-
-    // Cleanup function to restore scroll when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
 
-  // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isMenuOpen) {
         setIsMenuOpen(false);
       }
     };
-
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isMenuOpen]);
@@ -67,58 +67,69 @@ const Navigation = ({ lang }: NavigationProps) => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center h-16 sm:h-20">
-            {/* Left Section - Desktop Navigation */}
-            <div className="hidden md:flex flex-1 items-center justify-start">
-              <div className="flex items-baseline space-x-6 lg:space-x-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium min-h-[44px] flex items-center"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            
+            {/* Left Section - Navigation Items */}
+            <div className="hidden lg:flex items-center space-x-8 flex-1">
+              {leftNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium tracking-wide group"
+                >
+                  {item.name}
+                  <span className="absolute inset-x-4 bottom-0 h-0.5 bg-bronze scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </Link>
+              ))}
             </div>
 
             {/* Center Section - Logo */}
-            <div className="flex-1 md:flex-initial flex justify-center md:justify-center">
+            <div className="flex-shrink-0">
               <Link 
                 href={`/${lang}`}
-                className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 min-h-[44px] flex items-center text-center"
+                className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 px-4"
               >
-                Ivan <span className="text-bronze ml-1">Saxophon</span>
+                Ivan <span className="text-bronze">Saxophon</span>
               </Link>
             </div>
 
-            {/* Right Section - Language Switcher (Desktop) */}
-            <div className="hidden md:flex flex-1 items-center justify-end">
+            {/* Right Section - About & Language */}
+            <div className="hidden lg:flex items-center space-x-8 flex-1 justify-end">
+              {rightNavItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium tracking-wide group"
+                >
+                  {item.name}
+                  <span className="absolute inset-x-4 bottom-0 h-0.5 bg-bronze scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+                </Link>
+              ))}
+              
+              {/* Language Switcher */}
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                  className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-medium border border-charcoal/20 rounded-lg hover:border-bronze min-h-[44px]"
+                  className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium border border-gray-200 rounded-full hover:border-bronze hover:shadow-sm bg-white/80"
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
-                  <span>{lang.toUpperCase()}</span>
-                  <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-xs font-semibold tracking-wider">{lang.toUpperCase()}</span>
+                  <svg className={`w-3 h-3 transition-transform duration-300 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
-                {/* Language Dropdown */}
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
+                  <div className="absolute right-0 mt-3 w-36 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50 overflow-hidden">
                     {languages.map((langOption) => (
                       <button
                         key={langOption.code}
                         onClick={() => handleLanguageChange(langOption.code)}
-                        className={`w-full text-left px-4 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 flex items-center justify-between min-h-[44px] ${
-                          lang === langOption.code ? 'text-bronze font-medium' : 'text-charcoal'
+                        className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between ${
+                          lang === langOption.code ? 'text-bronze font-medium bg-bronze/5' : 'text-charcoal'
                         }`}
                       >
                         <span>{langOption.name}</span>
@@ -134,13 +145,13 @@ const Navigation = ({ lang }: NavigationProps) => {
               </div>
             </div>
 
-            {/* Mobile menu button and language switcher */}
-            <div className="md:hidden flex items-center space-x-3 absolute right-4">
+            {/* Mobile Controls */}
+            <div className="lg:hidden flex items-center space-x-3">
               {/* Mobile Language Switcher */}
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 text-sm font-medium min-h-[44px] px-2"
+                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-xs font-semibold tracking-wider border border-gray-200 rounded-full bg-white/80"
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
@@ -150,28 +161,27 @@ const Navigation = ({ lang }: NavigationProps) => {
                   </svg>
                 </button>
 
-                {/* Mobile Language Dropdown */}
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-beige py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
                     {languages.map((langOption) => (
                       <button
                         key={langOption.code}
                         onClick={() => handleLanguageChange(langOption.code)}
-                        className={`w-full text-left px-3 py-3 text-sm hover:bg-beige/50 transition-colors duration-200 min-h-[44px] ${
+                        className={`w-full text-left px-3 py-3 text-sm hover:bg-gray-50 transition-colors duration-200 ${
                           lang === langOption.code ? 'text-bronze font-medium' : 'text-charcoal'
                         }`}
                       >
-                        {langOption.code}
+                        {langOption.name}
                       </button>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Mobile menu button */}
+              {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-charcoal hover:text-bronze focus:outline-none focus:text-bronze transition-colors duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center relative z-[60]"
+                className="text-charcoal hover:text-bronze focus:outline-none transition-colors duration-300 p-2 rounded-lg hover:bg-gray-50"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
               >
@@ -200,32 +210,29 @@ const Navigation = ({ lang }: NavigationProps) => {
 
       {/* Mobile Navigation Overlay */}
       <div 
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
         <div 
-          className="absolute inset-0 bg-black/30 transition-opacity duration-300 ease-in-out"
+          className="absolute inset-0 bg-black/20 backdrop-blur-sm transition-all duration-300"
           onClick={closeMenu}
           aria-hidden="true"
         />
         
-        {/* Mobile Menu Panel */}
         <div 
-          className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 ease-in-out transform ${
+          className={`absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl transition-transform duration-300 ease-in-out transform ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
         >
-          {/* Menu Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-beige">
-            <h2 className="text-lg font-serif font-semibold text-charcoal">Menu</h2>
+          <div className="flex items-center justify-between px-6 py-6 border-b border-gray-100">
+            <h2 className="text-lg font-serif font-semibold text-charcoal">Navigation</h2>
             <button
               onClick={closeMenu}
-              className="p-2 -mr-2 text-charcoal hover:text-bronze transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg hover:bg-beige/50"
+              className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-gray-50"
               aria-label="Close menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,13 +241,12 @@ const Navigation = ({ lang }: NavigationProps) => {
             </button>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex flex-col px-6 py-6 space-y-2">
-            {navItems.map((item, index) => (
+          <div className="flex flex-col px-6 py-8 space-y-1">
+            {allNavItems.map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="group flex items-center px-4 py-4 text-base font-medium text-charcoal hover:text-bronze hover:bg-beige/30 rounded-xl transition-all duration-200 min-h-[56px]"
+                className="group flex items-center px-4 py-4 text-base font-medium text-charcoal hover:text-bronze hover:bg-gray-50 rounded-xl transition-all duration-200"
                 onClick={closeMenu}
                 style={{
                   animationDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
