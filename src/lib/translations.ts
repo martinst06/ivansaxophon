@@ -7,11 +7,7 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Ivan',
-      subtitle: 'Saxophon',
-      description: 'Saxophonist for Events & Private Lessons',
-      viewPerformances: 'Book Lessons',
-      bookPerformance: 'Book Performance'
+      description: 'Saxophonist for Events & Private Lessons'
     },
     about: {
       title: "I'm Ivan — a professional saxophonist passionate about live events and personalized teaching.",
@@ -19,59 +15,6 @@ export const translations = {
       cta: "Book a free trial lesson or request a performance now!",
       trialLessonBtn: "Free Trial Lesson",
       performanceBtn: "Request Performance"
-    },
-    aboutMe: {
-      title: 'About',
-      titleAccent: 'Me',
-      intro: "I'm Ivan, a passionate saxophonist with over 15 years of professional experience. My journey with music began in childhood, and since then, I've dedicated my life to mastering the saxophone and sharing its beautiful sound with the world.",
-      education: "I earned my Bachelor's degree in Music Performance from the University \"Hl. Kyrill and Method\" in Skopje, where I studied with renowned artists including Baptiste Herbin, Nikita Zimin, Nikola Arsenijevic, and Derek Brown through international masterclasses.",
-      current: "Now based in Switzerland, I operate my private teaching studio in Baselland while performing at diverse events across Europe. Whether it's teaching the next generation of saxophonists or bringing music to your special moments, I approach every performance with heart, skill, and personality.",
-      startLearning: "Start Learning",
-      bookPerformance: "Book Performance",
-      professionalBackground: {
-        title: "Professional",
-        titleAccent: "Background",
-        education: {
-          title: "Education & Training",
-          items: [
-            "Bachelor in Music Performance",
-            "International masterclasses", 
-            "Studies with renowned artists",
-            "Classical & contemporary training"
-          ]
-        },
-        performance: {
-          title: "Performance Experience",
-          items: [
-            "100+ live performances",
-            "\"Saxocoustics Unplugged\" band",
-            "European jazz festivals",
-            "Macedonian Opera & Philharmonic"
-          ]
-        },
-        teaching: {
-          title: "Teaching Experience", 
-          items: [
-            "10+ years teaching",
-            "Private studio in Baselland",
-            "200+ students taught",
-            "All skill levels welcome"
-          ]
-        },
-        focus: {
-          title: "Current Focus",
-          items: [
-            "Wedding & corporate events",
-            "Private lesson instruction",
-            "Jazz, classical & contemporary",
-            "Switzerland-based performances" 
-          ]
-        }
-      },
-      quote: "Music is the universal language that connects hearts. Through the saxophone, I strive to tell stories, evoke emotions, and create unforgettable moments that resonate with every audience.",
-      quoteName: "— Ivan",
-      yearsExperience: "Years Experience",
-      performances: "Performances"
     },
     lessons: {
       title: "Saxophone",
@@ -181,34 +124,6 @@ export const translations = {
         }
       }
     },
-    overview: {
-      title: 'Professional',
-      titleAccent: 'Saxophone Services',
-      subtitle: 'Bringing exceptional saxophone music to your most important moments',
-      services: {
-        performances: {
-          title: 'Professional Performances',
-          description: 'Elegant live saxophone music for weddings, corporate events, and special occasions.',
-          linkText: 'Book Event'
-        },
-        lessons: {
-          title: 'Saxophone Lessons',
-          description: 'Personalized instruction for all skill levels, from beginner to advanced musicians.',
-          linkText: 'Learn More'
-        },
-        genres: {
-          title: 'Multiple Genres',
-          description: 'Expertise in jazz, classical, and contemporary styles to match any event atmosphere.',
-          linkText: 'About Ivan'
-        }
-      },
-      stats: {
-        experience: 'Years Experience',
-        performances: 'Performances',
-        students: 'Students Taught',
-        genres: 'Musical Genres'
-      }
-    },
     contact: {
       title: 'Book',
       titleAccent: 'Performance',
@@ -302,15 +217,7 @@ export const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Ivan',
-      subtitle: 'Saxophon',
-      description: 'Saxophonist für Events & Privatunterricht',
-      jazz: 'Jazz',
-      classical: 'Klassik',
-      contemporary: 'zeitgenössische',
-      performances: 'Aufführungen zum Leben erweckt',
-      viewPerformances: 'Unterricht buchen',
-      bookPerformance: 'Auftritte buchen'
+      description: 'Saxophonist für Events & Privatunterricht'
     },
     about: {
       title: "Ich bin Ivan — ein professioneller Saxophonist mit Leidenschaft für Live-Events und personalisierten Unterricht.",
@@ -318,59 +225,6 @@ export const translations = {
       cta: "Buchen Sie jetzt eine kostenlose Probestunde oder fordern Sie einen Auftritt an!",
       trialLessonBtn: "Kostenlose Probestunde",
       performanceBtn: "Auftritt anfragen"
-    },
-    aboutMe: {
-      title: 'Über',
-      titleAccent: 'mich',
-      intro: "Ich bin Ivan, ein leidenschaftlicher Saxophonist mit über 15 Jahren professioneller Erfahrung. Meine musikalische Reise begann in der Kindheit, und seitdem habe ich mein Leben der Beherrschung des Saxophons und dem Teilen seines wunderschönen Klangs mit der Welt gewidmet.",
-      education: "Ich erwarb meinen Bachelor-Abschluss in Musikaufführung an der Universität \"Hl. Kyrill and Method\" in Skopje, wo ich bei renommierten Künstlern wie Baptiste Herbin, Nikita Zimin, Nikola Arsenijevic und Derek Brown durch internationale Meisterklassen studierte.",
-      current: "Jetzt in der Schweiz ansässig, betreibe ich mein privates Unterrichtsstudio im Baselland und trete bei verschiedenen Veranstaltungen in ganz Europa auf. Ob beim Unterrichten der nächsten Generation von Saxophonisten oder beim Bringen von Musik zu Ihren besonderen Momenten - ich nähere mich jeder Aufführung mit Herz, Können und Persönlichkeit.",
-      startLearning: "Unterricht beginnen",
-      bookPerformance: "Auftritt buchen",
-      professionalBackground: {
-        title: "Professioneller",
-        titleAccent: "Hintergrund",
-        education: {
-          title: "Ausbildung & Training",
-          items: [
-            "Bachelor in Musikaufführung",
-            "Internationale Meisterklassen",
-            "Studium bei renommierten Künstlern",
-            "Klassische & zeitgenössische Ausbildung"
-          ]
-        },
-        performance: {
-          title: "Aufführungserfahrung",
-          items: [
-            "100+ Live-Auftritte",
-            "\"Saxocoustics Unplugged\" Band",
-            "Europäische Jazz-Festivals",
-            "Mazedonische Oper & Philharmonie"
-          ]
-        },
-        teaching: {
-          title: "Unterrichtserfahrung",
-          items: [
-            "10+ Jahre Unterrichtserfahrung",
-            "Privates Studio im Baselland",
-            "200+ unterrichtete Schüler",
-            "Alle Spielniveaus willkommen"
-          ]
-        },
-        focus: {
-          title: "Aktueller Fokus",
-          items: [
-            "Hochzeiten & Firmenveranstaltungen",
-            "Privater Musikunterricht",
-            "Jazz, Klassik & Zeitgenössisches",
-            "Schweizer Auftritte"
-          ]
-        }
-      },
-      quote: "Musik ist die universelle Sprache, die Herzen verbindet. Durch das Saxophon strebe ich danach, Geschichten zu erzählen, Emotionen zu wecken und unvergessliche Momente zu schaffen, die bei jedem Publikum Resonanz finden.",
-      quoteName: "— Ivan",
-      yearsExperience: "Jahre Erfahrung",
-      performances: "Auftritte"
     },
     lessons: {
       title: "Saxophon",
@@ -382,21 +236,21 @@ export const translations = {
           description: "Perfekt für diejenigen, die gerade ihre Saxophon-Reise beginnen. Lernen Sie richtige Atmung, Haltung und grundlegende Techniken.",
           features: ["Instrument-Grundlagen", "Notenlesen", "Erste Lieder", "Richtige Technik"],
           duration: "45 Minuten",
-          price: "Ab €50"
+          price: "Ab 50 CHF"
         },
         intermediate: {
           title: "Fortgeschrittenen-Unterricht",
           description: "Für Schüler, die bereit sind, ihre Fähigkeiten zu erweitern und verschiedene musikalische Stile und Techniken zu erkunden.",
           features: ["Erweiterte Techniken", "Jazz-Improvisation", "Musiktheorie", "Aufführungsfähigkeiten"],
           duration: "60 Minuten",
-          price: "Ab €60"
+          price: "Ab 60 CHF"
         },
         advanced: {
           title: "Profi-Unterricht",
           description: "Unterricht auf professionellem Niveau für ernsthafte Musiker, die das Saxophon meistern möchten.",
           features: ["Meister-Techniken", "Aufführungs-Coaching", "Aufnahme-Vorbereitung", "Karriere-Beratung"],
           duration: "60 Minuten",
-          price: "Ab €80"
+          price: "Ab 80 CHF"
         }
       },
       whatYoullLearn: "Was Sie lernen werden",
@@ -480,34 +334,6 @@ export const translations = {
         }
       }
     },
-    overview: {
-      title: 'Professionelle',
-      titleAccent: 'Saxophon-Dienstleistungen',
-      subtitle: 'Außergewöhnliche Saxophonmusik für Ihre wichtigsten Momente',
-      services: {
-        performances: {
-          title: 'Professionelle Auftritte',
-          description: 'Elegante Live-Saxophonmusik für Hochzeiten, Firmenveranstaltungen und besondere Anlässe.',
-          linkText: 'Event buchen'
-        },
-        lessons: {
-          title: 'Saxophon-Unterricht',
-          description: 'Persönlicher Unterricht für alle Spielniveaus, von Anfängern bis hin zu fortgeschrittenen Musikern.',
-          linkText: 'Mehr erfahren'
-        },
-        genres: {
-          title: 'Mehrere Genres',
-          description: 'Expertise in Jazz, Klassik und zeitgenössischen Stilen, passend zu jeder Veranstaltungsatmosphäre.',
-          linkText: 'Über Ivan'
-        }
-      },
-      stats: {
-        experience: 'Jahre Erfahrung',
-        performances: 'Auftritte',
-        students: 'Unterrichtete Schüler',
-        genres: 'Musikgenres'
-      }
-    },
     contact: {
       title: 'Auftritt',
       titleAccent: 'buchen',
@@ -582,7 +408,7 @@ export const translations = {
       }
     },
     footer: {
-      description: 'Saxophonist für Events & Privatunterricht',
+      description: 'Saxophonist für Events & Privatunterricht',
       quickLinks: 'Schnelle Links',
       partners: 'Partner',
       connect: 'Verbinden',

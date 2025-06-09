@@ -37,9 +37,19 @@ export default async function OfferPage({ params }: Props) {
       <main className="pt-16">
         {/* Hero Section */}
         <section 
-          className="min-h-screen flex items-center justify-end bg-cover bg-center bg-no-repeat relative"
+          className="min-h-screen flex items-start justify-center bg-cover bg-top bg-no-repeat relative"
           style={{ backgroundImage: 'url(/ivan-3.jpg)' }}
         >
+          {/* Dark overlay to improve text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+          
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 relative z-10">
+            <div className="text-center">
+              <p className="text-lg sm:text-xl md:text-xl text-white/80 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2">
+                Whether wedding, party, birthday, or corporate event — I provide elegant saxophone music perfectly suited to your occasion.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Offers Grid Section */}
