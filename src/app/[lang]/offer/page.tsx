@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
-import { Language, translations } from '@/lib/translations';
+import { Language } from '@/lib/translations';
 import OfferGrid from '@/components/OfferGrid';
 
 type Props = {
@@ -11,9 +11,7 @@ type Props = {
 
 // Metadata generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
-  const typedLang = lang as Language;
-  const t = translations[typedLang];
+  await params; // Ensure params is awaited but we don't need the destructured value
   
   return {
     title: `Professional Saxophone Services - Ivan Saxophon`,
@@ -53,7 +51,7 @@ export default async function OfferPage({ params }: Props) {
         </section>
 
         {/* Offers Grid Section */}
-        <OfferGrid lang={typedLang} />
+        <OfferGrid />
 
         {/* Contact Section */}
         <Contact lang={typedLang} />

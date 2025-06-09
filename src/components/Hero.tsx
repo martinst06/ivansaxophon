@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { translations, Language } from '@/lib/translations';
 
 interface HeroProps {

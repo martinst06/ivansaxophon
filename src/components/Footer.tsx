@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import Image from 'next/image';
 import { translations, Language } from '@/lib/translations';
 
 interface FooterProps {
@@ -70,9 +70,11 @@ const Footer = ({ lang }: FooterProps) => {
                   rel="noopener noreferrer"
                   className="inline-block hover:opacity-80 transition-opacity duration-300"
                 >
-                  <img
+                  <Image
                     src="https://deindj.ch/wp-content/uploads/2022/02/DeinDJ-Logo-Dark-2.svg"
                     alt="DeinDJ"
+                    width={120}
+                    height={48}
                     className="h-12 w-auto filter brightness-0 invert"
                   />
                 </a>
@@ -86,9 +88,11 @@ const Footer = ({ lang }: FooterProps) => {
                   rel="noopener noreferrer"
                   className="inline-block hover:opacity-80 transition-opacity duration-300"
                 >
-                  <img
+                  <Image
                     src="/matchspace_music_logo.png"
                     alt="Matchspace Music"
+                    width={80}
+                    height={32}
                     className="h-8 w-auto filter brightness-0 invert"
                   />
                 </a>

@@ -1,13 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Language } from '@/lib/translations';
 
-interface OfferGridProps {
-  lang: Language;
-}
-
-const OfferGrid = ({ lang }: OfferGridProps) => {
+const OfferGrid = () => {
   const offers = [
     {
       id: 'acoustic',
@@ -128,8 +123,9 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
 
   useEffect(() => {
     // Setup audio event listeners for all audio elements
+    const currentAudioRefs = audioRefs.current;
     const setupAudioListeners = () => {
-      Object.values(audioRefs.current).forEach(audio => {
+      Object.values(currentAudioRefs).forEach(audio => {
         if (audio) {
           const handleEnded = () => {
             setIsPlaying(false);
@@ -144,10 +140,9 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
 
     return () => {
       // Cleanup
-      Object.values(audioRefs.current).forEach(audio => {
+      Object.values(currentAudioRefs).forEach(audio => {
         if (audio) {
           audio.pause();
-          audio.removeEventListener('ended', () => {});
         }
       });
     };
@@ -157,7 +152,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
     <section className="py-16 sm:py-20 bg-gradient-to-br from-beige/20 via-white to-bronze-light/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {offers.map((offer, index) => (
+          {offers.map((offer) => (
             <div 
               key={offer.id}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50"
@@ -257,5 +252,4 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
   );
 };
 
-export default OfferGrid;
-export type { OfferGridProps }; 
+export default OfferGrid; 

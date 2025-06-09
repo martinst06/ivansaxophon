@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { translations, Language } from '@/lib/translations';
+import { Language } from '@/lib/translations';
 
 interface NavigationProps {
   lang: Language;
@@ -14,7 +14,6 @@ const Navigation = ({ lang }: NavigationProps) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const t = translations[lang] || translations.en;
 
   // Split navigation items for left and right sections
   const leftNavItems = [
