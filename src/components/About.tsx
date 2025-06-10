@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { translations, Language } from '@/lib/translations';
 
 interface AboutProps {
@@ -11,12 +12,16 @@ const About = ({ lang }: AboutProps) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px]">
       {/* Left side - Full Image */}
-      <div 
-        className="order-2 lg:order-1 bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: 'url(/ivan-1.jpg)' }}
-      >
+      <div className="order-2 lg:order-1 relative overflow-hidden">
+        <Image
+          src="/ivan-1.JPG"
+          alt="Ivan Saxophon professional portrait"
+          fill
+          className="object-cover object-center"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
       </div>
 
       {/* Right side - Text Content */}

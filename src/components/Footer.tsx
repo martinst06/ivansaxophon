@@ -89,7 +89,7 @@ const Footer = ({ lang }: FooterProps) => {
                   className="inline-block hover:opacity-80 transition-opacity duration-300"
                 >
                   <Image
-                    src="/matchspace_music_logo.png"
+                    src="/matchspace_music_logo.svg"
                     alt="Matchspace Music"
                     width={80}
                     height={32}

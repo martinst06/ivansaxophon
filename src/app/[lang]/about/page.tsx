@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Language } from '@/lib/translations';
@@ -76,11 +77,15 @@ export default async function AboutPage({ params }: Props) {
         {/* Main Section with Half-Screen Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[80vh]">
           {/* Left Side - Ivan's Image */}
-          <div 
-            className="order-2 lg:order-1 bg-cover bg-center bg-no-repeat relative"
-            style={{ backgroundImage: 'url(/ivan-2.jpg)' }}
-          >
-            <div className="absolute inset-0 bg-black/20"></div>
+          <div className="order-2 lg:order-1 relative overflow-hidden">
+            <Image
+              src="/ivan-2.JPG"
+              alt="Ivan Saxophon personal portrait"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-black/20 z-10"></div>
           </div>
 
           {/* Right Side - Personal Story */}
