@@ -2,7 +2,6 @@ export const translations = {
   en: {
     nav: {
       lessons: 'Lessons',
-      performances: 'Performances',
       aboutMe: 'About Me',
       contact: 'Contact'
     },
@@ -60,68 +59,6 @@ export const translations = {
         title: "Ready to Start?",
         subtitle: "Book your first lesson today",
         button: "Contact Me"
-      }
-    },
-    performances: {
-      title: 'Performance',
-      titleAccent: 'Types',
-      subtitle: 'From intimate jazz sessions to grand classical performances, discover the perfect musical experience for your event.',
-      jazz: {
-        title: 'Jazz Ensembles',
-        description: 'Smooth jazz performances for intimate venues, restaurants, and private events. Featuring classic standards and contemporary jazz pieces.',
-        features: ['Solo performances', 'Small ensembles', 'Background music', 'Interactive sets']
-      },
-      classical: {
-        title: 'Classical Concerts',
-        description: 'Formal concert performances featuring classical saxophone repertoire and chamber music collaborations.',
-        features: ['Concert halls', 'Chamber music', 'Orchestral solos', 'Recitals']
-      },
-      wedding: {
-        title: 'Wedding & Events',
-        description: 'Elegant musical accompaniment for weddings, corporate events, and special celebrations.',
-        features: ['Ceremony music', 'Cocktail hour', 'Reception entertainment', 'Custom arrangements']
-      },
-      contemporary: {
-        title: 'Contemporary & Fusion',
-        description: 'Modern interpretations blending jazz, classical, and contemporary styles for unique musical experiences.',
-        features: ['Original compositions', 'Genre fusion', 'Collaborative projects', 'Studio recordings']
-      },
-      learnMore: 'Learn more',
-      bookYourPerformance: 'Book Your Performance',
-      ctaTitle: 'Ready to Experience Live Saxophone Music?',
-      ctaDescription: 'Each performance is tailored to your event\'s unique atmosphere and requirements. Let\'s create an unforgettable musical experience together.',
-      viewGallery: 'View Gallery'
-    },
-    gallery: {
-      title: 'Performance',
-      titleAccent: 'Gallery',
-      subtitle: 'A glimpse into the world of professional saxophone performances across various venues and occasions.',
-      followText: 'Want to see more? Follow Ivan on social media for the latest performances and updates.',
-      items: {
-        jazzClub: {
-          title: 'Jazz Club Performance',
-          description: 'Intimate evening at Blue Note'
-        },
-        wedding: {
-          title: 'Wedding Ceremony',
-          description: 'Romantic ceremony music'
-        },
-        concert: {
-          title: 'Concert Hall Solo',
-          description: 'Classical recital performance'
-        },
-        corporate: {
-          title: 'Corporate Event',
-          description: 'Background music for gala'
-        },
-        studio: {
-          title: 'Studio Recording',
-          description: 'Latest album session'
-        },
-        festival: {
-          title: 'Outdoor Festival',
-          description: 'Summer jazz festival'
-        }
       }
     },
     contact: {
@@ -231,7 +168,6 @@ export const translations = {
   de: {
     nav: {
       lessons: 'Unterricht',
-      performances: 'Auftritte',
       aboutMe: 'Über mich',
       contact: 'Kontakt'
     },
@@ -289,68 +225,6 @@ export const translations = {
         title: "Bereit anzufangen?",
         subtitle: "Buchen Sie heute Ihre erste Stunde",
         button: "Kontaktieren Sie mich"
-      }
-    },
-    performances: {
-      title: 'Auftritte',
-      titleAccent: 'Arten',
-      subtitle: 'Von intimen Jazz-Sessions bis hin zu grossen klassischen Aufführungen - entdecken Sie das perfekte Musikerlebnis für Ihre Veranstaltung.',
-      jazz: {
-        title: 'Jazz-Ensembles',
-        description: 'Sanfte Jazz-Aufführungen für intime Veranstaltungsorte, Restaurants und private Events. Mit klassischen Standards und zeitgenössischen Jazz-Stücken.',
-        features: ['Solo-Auftritte', 'Kleine Ensembles', 'Hintergrundmusik', 'Interaktive Sets']
-      },
-      classical: {
-        title: 'Klassische Konzerte',
-        description: 'Formelle Konzertaufführungen mit klassischem Saxophon-Repertoire und Kammermusik-Kollaborationen.',
-        features: ['Konzertsäle', 'Kammermusik', 'Orchester-Soli', 'Rezitale']
-      },
-      wedding: {
-        title: 'Hochzeiten & Events',
-        description: 'Elegante musikalische Begleitung für Hochzeiten, Firmenveranstaltungen und besondere Feiern.',
-        features: ['Zeremonienmusik', 'Cocktailstunde', 'Empfangs-Entertainment', 'Massgeschneiderte Arrangements']
-      },
-      contemporary: {
-        title: 'Zeitgenössisch & Fusion',
-        description: 'Moderne Interpretationen, die Jazz, Klassik und zeitgenössische Stile für einzigartige Musikerlebnisse verbinden.',
-        features: ['Eigene Kompositionen', 'Genre-Fusion', 'Kollaborative Projekte', 'Studio-Aufnahmen']
-      },
-      learnMore: 'Mehr erfahren',
-      bookYourPerformance: 'Ihren Auftritt buchen',
-      ctaTitle: 'Bereit für Live-Saxophonmusik?',
-      ctaDescription: 'Jede Aufführung wird auf die einzigartige Atmosphäre und die Anforderungen Ihrer Veranstaltung zugeschnitten. Lassen Sie uns gemeinsam ein unvergessliches Musikerlebnis schaffen.',
-      viewGallery: 'Galerie ansehen'
-    },
-    gallery: {
-      title: 'Auftritte',
-      titleAccent: 'Galerie',
-      subtitle: 'Ein Einblick in die Welt professioneller Saxophon-Aufführungen in verschiedenen Veranstaltungsorten und Anlässen.',
-      followText: 'Möchten Sie mehr sehen? Folgen Sie Ivan in den sozialen Medien für die neuesten Auftritte und Updates.',
-      items: {
-        jazzClub: {
-          title: 'Jazz-Club Auftritt',
-          description: 'Intimer Abend im Blue Note'
-        },
-        wedding: {
-          title: 'Hochzeitszeremonie',
-          description: 'Romantische Zeremonienmusik'
-        },
-        concert: {
-          title: 'Konzertsaal Solo',
-          description: 'Klassische Rezital-Aufführung'
-        },
-        corporate: {
-          title: 'Firmenveranstaltung',
-          description: 'Hintergrundmusik für Gala'
-        },
-        studio: {
-          title: 'Studio-Aufnahme',
-          description: 'Neueste Album-Session'
-        },
-        festival: {
-          title: 'Outdoor-Festival',
-          description: 'Sommer-Jazz-Festival'
-        }
       }
     },
     contact: {

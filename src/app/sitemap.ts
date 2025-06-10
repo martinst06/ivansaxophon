@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ivansaxophon.ch'
   const lastModified = new Date()
   const languages = ['en', 'de']
-  const pages = ['', '/lessons', '/performances', '/about-me']
+  const pages = ['', '/lessons', '/about', '/offer']
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 
@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${lang}${page}`,
         lastModified: lastModified,
         changeFrequency: page === '' ? 'weekly' : 'monthly',
-        priority: page === '' ? 1 : page === '/lessons' || page === '/performances' ? 0.8 : 0.7,
+        priority: page === '' ? 1 : page === '/lessons' || page === '/offer' ? 0.8 : 0.7,
       })
     })
   })

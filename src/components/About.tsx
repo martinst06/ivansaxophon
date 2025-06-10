@@ -48,7 +48,7 @@ const About = ({ lang }: AboutProps) => {
             </Link>
             
             <Link 
-              href={`/${lang}/performances`}
+              href={`/${lang}/offer`}
               className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg min-w-[200px] justify-center"
             >
               {t.about.performanceBtn}

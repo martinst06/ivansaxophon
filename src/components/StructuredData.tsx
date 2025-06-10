@@ -315,12 +315,6 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Performances",
-        "item": "https://ivansaxophon.ch/performances"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
         "name": "Lessons",
         "item": "https://ivansaxophon.ch/lessons"
       }
