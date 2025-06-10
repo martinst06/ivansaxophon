@@ -41,18 +41,23 @@ export default async function OfferPage({ params }: Props) {
             src="/ivan-4.JPG"
             alt="Ivan Saxophon professional performance"
             fill
-            className="object-cover object-top hero-image"
+            className="object-cover object-center hero-image"
             priority
             sizes="100vw"
           />
           
           {/* Dark overlay to improve text readability */}
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <div className="absolute inset-0 bg-black/38 z-10"></div>
           
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 relative z-20">
             <div className="text-center">
-              <p className="text-lg sm:text-xl md:text-xl text-white/80 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2">
-                {t.offers.heroText}
+              <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-8 max-w-full mx-auto leading-relaxed px-4">
+                {t.offers.heroText.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < t.offers.heroText.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </div>

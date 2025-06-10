@@ -36,7 +36,7 @@ const Hero = ({ lang }: HeroProps) => {
       />
       
       {/* Dark overlay to improve text readability */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-black/35 z-10"></div>
       
       {/* Mobile-specific background overlay to ensure proper image display */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 z-[11] md:hidden"></div>
