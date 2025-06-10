@@ -173,4 +173,61 @@ img {
     backface-visibility: hidden;
     transform: translateZ(0);
   }
+  
+  /* Text shadow utility for better readability on mobile */
+  .shadow-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Prevent horizontal scrolling issues */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Improve touch targets */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Optimize images for mobile loading */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Better mobile image containers */
+  .hero-image {
+    object-position: center center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Ensure proper image loading on mobile */
+  .hero-image[data-loaded="false"] {
+    opacity: 0;
+  }
+  
+  .hero-image[data-loaded="true"] {
+    opacity: 1;
+  }
+}
+
+/* Mobile viewport fixes */
+@media screen and (max-width: 768px) {
+  /* Fix iOS viewport issues */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Ensure proper mobile sizing */
+  section {
+    position: relative;
+    overflow: hidden;
+  }
 }

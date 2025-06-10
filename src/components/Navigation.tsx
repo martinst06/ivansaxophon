@@ -66,7 +66,7 @@ const Navigation = ({ lang }: NavigationProps) => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             
@@ -150,7 +150,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-xs font-semibold tracking-wider border border-gray-200 rounded-full bg-white/80"
+                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-xs font-semibold tracking-wider border border-gray-200 rounded-full bg-white/80 touch-manipulation"
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
@@ -161,12 +161,12 @@ const Navigation = ({ lang }: NavigationProps) => {
                 </button>
 
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-[60]">
                     {languages.map((langOption) => (
                       <button
                         key={langOption.code}
                         onClick={() => handleLanguageChange(langOption.code)}
-                        className={`w-full text-left px-3 py-3 text-sm hover:bg-gray-50 transition-colors duration-200 ${
+                        className={`w-full text-left px-3 py-3 text-sm hover:bg-gray-50 transition-colors duration-200 touch-manipulation ${
                           lang === langOption.code ? 'text-bronze font-medium' : 'text-charcoal'
                         }`}
                       >
@@ -180,7 +180,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-charcoal hover:text-bronze focus:outline-none transition-colors duration-300 p-2 rounded-lg hover:bg-gray-50"
+                className="text-charcoal hover:text-bronze focus:outline-none transition-colors duration-300 p-2 rounded-lg hover:bg-gray-50 touch-manipulation"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
               >
@@ -209,7 +209,7 @@ const Navigation = ({ lang }: NavigationProps) => {
 
       {/* Mobile Navigation Overlay */}
       <div 
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[55] lg:hidden transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -231,7 +231,7 @@ const Navigation = ({ lang }: NavigationProps) => {
             <h2 className="text-lg font-serif font-semibold text-charcoal">Navigation</h2>
             <button
               onClick={closeMenu}
-              className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-gray-50"
+              className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-gray-50 touch-manipulation"
               aria-label="Close menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,7 +245,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="group flex items-center px-4 py-4 text-base font-medium text-charcoal hover:text-bronze hover:bg-gray-50 rounded-xl transition-all duration-200"
+                className="group flex items-center px-4 py-4 text-base font-medium text-charcoal hover:text-bronze hover:bg-gray-50 rounded-xl transition-all duration-200 touch-manipulation"
                 onClick={closeMenu}
                 style={{
                   animationDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
