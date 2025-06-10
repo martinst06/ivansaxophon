@@ -14,7 +14,6 @@ const Navigation = ({ lang }: NavigationProps) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const t = translations[lang] || translations.en;
 
   // Navigation items with proper translations
   const navItems = [
@@ -261,7 +260,7 @@ const Navigation = ({ lang }: NavigationProps) => {
 
             {/* Navigation Links */}
             <div className="flex flex-col px-6 py-6 space-y-1">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
