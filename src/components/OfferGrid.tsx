@@ -59,11 +59,31 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
     hits: 0,
     jazz: 0
   });
-  const [audioLoaded, setAudioLoaded] = useState(false);
+  const [loadedAudioFiles, setLoadedAudioFiles] = useState<Set<string>>(new Set());
   const audioRefs = useRef<{ [key: string]: HTMLAudioElement | null }>({});
+
+  // Load audio file on demand
+  const loadAudioFile = (audioKey: string, audioFile: string) => {
+    if (!loadedAudioFiles.has(audioKey)) {
+      const audio = audioRefs.current[audioKey];
+      if (audio && !audio.src) {
+        audio.src = audioFile;
+        audio.preload = 'metadata';
+        setLoadedAudioFiles(prev => new Set(prev).add(audioKey));
+      }
+    }
+  };
 
   const toggleAudio = (offerId: string) => {
     const audioKey = `${offerId}-${selectedSongs[offerId]}`;
+    const offer = offers.find(o => o.id === offerId);
+    
+    if (offer?.audioFiles) {
+      const audioFile = offer.audioFiles[selectedSongs[offerId]];
+      // Load audio file if not already loaded
+      loadAudioFile(audioKey, audioFile.file);
+    }
+
     const audio = audioRefs.current[audioKey];
     if (!audio) return;
 
@@ -81,7 +101,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       });
       
       // Play selected audio
-      audio.play();
+      audio.play().catch(e => console.log('Audio play failed:', e));
       setCurrentPlaying(audioKey);
       setIsPlaying(true);
     }
@@ -106,55 +126,41 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
   };
 
   useEffect(() => {
-    // Load audio files after page has loaded
-    const loadAudioFiles = () => {
-      setAudioLoaded(true);
-    };
-
-    // Wait for page to fully load
-    if (document.readyState === 'complete') {
-      // Page already loaded, load audio immediately
-      setTimeout(loadAudioFiles, 500);
-    } else {
-      // Wait for page to load
-      window.addEventListener('load', () => {
-        setTimeout(loadAudioFiles, 500);
-      });
-    }
-
-    return () => {
-      window.removeEventListener('load', loadAudioFiles);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Setup audio event listeners for all audio elements
+    // Setup audio event listeners for loaded audio elements
     const currentAudioRefs = audioRefs.current;
-    const setupAudioListeners = () => {
-      Object.values(currentAudioRefs).forEach(audio => {
-        if (audio) {
-          const handleEnded = () => {
-            setIsPlaying(false);
-            setCurrentPlaying(null);
-          };
-          audio.addEventListener('ended', handleEnded);
-        }
-      });
-    };
+    
+    Object.values(currentAudioRefs).forEach(audio => {
+      if (audio && audio.src) {
+        const handleEnded = () => {
+          setIsPlaying(false);
+          setCurrentPlaying(null);
+        };
+        
+        const handleError = () => {
+          setIsPlaying(false);
+          setCurrentPlaying(null);
+        };
 
-    if (audioLoaded) {
-      setupAudioListeners();
-    }
+        audio.addEventListener('ended', handleEnded);
+        audio.addEventListener('error', handleError);
+        
+        // Cleanup function for this audio element
+        return () => {
+          audio.removeEventListener('ended', handleEnded);
+          audio.removeEventListener('error', handleError);
+        };
+      }
+    });
 
     return () => {
-      // Cleanup
+      // Cleanup all audio on unmount
       Object.values(currentAudioRefs).forEach(audio => {
         if (audio) {
           audio.pause();
         }
       });
     };
-  }, [selectedSongs, audioLoaded]);
+  }, [selectedSongs, loadedAudioFiles]);
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-beige/20 via-white to-bronze-light/10">
@@ -219,15 +225,14 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
                     </button>
                   </div>
 
-                  {/* Audio Elements */}
+                  {/* Audio Elements - Create without src, load on demand */}
                   {offer.audioFiles.map((audioFile, songIndex) => (
                     <audio
                       key={songIndex}
                       ref={(el) => {
                         if (el) audioRefs.current[`${offer.id}-${songIndex}`] = el;
                       }}
-                      src={audioLoaded ? audioFile.file : undefined}
-                      preload={audioLoaded ? "metadata" : "none"}
+                      preload="none"
                     />
                   ))}
                 </div>
