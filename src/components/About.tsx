@@ -14,7 +14,7 @@ const About = ({ lang }: AboutProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] hero-optimized above-fold">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] hero-optimized above-fold pt-0 lg:pt-16">
       {/* Left side - Full Image */}
       <div className="order-2 lg:order-1 relative overflow-hidden h-[350px] sm:h-[400px] lg:h-auto">
         {/* Loading backdrop */}
