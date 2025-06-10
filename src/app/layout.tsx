@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins, Playfair_Display } from "next/font/google";
+import { Bodoni_Moda } from "next/font/google";
 import Analytics from "@/components/Analytics";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
@@ -183,7 +175,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfairDisplay.variable}`} prefix="og: http://ogp.me/ns#">
+    <html lang="en" className={bodoniModa.variable} prefix="og: http://ogp.me/ns#">
       <head>
         {/* Preload critical hero images */}
         <link rel="preload" as="image" href="/bg-hero.jpg" />
@@ -196,7 +188,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}>
+      <body className={`${bodoniModa.variable} antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --bronze: #cd7f32;
-  --bronze-light: #e6a85c;
-  --bronze-dark: #b8722c;
+  --bronze: #B9B1A2;
+  --bronze-light: #C9C1B2;
+  --bronze-dark: #A9A192;
   --beige: #f5f5dc;
   --charcoal: #1a1a1a;
 }
@@ -18,8 +18,8 @@
   --color-bronze-dark: var(--bronze-dark);
   --color-beige: var(--beige);
   --color-charcoal: var(--charcoal);
-  --font-sans: var(--font-poppins);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-bodoni);
+  --font-serif: var(--font-bodoni);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,7 +38,8 @@ body {
   background: var(--background);
   background-color: #ffffff;
   color: var(--foreground);
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: var(--font-bodoni), Georgia, "Times New Roman", serif;
+  letter-spacing: 0.025em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

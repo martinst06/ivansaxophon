@@ -51,7 +51,7 @@ const Contact = ({ lang }: ContactProps) => {
 
         {/* Contact Form - Centered */}
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-sm border-2 border-white/20 p-6 sm:p-8 shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-8">
               
               {/* Personal Information Section */}
@@ -73,7 +73,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.firstNamePlaceholder}
                       />
                     </div>
@@ -89,7 +89,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.lastNamePlaceholder}
                       />
                     </div>
@@ -107,7 +107,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.emailPlaceholder}
                       />
                     </div>
@@ -123,7 +123,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.phonePlaceholder}
                       />
                     </div>
@@ -140,7 +140,7 @@ const Contact = ({ lang }: ContactProps) => {
                       required
                       value={formData.address}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                      className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                       placeholder={t.contact.form.addressPlaceholder}
                     />
                   </div>
@@ -171,7 +171,7 @@ const Contact = ({ lang }: ContactProps) => {
                             required
                             className="sr-only"
                           />
-                          <div className={`w-full px-3 py-2 text-center text-sm rounded-lg border transition-all duration-300 ${
+                          <div className={`w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 ${
                             formData.eventType === type 
                               ? 'bg-bronze text-white border-bronze' 
                               : 'bg-white/10 text-white border-white/20 hover:border-bronze/50'
@@ -200,7 +200,7 @@ const Contact = ({ lang }: ContactProps) => {
                             required
                             className="sr-only"
                           />
-                          <div className={`w-full px-3 py-2 text-center text-sm rounded-lg border transition-all duration-300 ${
+                          <div className={`w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 ${
                             formData.performanceType === type 
                               ? 'bg-bronze text-white border-bronze' 
                               : 'bg-white/10 text-white border-white/20 hover:border-bronze/50'
@@ -225,7 +225,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.guests}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.guestsPlaceholder}
                       />
                     </div>
@@ -241,7 +241,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.place}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.placePlaceholder}
                       />
                     </div>
@@ -258,7 +258,7 @@ const Contact = ({ lang }: ContactProps) => {
                       required
                       value={formData.eventAddress}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
+                      className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                       placeholder={t.contact.form.eventAddressPlaceholder}
                     />
                   </div>
@@ -276,7 +276,7 @@ const Contact = ({ lang }: ContactProps) => {
                           required
                           value={formData.eventDate}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 pr-12 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0 appearance-none"
+                          className="w-full px-4 py-3 pr-12 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white min-h-[48px] h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0 appearance-none"
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                           <svg className="w-5 h-5 text-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -296,7 +296,7 @@ const Contact = ({ lang }: ContactProps) => {
                         required
                         value={formData.durationType}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 text-white min-h-[48px] h-[48px] appearance-none"
+                        className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white min-h-[48px] h-[48px] appearance-none"
                         style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23cd7f32' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 0.75rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1rem' }}
                       >
                         <option value="" className="bg-charcoal">Select duration</option>
@@ -319,16 +319,16 @@ const Contact = ({ lang }: ContactProps) => {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-bronze focus:border-transparent transition-all duration-300 resize-none text-white placeholder-white/50"
+                      className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 resize-none text-white placeholder-white/50"
                       placeholder={t.contact.form.messagePlaceholder}
                     ></textarea>
                   </div>
                 </div>
               </div>
 
-              <button
+                            <button 
                 type="submit"
-                className="w-full bg-bronze hover:bg-bronze-dark text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[48px] flex items-center justify-center text-sm sm:text-base"
+                className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
               >
                 {t.contact.form.sendMessage}
               </button>

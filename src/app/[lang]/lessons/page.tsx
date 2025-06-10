@@ -51,7 +51,7 @@ export default async function LessonsPage({ params }: Props) {
       <Navigation lang={typedLang} />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-white via-beige/30 to-bronze-light/10">
+        <section className="py-16 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h1 className="text-4xl xs:text-5xl sm:text-5xl md:text-6xl font-serif font-bold text-charcoal mb-4 sm:mb-6 leading-tight">
@@ -70,7 +70,7 @@ export default async function LessonsPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
               {/* Beginner Lessons */}
-              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+              <div className="bg-white border-2 border-charcoal/10 p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -104,20 +104,20 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
+                  className="block w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white text-center py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
               </div>
 
               {/* Intermediate Lessons */}
-              <div className="bg-gradient-to-br from-bronze-light/20 to-bronze/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-bronze/20 flex flex-col">
+              <div className="bg-white border-2 border-bronze/50 p-6 sm:p-8 shadow-md hover:shadow-lg hover:border-bronze transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                   </svg>
                 </div>
-                <div className="bg-bronze text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3 self-start">
+                <div className="bg-bronze text-white text-xs font-semibold px-3 py-1 inline-block mb-3 self-start">
                   {lang === 'de' ? 'BELIEBT' : 'POPULAR'}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-charcoal mb-3 sm:mb-4">
@@ -148,14 +148,14 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
+                  className="block w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white text-center py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
               </div>
 
               {/* Advanced Lessons */}
-              <div className="bg-gradient-to-br from-beige/30 to-bronze-light/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
+              <div className="bg-white border-2 border-charcoal/10 p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="text-bronze mb-4">
                   <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -189,7 +189,7 @@ export default async function LessonsPage({ params }: Props) {
                 </div>
                 <Link 
                   href={`/${typedLang}#contact`}
-                  className="block w-full bg-bronze hover:bg-bronze-dark text-white text-center py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mt-auto"
+                  className="block w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white text-center py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 mt-auto"
                 >
                   {t.lessons.bookNow}
                 </Link>
@@ -199,7 +199,7 @@ export default async function LessonsPage({ params }: Props) {
         </section>
 
         {/* Why Choose Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-beige/30 to-bronze-light/10">
+        <section className="py-16 sm:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-serif font-bold text-charcoal mb-4 sm:mb-6 leading-tight">
@@ -210,8 +210,8 @@ export default async function LessonsPage({ params }: Props) {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
               {t.lessons.whyChoose.reasons.map((reason, index) => (
-                <div key={index} className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-xl shadow-lg">
-                  <div className="bg-bronze p-2 rounded-lg flex-shrink-0">
+                <div key={index} className="flex items-start space-x-4 p-6 bg-white border border-gray-200 shadow-sm">
+                  <div className="bg-bronze p-2 flex-shrink-0">
                     <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -234,7 +234,7 @@ export default async function LessonsPage({ params }: Props) {
             </p>
             <Link
               href={`/${typedLang}#contact`}
-              className="inline-flex items-center bg-bronze hover:bg-bronze-dark text-white px-8 sm:px-12 py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+              className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-8 sm:px-12 py-4 font-medium transition-all duration-300 transform hover:-translate-y-0.5 text-lg"
             >
               {t.lessons.cta.button}
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

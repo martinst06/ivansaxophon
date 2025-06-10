@@ -163,13 +163,13 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
   }, [selectedSongs, loadedAudioFiles]);
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-beige/20 via-white to-bronze-light/10">
+    <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {offers.map((offer) => (
             <div 
               key={offer.id}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100/50"
+              className="bg-white border-2 border-charcoal/10 p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Title */}
               <div className="mb-6">
@@ -180,7 +180,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
 
               {/* Audio Preview - Only for first 3 offers */}
               {offer.audioFiles && (
-                <div className="mb-6 p-4 bg-bronze/5 rounded-xl border border-bronze/20">
+                <div className="mb-6 p-4 bg-white border border-bronze/30">
                   {/* Song Selection */}
                   <div className="mb-4">
                     <p className="text-sm text-charcoal/60 mb-2">Choose a song:</p>
@@ -189,10 +189,10 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
                         <button
                           key={songIndex}
                           onClick={() => changeSong(offer.id, songIndex)}
-                          className={`text-xs p-2 rounded-lg transition-colors duration-200 text-left ${
+                          className={`text-xs p-2 border transition-colors duration-200 text-left ${
                             selectedSongs[offer.id] === songIndex
-                              ? 'bg-bronze text-white'
-                              : 'bg-white/60 text-charcoal hover:bg-white/80'
+                              ? 'bg-bronze text-white border-bronze'
+                              : 'bg-white text-charcoal border-charcoal/20 hover:border-bronze/50'
                           }`}
                         >
                           {audioFile.title}
@@ -211,7 +211,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
                     </div>
                     <button
                       onClick={() => toggleAudio(offer.id)}
-                      className="w-12 h-12 bg-bronze hover:bg-bronze-dark text-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg hover:shadow-xl"
+                      className="w-12 h-12 border-2 border-bronze hover:bg-bronze hover:border-bronze text-bronze hover:text-white flex items-center justify-center transition-all duration-200"
                     >
                       {currentPlaying === `${offer.id}-${selectedSongs[offer.id]}` && isPlaying ? (
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -244,7 +244,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
               </p>
 
               {/* CTA Button */}
-              <button className="w-full bg-gradient-to-r from-bronze to-bronze-dark text-white font-medium py-4 px-6 rounded-xl hover:from-bronze-dark hover:to-bronze transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-medium py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5">
                 Learn More About {offer.title}
               </button>
             </div>

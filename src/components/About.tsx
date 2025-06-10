@@ -50,21 +50,20 @@ const About = ({ lang }: AboutProps) => {
             {t.about.cta}
           </p>
           
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
-            <Link 
-              href={`/${lang}/lessons`}
-              className="inline-flex items-center bg-bronze hover:bg-bronze-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+            <a 
+              href="#contact"
+              className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-4 font-medium transition-all duration-300 transform hover:-translate-y-0.5 text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
             >
-              {t.about.trialLessonBtn}
-            </Link>
-            
-            <Link 
-              href={`/${lang}/offer#contact`}
-              className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
+              Book Now
+            </a>
+            <a 
+              href="#offers"
+              className="inline-flex items-center border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white px-6 sm:px-8 py-3 sm:py-4 font-medium transition-all duration-300 transform hover:-translate-y-0.5 text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
             >
-              {t.about.performanceBtn}
-            </Link>
+              Learn More
+            </a>
           </div>
         </div>
       </div>

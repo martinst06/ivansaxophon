@@ -17,10 +17,10 @@ const Navigation = ({ lang }: NavigationProps) => {
 
   // Navigation items with proper translations
   const navItems = [
-    { name: lang === 'de' ? 'Über mich' : 'About', href: `/${lang}/about` },
-    { name: lang === 'de' ? 'Angebot' : 'Offer', href: `/${lang}/offer` },
-    { name: lang === 'de' ? 'Unterricht' : 'Teaching', href: `/${lang}/teaching` },
-    { name: lang === 'de' ? 'Medien' : 'Media', href: `/${lang}/media` },
+    { name: lang === 'de' ? 'ÜBER MICH' : 'ABOUT', href: `/${lang}/about` },
+    { name: lang === 'de' ? 'ANGEBOT' : 'OFFER', href: `/${lang}/offer` },
+    { name: lang === 'de' ? 'UNTERRICHT' : 'TEACHING', href: `/${lang}/teaching` },
+    { name: lang === 'de' ? 'MEDIEN' : 'MEDIA', href: `/${lang}/media` },
   ];
 
   // Split navigation items for desktop layout
@@ -90,7 +90,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium tracking-wide group"
+                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-base font-semibold tracking-wide group"
                 >
                   {item.name}
                   <span className="absolute inset-x-4 bottom-0 h-0.5 bg-bronze scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
@@ -104,7 +104,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 href={`/${lang}`}
                 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300 px-4"
               >
-                Ivan <span className="text-bronze">Saxophon</span>
+                IVAN <span className="text-bronze">SAXOPHON</span>
               </Link>
             </div>
 
@@ -114,7 +114,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium tracking-wide group"
+                  className="relative text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-base font-semibold tracking-wide group"
                 >
                   {item.name}
                   <span className="absolute inset-x-4 bottom-0 h-0.5 bg-bronze scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
@@ -125,18 +125,18 @@ const Navigation = ({ lang }: NavigationProps) => {
               <div className="relative">
                 <button
                   onClick={toggleLanguageMenu}
-                  className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium border border-gray-200 rounded-full hover:border-bronze hover:shadow-sm bg-white/80"
+                  className="flex items-center space-x-2 text-charcoal hover:text-bronze transition-all duration-300 px-4 py-2 text-sm font-medium border-2 border-gray-200 hover:border-bronze bg-white/80"
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
-                  <span className="text-xs font-semibold tracking-wider">{lang.toUpperCase()}</span>
+                  <span className="text-sm font-semibold tracking-wider">{lang.toUpperCase()}</span>
                   <svg className={`w-3 h-3 transition-transform duration-300 ${isLanguageOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-3 w-36 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50 overflow-hidden">
+                  <div className="absolute right-0 mt-3 w-36 bg-white shadow-lg border-2 border-gray-100 py-2 z-50 overflow-hidden">
                     {languages.map((langOption) => (
                       <button
                         key={langOption.code}
@@ -164,7 +164,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               <div className="relative">
                 <button
                   onClick={toggleLanguageMenu}
-                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-xs font-semibold tracking-wider border border-gray-200 rounded-full bg-white/80 touch-manipulation"
+                  className="flex items-center space-x-1 text-charcoal hover:text-bronze transition-colors duration-300 px-3 py-2 text-sm font-semibold tracking-wider border-2 border-gray-200 bg-white/80 touch-manipulation"
                   aria-label="Change language"
                   aria-expanded={isLanguageOpen}
                 >
@@ -175,7 +175,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 </button>
 
                 {isLanguageOpen && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-[60]">
+                  <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg border-2 border-gray-100 py-2 z-[60]">
                     {languages.map((langOption) => (
                       <button
                         key={langOption.code}
@@ -194,7 +194,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               {/* Mobile Menu Button */}
               <button
                 onClick={toggleMobileMenu}
-                className="text-charcoal hover:text-bronze focus:outline-none transition-colors duration-300 p-2 rounded-lg hover:bg-gray-50 touch-manipulation"
+                className="text-charcoal hover:text-bronze focus:outline-none transition-colors duration-300 p-2 hover:bg-gray-50 touch-manipulation"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
                 type="button"
@@ -248,7 +248,7 @@ const Navigation = ({ lang }: NavigationProps) => {
               </Link>
               <button
                 onClick={closeMenu}
-                className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-gray-100 touch-manipulation"
+                className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 hover:bg-gray-100 touch-manipulation"
                 aria-label="Close menu"
                 type="button"
               >
@@ -264,7 +264,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center justify-between px-4 py-3 text-lg font-medium text-charcoal hover:text-bronze hover:bg-gray-50 rounded-lg transition-all duration-200 touch-manipulation"
+                  className="flex items-center justify-between px-4 py-3 text-xl font-semibold text-charcoal hover:text-bronze hover:bg-gray-50 transition-all duration-200 touch-manipulation"
                   onClick={closeMenu}
                 >
                   <span>{item.name}</span>
@@ -286,10 +286,10 @@ const Navigation = ({ lang }: NavigationProps) => {
                   <button
                     key={langOption.code}
                     onClick={() => handleLanguageChange(langOption.code)}
-                    className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 touch-manipulation ${
+                    className={`flex-1 px-4 py-2 border-2 text-sm font-medium transition-all duration-200 touch-manipulation ${
                       lang === langOption.code 
-                        ? 'bg-bronze text-white' 
-                        : 'bg-gray-100 text-charcoal hover:bg-gray-200'
+                        ? 'bg-bronze text-white border-bronze' 
+                        : 'bg-gray-100 text-charcoal border-gray-200 hover:border-bronze'
                     }`}
                     type="button"
                   >
