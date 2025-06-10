@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ivansaxophon.ch'
   const lastModified = new Date()
   const languages = ['en', 'de']
-  const pages = ['', '/lessons', '/about', '/offer']
+  const pages = ['', '/about', '/offer', '/media', '/teaching']
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 

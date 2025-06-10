@@ -316,7 +316,7 @@ export default function StructuredData({ lang }: StructuredDataProps) {
         "@type": "ListItem",
         "position": 2,
         "name": "Lessons",
-        "item": "https://ivansaxophon.ch/lessons"
+        "item": "https://ivansaxophon.ch/teaching"
       }
     ]
   };
