@@ -67,9 +67,19 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
     if (!loadedAudioFiles.has(audioKey)) {
       const audio = audioRefs.current[audioKey];
       if (audio && !audio.src) {
+        console.log(`Loading audio: ${audioKey} - ${audioFile}`);
         audio.src = audioFile;
         audio.preload = 'metadata';
         setLoadedAudioFiles(prev => new Set(prev).add(audioKey));
+        
+        // Add load event listener
+        audio.addEventListener('loadeddata', () => {
+          console.log(`Audio loaded successfully: ${audioKey}`);
+        });
+        
+        audio.addEventListener('error', (e) => {
+          console.error(`Audio loading failed: ${audioKey}`, e);
+        });
       }
     }
   };
@@ -85,10 +95,14 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
     }
 
     const audio = audioRefs.current[audioKey];
-    if (!audio) return;
+    if (!audio) {
+      console.error(`Audio element not found: ${audioKey}`);
+      return;
+    }
 
     if (currentPlaying === audioKey && isPlaying) {
       // Pause current audio
+      console.log(`Pausing audio: ${audioKey}`);
       audio.pause();
       setIsPlaying(false);
     } else {
@@ -101,9 +115,23 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       });
       
       // Play selected audio
-      audio.play().catch(e => console.log('Audio play failed:', e));
-      setCurrentPlaying(audioKey);
-      setIsPlaying(true);
+      console.log(`Attempting to play audio: ${audioKey}`);
+      console.log(`Audio readyState: ${audio.readyState}`);
+      console.log(`Audio src: ${audio.src}`);
+      
+      if (audio.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+        audio.play().catch(e => console.error('Audio play failed:', e));
+        setCurrentPlaying(audioKey);
+        setIsPlaying(true);
+      } else {
+        console.log('Audio not ready, waiting for it to load...');
+        audio.addEventListener('canplay', () => {
+          console.log(`Audio ready to play: ${audioKey}`);
+          audio.play().catch(e => console.error('Audio play failed:', e));
+          setCurrentPlaying(audioKey);
+          setIsPlaying(true);
+        }, { once: true });
+      }
     }
   };
 
