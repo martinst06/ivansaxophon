@@ -1,13 +1,20 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { translations, Language } from '@/lib/translations';
 
-const OfferGrid = () => {
+interface OfferGridProps {
+  lang: Language;
+}
+
+const OfferGrid = ({ lang }: OfferGridProps) => {
+  const t = translations[lang] || translations.en;
+  
   const offers = [
     {
       id: 'acoustic',
-      title: 'Acoustic',
-      description: 'Intimate acoustic saxophone performances perfect for quiet moments and elegant gatherings. Pure, unprocessed sound that connects directly with your soul.',
+      title: t.offers.acoustic.title,
+      description: t.offers.acoustic.description,
       features: [
         'Solo saxophone performances',
         'Unplugged intimate sessions',
@@ -23,8 +30,8 @@ const OfferGrid = () => {
     },
     {
       id: 'hits',
-      title: 'Hits',
-      description: 'Popular songs and chart-toppers reimagined for saxophone. From yesterday\'s classics to today\'s favorites, bringing familiar melodies to life.',
+      title: t.offers.hits.title,
+      description: t.offers.hits.description,
       features: [
         'Top 40 hits arranged for saxophone',
         'Popular music from all decades',  
@@ -40,8 +47,8 @@ const OfferGrid = () => {
     },
     {
       id: 'jazz',
-      title: 'Jazz',
-      description: 'Smooth jazz standards, bebop classics, and contemporary jazz fusion. The saxophone\'s natural home in sophisticated musical expression.',
+      title: t.offers.jazz.title,
+      description: t.offers.jazz.description,
       features: [
         'Classic jazz standards',
         'Smooth jazz and fusion',
@@ -57,8 +64,8 @@ const OfferGrid = () => {
     },
     {
       id: 'sax-dj',
-      title: 'Sax / DJ',
-      description: 'The perfect fusion of live saxophone with DJ mixing. Modern entertainment that combines electronic beats with live instrumental performance.',
+      title: t.offers.saxDj.title,
+      description: t.offers.saxDj.description,
       features: [
         'Live sax over DJ sets',
         'Electronic and house music backing',
@@ -76,6 +83,7 @@ const OfferGrid = () => {
     hits: 0,
     jazz: 0
   });
+  const [audioLoaded, setAudioLoaded] = useState(false);
   const audioRefs = useRef<{ [key: string]: HTMLAudioElement | null }>({});
 
   const toggleAudio = (offerId: string) => {
@@ -122,6 +130,28 @@ const OfferGrid = () => {
   };
 
   useEffect(() => {
+    // Load audio files after page has loaded
+    const loadAudioFiles = () => {
+      setAudioLoaded(true);
+    };
+
+    // Wait for page to fully load
+    if (document.readyState === 'complete') {
+      // Page already loaded, load audio immediately
+      setTimeout(loadAudioFiles, 500);
+    } else {
+      // Wait for page to load
+      window.addEventListener('load', () => {
+        setTimeout(loadAudioFiles, 500);
+      });
+    }
+
+    return () => {
+      window.removeEventListener('load', loadAudioFiles);
+    };
+  }, []);
+
+  useEffect(() => {
     // Setup audio event listeners for all audio elements
     const currentAudioRefs = audioRefs.current;
     const setupAudioListeners = () => {
@@ -136,7 +166,9 @@ const OfferGrid = () => {
       });
     };
 
-    setupAudioListeners();
+    if (audioLoaded) {
+      setupAudioListeners();
+    }
 
     return () => {
       // Cleanup
@@ -146,7 +178,7 @@ const OfferGrid = () => {
         }
       });
     };
-  }, [selectedSongs]);
+  }, [selectedSongs, audioLoaded]);
 
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-br from-beige/20 via-white to-bronze-light/10">
@@ -218,8 +250,8 @@ const OfferGrid = () => {
                       ref={(el) => {
                         if (el) audioRefs.current[`${offer.id}-${songIndex}`] = el;
                       }}
-                      src={audioFile.file}
-                      preload="metadata"
+                      src={audioLoaded ? audioFile.file : undefined}
+                      preload={audioLoaded ? "metadata" : "none"}
                     />
                   ))}
                 </div>

@@ -10,14 +10,15 @@ const About = ({ lang }: AboutProps) => {
   const t = translations[lang] || translations.en;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px] hero-optimized above-fold">
       {/* Left side - Full Image */}
       <div className="order-2 lg:order-1 relative overflow-hidden">
         <Image
           src="/ivan-1.JPG"
           alt="Ivan Saxophon professional portrait"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hero-image"
+          priority
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
         {/* Dark overlay */}

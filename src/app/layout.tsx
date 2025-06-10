@@ -184,6 +184,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${playfairDisplay.variable}`} prefix="og: http://ogp.me/ns#">
+      <head>
+        {/* Preload critical hero images */}
+        <link rel="preload" as="image" href="/bg-hero.jpg" />
+        <link rel="preload" as="image" href="/ivan-1.JPG" />
+        <link rel="preload" as="image" href="/ivan-2.JPG" />
+        <link rel="preload" as="image" href="/ivan-3.JPG" />
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://deindj.ch" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      </head>
       <body className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}>
         {children}
         <Analytics />

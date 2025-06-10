@@ -35,12 +35,12 @@ export default async function OfferPage({ params }: Props) {
       <Navigation lang={typedLang} />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-start justify-center relative overflow-hidden">
+        <section className="min-h-screen flex items-start justify-center relative overflow-hidden hero-optimized above-fold">
           <Image
             src="/ivan-3.JPG"
             alt="Ivan Saxophon professional performance"
             fill
-            className="object-cover object-top"
+            className="object-cover object-top hero-image"
             priority
             sizes="100vw"
           />
@@ -58,7 +58,7 @@ export default async function OfferPage({ params }: Props) {
         </section>
 
         {/* Offers Grid Section */}
-        <OfferGrid />
+        <OfferGrid lang={typedLang} />
 
         {/* Contact Section */}
         <Contact lang={typedLang} />

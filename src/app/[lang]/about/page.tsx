@@ -75,14 +75,15 @@ export default async function AboutPage({ params }: Props) {
       <Navigation lang={typedLang} />
       <main className="pt-16">
         {/* Main Section with Half-Screen Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[80vh] hero-optimized above-fold">
           {/* Left Side - Ivan's Image */}
           <div className="order-2 lg:order-1 relative overflow-hidden">
             <Image
               src="/ivan-2.JPG"
               alt="Ivan Saxophon personal portrait"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center hero-image"
+              priority
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-black/20 z-10"></div>

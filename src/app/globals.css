@@ -153,3 +153,24 @@ img {
 .contain-paint {
   contain: paint;
 }
+
+/* Critical hero styles - loaded first */
+@layer base {
+  /* Hero section optimization */
+  .hero-optimized {
+    content-visibility: auto;
+    contain-intrinsic-size: 100vh;
+  }
+  
+  /* Above-the-fold content should render immediately */
+  .above-fold {
+    contain: layout style paint;
+  }
+  
+  /* Ensure hero images are rendered with will-change for GPU acceleration */
+  .hero-image {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+}

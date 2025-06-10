@@ -13,14 +13,14 @@ const Hero = ({ lang }: HeroProps) => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-start justify-center relative overflow-hidden"
+      className="min-h-screen flex items-start justify-center relative overflow-hidden hero-optimized above-fold"
     >
       {/* Background Image */}
       <Image
         src="/bg-hero.jpg"
         alt="Professional saxophonist performing"
         fill
-        className="object-cover object-center"
+        className="object-cover object-center hero-image"
         priority
         sizes="100vw"
       />
