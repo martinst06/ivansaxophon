@@ -169,7 +169,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
           {offers.map((offer) => (
             <div 
               key={offer.id}
-              className="bg-white border-2 border-charcoal/10 p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white border-2 border-charcoal/10 p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full"
             >
               {/* Title */}
               <div className="mb-6">
@@ -244,7 +244,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
               </p>
 
               {/* CTA Button */}
-              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-medium py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5">
+              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-medium py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
                 Learn More About {offer.title}
               </button>
             </div>
