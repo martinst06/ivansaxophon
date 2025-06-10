@@ -173,7 +173,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
             >
               {/* Title */}
               <div className="mb-6">
-                <h2 className="text-3xl font-serif font-bold text-charcoal">
+                <h2 className="text-3xl font-serif font-bold text-charcoal text-center">
                   {offer.title}
                 </h2>
               </div>
@@ -239,7 +239,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
               )}
 
               {/* Description */}
-              <p className="text-charcoal/80 text-lg leading-relaxed mb-6">
+              <p className="text-charcoal/80 text-lg leading-relaxed mb-6 text-justify">
                 {offer.description}
               </p>
 
