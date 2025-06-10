@@ -16,7 +16,7 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       title: t.offers.acoustic.title,
       description: t.offers.acoustic.description,
       audioFiles: [
-        { file: '/audio/ACOUSTICS/Yesterday - Ivan_Saxophon.wav', title: 'Yesterday' },
+        { file: '/audio/ACOUSTICS/Yesterday_Ivan.m4a', title: 'Yesterday' },
         { file: '/audio/ACOUSTICS/Watermelon Sugar - Ivan_Saxophon.m4a', title: 'Watermelon Sugar' },
         { file: '/audio/ACOUSTICS/Valerie - Ivan_Saxophon.m4a', title: 'Valerie' },
         { file: '/audio/ACOUSTICS/Can\'t Take My Eyes Off You - Ivan_Saxophon.m4a', title: 'Can\'t Take My Eyes Off You' }
@@ -27,8 +27,8 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       title: t.offers.hits.title,
       description: t.offers.hits.description,
       audioFiles: [
-        { file: '/audio/HITS/September - Ivan_Saxophon.wav', title: 'September' },
-        { file: '/audio/HITS/Sara Perche Ti Amo - Ivan_Saxophon.wav', title: 'Sara Perche Ti Amo' },
+        { file: '/audio/HITS/September - Ivan_Saxophon.m4a', title: 'September' },
+        { file: '/audio/HITS/Sara Perche Ti Amo - Ivan_Saxophon.m4a', title: 'Sara Perche Ti Amo' },
         { file: '/audio/HITS/Espresso - Ivan_Saxophon.m4a', title: 'Espresso' },
         { file: '/audio/HITS/Ain\'t Nobody - Ivan_Saxophon.m4a', title: 'Ain\'t Nobody' }
       ]
@@ -38,10 +38,10 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       title: t.offers.jazz.title,
       description: t.offers.jazz.description,
       audioFiles: [
-        { file: '/audio/JAZZ/Summertime - Ivan_Saxophon.wav', title: 'Summertime' },
+        { file: '/audio/JAZZ/Summertime - Ivan_Saxophon.m4a', title: 'Summertime' },
         { file: '/audio/JAZZ/Sandu - Ivan_Saxophon.m4a', title: 'Sandu' },
-        { file: '/audio/JAZZ/Blue Bossa - Ivan_Saxophon.wav', title: 'Blue Bossa' },
-        { file: '/audio/JAZZ/Autumn Leaves - Ivan_Saxophon.wav', title: 'Autumn Leaves' }
+        { file: '/audio/JAZZ/Blue Bossa - Ivan_Saxophon.m4a', title: 'Blue Bossa' },
+        { file: '/audio/JAZZ/Autumn Leaves - Ivan_Saxophon.m4a', title: 'Autumn Leaves' }
       ]
     },
     {
