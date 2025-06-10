@@ -198,6 +198,7 @@ export const translations = {
       }
     },
     offers: {
+      heroText: 'Whether wedding, party, birthday, or corporate event — I provide elegant saxophone music perfectly suited to your occasion.',
       acoustic: {
         title: 'Acoustic',
         description: 'Smooth saxophone meets acoustic guitar — an unplugged blend that sets the perfect mood for any event, from cozy gatherings to stylish celebrations.'
@@ -395,7 +396,7 @@ export const translations = {
         placePlaceholder: 'Hotel, Kirche, Restaurant',
         eventAddressPlaceholder: 'Adresse des Veranstaltungsortes',
         messagePlaceholder: 'Falls Sie besondere Wünsche haben, lassen Sie es mich hier wissen...',
-        corporate: 'Firmenveranstaltung',
+        corporate: 'Firmenanlass',
         wedding: 'Hochzeit',
         birthday: 'Geburtstag',
         private: 'Privat',
@@ -426,6 +427,7 @@ export const translations = {
       }
     },
     offers: {
+      heroText: 'Ob Hochzeit, Party, Geburtstag oder Firmenveranstaltung — ich biete elegante Saxophonmusik, die perfekt zu Ihrem Anlass passt.',
       acoustic: {
         title: 'Acoustic',
         description: 'Sanftes Saxophon trifft auf akustische Gitarre – ein unplugged Duo, das die perfekte Stimmung für jedes Event schafft, von gemütlichen Zusammenkünften bis hin zu stilvollen Feiern.'

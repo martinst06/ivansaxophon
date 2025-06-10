@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
-import { Language } from '@/lib/translations';
+import { Language, translations } from '@/lib/translations';
 import OfferGrid from '@/components/OfferGrid';
 
 type Props = {
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function OfferPage({ params }: Props) {
   const { lang } = await params;
   const typedLang = lang as Language;
+  const t = translations[typedLang];
   
   return (
     <>
@@ -51,7 +52,7 @@ export default async function OfferPage({ params }: Props) {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 relative z-20">
             <div className="text-center">
               <p className="text-lg sm:text-xl md:text-xl text-white/80 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed px-2">
-                Whether wedding, party, birthday, or corporate event — I provide elegant saxophone music perfectly suited to your occasion.
+                {t.offers.heroText}
               </p>
             </div>
           </div>
