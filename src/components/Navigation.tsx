@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Language } from '@/lib/translations';
+import { Language, translations } from '@/lib/translations';
 
 interface NavigationProps {
   lang: Language;
@@ -14,19 +14,19 @@ const Navigation = ({ lang }: NavigationProps) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const t = translations[lang] || translations.en;
 
-  // Split navigation items for left and right sections
-  const leftNavItems = [
-    { name: 'About', href: `/${lang}/about` },
-    { name: 'Offer', href: `/${lang}/offer` },
+  // Navigation items with proper translations
+  const navItems = [
+    { name: lang === 'de' ? 'Über mich' : 'About', href: `/${lang}/about` },
+    { name: lang === 'de' ? 'Angebot' : 'Offer', href: `/${lang}/offer` },
+    { name: lang === 'de' ? 'Unterricht' : 'Teaching', href: `/${lang}/teaching` },
+    { name: lang === 'de' ? 'Medien' : 'Media', href: `/${lang}/media` },
   ];
 
-  const rightNavItems = [
-    { name: 'Teaching', href: `/${lang}/teaching` },
-    { name: 'Media', href: `/${lang}/media` },
-  ];
-
-  const allNavItems = [...leftNavItems, ...rightNavItems];
+  // Split navigation items for desktop layout
+  const leftNavItems = navItems.slice(0, 2);
+  const rightNavItems = navItems.slice(2);
 
   const languages = [
     { code: 'en' as Language, name: 'English' },
@@ -41,7 +41,7 @@ const Navigation = ({ lang }: NavigationProps) => {
 
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setIsLanguageOpen(false); // Close language dropdown when opening menu
+    setIsLanguageOpen(false);
   };
 
   const toggleLanguageMenu = () => {
@@ -227,29 +227,29 @@ const Navigation = ({ lang }: NavigationProps) => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[55] lg:hidden">
           <div 
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-all duration-300"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeMenu}
             aria-hidden="true"
           />
           
           <div 
-            className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-white via-beige/10 to-bronze-light/5 shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-0"
+            className="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
           >
             {/* Header with Logo */}
-            <div className="flex items-center justify-between px-6 py-8 border-b border-bronze/20">
+            <div className="flex items-center justify-between px-6 py-6 border-b border-gray-200">
               <Link 
                 href={`/${lang}`}
-                className="text-2xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300"
+                className="text-xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300"
                 onClick={closeMenu}
               >
                 Ivan <span className="text-bronze">Saxophon</span>
               </Link>
               <button
                 onClick={closeMenu}
-                className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-white/50 touch-manipulation"
+                className="p-2 text-charcoal hover:text-bronze transition-colors duration-200 rounded-lg hover:bg-gray-100 touch-manipulation"
                 aria-label="Close menu"
                 type="button"
               >
@@ -260,20 +260,17 @@ const Navigation = ({ lang }: NavigationProps) => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex flex-col px-6 py-8 space-y-2">
-              {allNavItems.map((item, index) => (
+            <div className="flex flex-col px-6 py-6 space-y-1">
+              {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group flex items-center justify-between px-6 py-4 text-lg font-medium text-charcoal hover:text-bronze hover:bg-white/40 rounded-xl transition-all duration-300 transform hover:scale-[1.02] touch-manipulation"
+                  className="flex items-center justify-between px-4 py-3 text-lg font-medium text-charcoal hover:text-bronze hover:bg-gray-50 rounded-lg transition-all duration-200 touch-manipulation"
                   onClick={closeMenu}
-                  style={{
-                    animationDelay: `${index * 100}ms`
-                  }}
                 >
-                  <span className="font-serif">{item.name}</span>
+                  <span>{item.name}</span>
                   <svg 
-                    className="w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300 text-bronze" 
+                    className="w-5 h-5 text-bronze opacity-60" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -284,18 +281,17 @@ const Navigation = ({ lang }: NavigationProps) => {
               ))}
             </div>
 
-            {/* Language Selector in Mobile Menu */}
-            <div className="px-6 py-4 border-t border-bronze/20 mt-auto">
-              <p className="text-sm font-medium text-charcoal/70 mb-3 font-serif">Language</p>
+            {/* Language Selector */}
+            <div className="px-6 py-4 border-t border-gray-200 mt-auto">
               <div className="flex space-x-3">
                 {languages.map((langOption) => (
                   <button
                     key={langOption.code}
                     onClick={() => handleLanguageChange(langOption.code)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 touch-manipulation ${
+                    className={`flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 touch-manipulation ${
                       lang === langOption.code 
-                        ? 'bg-bronze text-white shadow-lg' 
-                        : 'bg-white/50 text-charcoal hover:bg-white/70 hover:text-bronze'
+                        ? 'bg-bronze text-white' 
+                        : 'bg-gray-100 text-charcoal hover:bg-gray-200'
                     }`}
                     type="button"
                   >
