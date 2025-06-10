@@ -15,12 +15,6 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       id: 'acoustic',
       title: t.offers.acoustic.title,
       description: t.offers.acoustic.description,
-      features: [
-        'Solo saxophone performances',
-        'Unplugged intimate sessions',
-        'Classical and contemporary pieces',
-        'Perfect for ceremonies and quiet venues'
-      ],
       audioFiles: [
         { file: '/audio/ACOUSTICS/Yesterday - Ivan_Saxophon.wav', title: 'Yesterday' },
         { file: '/audio/ACOUSTICS/Watermelon Sugar - Ivan_Saxophon.m4a', title: 'Watermelon Sugar' },
@@ -32,12 +26,6 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       id: 'hits',
       title: t.offers.hits.title,
       description: t.offers.hits.description,
-      features: [
-        'Top 40 hits arranged for saxophone',
-        'Popular music from all decades',  
-        'Recognizable melodies everyone loves',
-        'Perfect for parties and celebrations'
-      ],
       audioFiles: [
         { file: '/audio/HITS/September - Ivan_Saxophon.wav', title: 'September' },
         { file: '/audio/HITS/Sara Perche Ti Amo - Ivan_Saxophon.wav', title: 'Sara Perche Ti Amo' },
@@ -49,12 +37,6 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       id: 'jazz',
       title: t.offers.jazz.title,
       description: t.offers.jazz.description,
-      features: [
-        'Classic jazz standards',
-        'Smooth jazz and fusion',
-        'Improvisation and interaction',
-        'Perfect for cocktails and dining'
-      ],
       audioFiles: [
         { file: '/audio/JAZZ/Summertime - Ivan_Saxophon.wav', title: 'Summertime' },
         { file: '/audio/JAZZ/Sandu - Ivan_Saxophon.m4a', title: 'Sandu' },
@@ -66,12 +48,6 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
       id: 'sax-dj',
       title: t.offers.saxDj.title,
       description: t.offers.saxDj.description,
-      features: [
-        'Live sax over DJ sets',
-        'Electronic and house music backing',
-        'Dynamic party atmosphere',
-        'Perfect for clubs and modern events'
-      ]
     }
   ];
 
@@ -261,16 +237,6 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
               <p className="text-charcoal/80 text-lg leading-relaxed mb-6">
                 {offer.description}
               </p>
-
-              {/* Features */}
-              <div className="space-y-3 mb-8">
-                {offer.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center">
-                    <div className="w-2 h-2 bg-bronze rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-charcoal/80">{feature}</span>
-                  </div>
-                ))}
-              </div>
 
               {/* CTA Button */}
               <button className="w-full bg-gradient-to-r from-bronze to-bronze-dark text-white font-medium py-4 px-6 rounded-xl hover:from-bronze-dark hover:to-bronze transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
