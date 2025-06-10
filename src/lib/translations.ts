@@ -137,19 +137,19 @@ export const translations = {
     offers: {
       heroText: 'Whether wedding, party, birthday, or corporate event — I provide elegant saxophone music perfectly suited to your occasion.',
       acoustic: {
-        title: 'Acoustic',
+        title: 'ACOUSTIC',
         description: 'Smooth saxophone meets acoustic guitar — an unplugged blend that sets the perfect mood for any event, from cozy gatherings to stylish celebrations.'
       },
       hits: {
-        title: 'Hits',
+        title: 'HITS',
         description: 'Imagine the greatest hits — from timeless classics to today\'s chart-toppers — all reimagined on the saxophone! This playlist brings the perfect party vibe for all generations.'
       },
       jazz: {
-        title: 'Jazz',
+        title: 'JAZZ',
         description: 'If you want to add charm, class, and elegance to your event, this is the perfect choice! A collection of timeless jazz standards that bring warmth and style to any occasion.'
       },
       saxDj: {
-        title: 'Sax / DJ',
+        title: 'SAX / DJ',
         description: 'As part of the DeinDJ agency, I offer a DJ & Sax duo tailored to your event. Just share your wishes with me — and together with the right DJ, we\'ll create the perfect atmosphere for your celebration! Whether you\'re planning a wedding, birthday, corporate event, or private party, we bring energy, elegance, and live performance that make your event unforgettable. Let\'s make your vision come to life with the unique blend of saxophone and DJ beats!'
       }
     },
@@ -303,19 +303,19 @@ export const translations = {
     offers: {
       heroText: 'Ob Hochzeit, Party, Geburtstag oder Firmenveranstaltung — ich biete elegante Saxophonmusik, die perfekt zu Ihrem Anlass passt.',
       acoustic: {
-        title: 'Acoustic',
+        title: 'AKUSTISCH',
         description: 'Sanftes Saxophon trifft auf akustische Gitarre – ein unplugged Duo, das die perfekte Stimmung für jedes Event schafft, von gemütlichen Zusammenkünften bis hin zu stilvollen Feiern.'
       },
       hits: {
-        title: 'Hits',
+        title: 'HITS',
         description: 'Stell dir die größten Hits vor – von zeitlosen Klassikern bis zu den aktuellen Chartstürmern – neu interpretiert auf dem Saxophon! Diese Playlist sorgt für die perfekte Partystimmung für alle Generationen.'
       },
       jazz: {
-        title: 'Jazz',
+        title: 'JAZZ',
         description: 'Wenn Sie Ihrem Event Charme, Klasse und Eleganz verleihen möchten, ist diese Playlist die perfekte Wahl! Eine Auswahl zeitloser Jazz-Standards, die jedem Anlass stilvoll Wärme verleihen.'
       },
       saxDj: {
-        title: 'Sax / DJ',
+        title: 'SAX / DJ',
         description: 'Als Teil der DeinDJ-Agentur biete ich ein DJ & Sax-Duo, das individuell auf Ihr Event abgestimmt ist. Teilen Sie mir einfach Ihre Wünsche mit – und gemeinsam mit dem passenden DJ schaffen wir die perfekte Atmosphäre für Ihre Feier! Ob Hochzeit, Geburtstag, Firmenanlass oder private Party – wir bringen Energie, Eleganz und Live-Performance, die Ihr Event unvergesslich machen. Lassen Sie uns Ihre Vorstellungen mit der einzigartigen Kombination aus Saxophon und DJ zum Leben erwecken!'
       }
     },

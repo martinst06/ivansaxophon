@@ -28,8 +28,8 @@ const Navigation = ({ lang }: NavigationProps) => {
   const rightNavItems = navItems.slice(2);
 
   const languages = [
-    { code: 'en' as Language, name: 'English' },
-    { code: 'de' as Language, name: 'Deutsch' },
+    { code: 'en' as Language, name: 'ENGLISH' },
+    { code: 'de' as Language, name: 'DEUTSCH' },
   ];
 
   const handleLanguageChange = (langCode: Language) => {
@@ -244,7 +244,7 @@ const Navigation = ({ lang }: NavigationProps) => {
                 className="text-xl font-serif font-bold text-charcoal hover:text-bronze transition-colors duration-300"
                 onClick={closeMenu}
               >
-                Ivan <span className="text-bronze">Saxophon</span>
+                IVAN <span className="text-bronze">SAXOPHON</span>
               </Link>
               <button
                 onClick={closeMenu}
