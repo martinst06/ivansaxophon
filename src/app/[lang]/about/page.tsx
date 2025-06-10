@@ -77,7 +77,7 @@ export default async function AboutPage({ params }: Props) {
         {/* Main Section with Half-Screen Image */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[80vh] hero-optimized above-fold">
           {/* Left Side - Ivan's Image */}
-          <div className="order-2 lg:order-1 relative overflow-hidden">
+          <div className="order-1 lg:order-1 relative overflow-hidden min-h-[50vh] lg:min-h-full">
             <Image
               src="/ivan-2.JPG"
               alt="Ivan Saxophon personal portrait"
@@ -90,7 +90,7 @@ export default async function AboutPage({ params }: Props) {
           </div>
 
           {/* Right Side - Personal Story */}
-          <div className="order-1 lg:order-2 flex items-center bg-gradient-to-br from-white via-beige/20 to-bronze-light/5">
+          <div className="order-2 lg:order-2 flex items-center bg-gradient-to-br from-white via-beige/20 to-bronze-light/5">
             <div className="w-full p-8 lg:p-16 space-y-8">
               
               <div>
