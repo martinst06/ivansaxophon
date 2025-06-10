@@ -192,8 +192,9 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/ivan-3.JPG" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://deindj.ch" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {/* Google Fonts preconnect */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
       <body className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}>
         {children}
