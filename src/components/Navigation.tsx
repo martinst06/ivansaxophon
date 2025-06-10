@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import { Language, translations } from '@/lib/translations';
+import { Language } from '@/lib/translations';
 
 interface NavigationProps {
   lang: Language;
