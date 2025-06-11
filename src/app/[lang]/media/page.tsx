@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Language } from '@/lib/translations';
 import ImageCarousel from '@/components/ImageCarousel';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 type Props = {
   params: Promise<{ lang: string }>
@@ -57,7 +59,9 @@ export default async function MediaPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
+      <Navigation lang={typedLang} />
       <ImageCarousel lang={typedLang} />
+      <Footer lang={typedLang} />
     </main>
   );
 }

@@ -18,7 +18,6 @@ interface ImageCarouselProps {
 
 const ImageCarousel = ({ lang }: ImageCarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<{ [key: string]: boolean }>({});
 
   // Array of all carousel images - memoized for performance
   const carouselImages = useMemo(() => [
@@ -68,9 +67,7 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
     },
   ], []);
 
-  const handleImageLoad = (src: string) => {
-    setImagesLoaded(prev => ({ ...prev, [src]: true }));
-  };
+
 
   useEffect(() => {
     // Preload first few images for better performance
@@ -81,26 +78,10 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
   }, [carouselImages]);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-beige/20 via-white to-bronze-light/10 py-8 sm:py-12 lg:py-16">
+    <section className="min-h-screen bg-gradient-to-br from-beige/20 via-white to-bronze-light/10 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-8 lg:px-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-charcoal mb-4 sm:mb-6">
-            {lang === 'de' ? 'Medien' : 'Media'}{' '}
-            <span className="text-bronze">
-              {lang === 'de' ? 'Galerie' : 'Gallery'}
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl text-charcoal/80 max-w-3xl mx-auto">
-            {lang === 'de' 
-              ? 'Entdecken Sie Bilder von meinen professionellen Auftritten bei verschiedenen Events'
-              : 'Explore photos from my professional performances at various events'
-            }
-          </p>
-        </div>
-
         {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative overflow-visible">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
             spaceBetween={20}
@@ -131,11 +112,11 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
             }}
             breakpoints={{
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 30,
               },
               768: {
-                slidesPerView: 1.5,
+                slidesPerView: 1,
                 spaceBetween: 40,
               },
               1024: {
@@ -143,7 +124,7 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
                 spaceBetween: 50,
               },
               1280: {
-                slidesPerView: 2.5,
+                slidesPerView: 3,
                 spaceBetween: 60,
               },
             }}
@@ -153,19 +134,16 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
             {carouselImages.map((image, index) => (
               <SwiperSlide key={index} className="!h-auto">
                 <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
-                  {/* Loading backdrop */}
-                  {!imagesLoaded[image.src] && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-beige/40 via-bronze/20 to-bronze-light/30 z-10 animate-pulse rounded-2xl sm:rounded-3xl"></div>
-                  )}
+
                   
                   <div className="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover object-center"
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 40vw"
-                      onLoad={() => handleImageLoad(image.src)}
+
                     />
                     
                     {/* Gradient overlay for better aesthetics */}
