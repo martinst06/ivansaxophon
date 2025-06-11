@@ -86,8 +86,9 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
             modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
             spaceBetween={20}
             slidesPerView={1}
-            centeredSlides={true}
+            slidesPerGroup={1}
             loop={true}
+            watchSlidesProgress={true}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
