@@ -52,7 +52,7 @@ const About = ({ lang }: AboutProps) => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <Link 
-              href="#contact"
+              href="/teaching"
               className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-all duration-300 transform hover:-translate-y-0.5 text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
             >
               {t.about.trialLessonBtn}
