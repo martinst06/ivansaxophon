@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `Professional Saxophone Services - Ivan Saxophon`,
       description: 'Complete range of saxophone services for every occasion',
-      images: ['/ivan-3.JPG'],
+      images: ['/ivan-3.jpg'],
     },
   };
 }
@@ -38,7 +38,7 @@ export default async function OfferPage({ params }: Props) {
         {/* Hero Section */}
         <section className="min-h-screen flex items-start justify-center relative overflow-hidden hero-optimized above-fold">
           <Image
-            src="/ivan-4.JPG"
+            src="/ivan-4.jpg"
             alt="Ivan Saxophon professional performance"
             fill
             className="object-cover object-center hero-image"

@@ -23,7 +23,7 @@ const About = ({ lang }: AboutProps) => {
         )}
         
         <Image
-          src="/ivan-1.JPG"
+          src="/ivan-1.jpg"
           alt="Ivan Saxophon professional portrait"
           fill
           className="object-cover object-center hero-image"

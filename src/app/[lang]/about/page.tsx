@@ -79,7 +79,7 @@ export default async function AboutPage({ params }: Props) {
           {/* Left Side - Ivan's Image */}
           <div className="order-1 lg:order-1 relative overflow-hidden min-h-[50vh] lg:min-h-full">
             <Image
-              src="/ivan-2.JPG"
+              src="/ivan-2.jpg"
               alt="Ivan Saxophon personal portrait"
               fill
               className="object-cover object-center hero-image"
@@ -97,7 +97,7 @@ export default async function AboutPage({ params }: Props) {
                 <h2 className="text-2xl font-serif font-bold text-charcoal mb-4 border-l-4 border-bronze pl-4">
                   {t.education}
                 </h2>
-                <p className="text-lg text-charcoal/90 leading-relaxed">
+                <p className="text-lg text-charcoal/90 leading-relaxed text-justify">
                   {t.educationText}
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default async function AboutPage({ params }: Props) {
                 <h2 className="text-2xl font-serif font-bold text-charcoal mb-4 border-l-4 border-bronze pl-4">
                   {t.performance}
                 </h2>
-                <p className="text-lg text-charcoal/90 leading-relaxed">
+                <p className="text-lg text-charcoal/90 leading-relaxed text-justify">
                   {t.performanceText}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export default async function AboutPage({ params }: Props) {
                 <h2 className="text-2xl font-serif font-bold text-charcoal mb-4 border-l-4 border-bronze pl-4">
                   {t.current}
                 </h2>
-                <p className="text-lg text-charcoal/90 leading-relaxed">
+                <p className="text-lg text-charcoal/90 leading-relaxed text-justify">
                   {t.currentText}
                 </p>
               </div>

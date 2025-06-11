@@ -179,9 +179,9 @@ export default function RootLayout({
       <head>
         {/* Preload critical hero images */}
         <link rel="preload" as="image" href="/bg-hero.jpg" />
-        <link rel="preload" as="image" href="/ivan-1.JPG" />
-        <link rel="preload" as="image" href="/ivan-2.JPG" />
-        <link rel="preload" as="image" href="/ivan-3.JPG" />
+        <link rel="preload" as="image" href="/ivan-1.jpg" />
+        <link rel="preload" as="image" href="/ivan-2.jpg" />
+        <link rel="preload" as="image" href="/ivan-3.jpg" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://deindj.ch" />
         {/* Google Fonts preconnect */}
