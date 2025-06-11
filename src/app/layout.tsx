@@ -184,11 +184,8 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/ivan-3.jpg" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://deindj.ch" />
-        {/* Google Fonts preconnect */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
-      <body className={`${bodoniModa.variable} antialiased`}>
+      <body className={`${bodoniModa.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
         <Analytics />
       </body>
