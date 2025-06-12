@@ -79,7 +79,7 @@ export default async function AboutPage({ params }: Props) {
           {/* Left Side - Ivan's Image */}
           <div className="order-1 lg:order-1 relative overflow-hidden min-h-[50vh] lg:min-h-full">
             <Image
-              src="/ivan-2.jpg"
+              src="/main-2.jpg"
               alt="Ivan Saxophon personal portrait"
               fill
               className="object-cover object-center hero-image"
