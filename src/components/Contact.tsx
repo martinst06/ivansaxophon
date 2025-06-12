@@ -1,7 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Form from 'next/form';
 import { translations, Language } from '@/lib/translations';
+import { submitContactForm } from '@/lib/actions';
+import SubmitButton from './SubmitButton';
 
 interface ContactProps {
   lang: Language;
@@ -9,34 +12,6 @@ interface ContactProps {
 
 const Contact = ({ lang }: ContactProps) => {
   const t = translations[lang] || translations.en;
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    eventType: '',
-    performanceType: '',
-    guests: '',
-    place: '',
-    eventAddress: '',
-    eventDate: '',
-    durationType: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <section id="contact" className="py-16 sm:py-20 bg-charcoal">
@@ -52,7 +27,7 @@ const Contact = ({ lang }: ContactProps) => {
         {/* Contact Form - Centered */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm border-2 border-white/20 p-6 sm:p-8 shadow-xl">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <Form action={submitContactForm} className="space-y-8">
               
               {/* Personal Information Section */}
               <div>
@@ -71,8 +46,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="firstName"
                         name="firstName"
                         required
-                        value={formData.firstName}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.firstNamePlaceholder}
                       />
@@ -87,8 +60,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="lastName"
                         name="lastName"
                         required
-                        value={formData.lastName}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.lastNamePlaceholder}
                       />
@@ -105,8 +76,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="email"
                         name="email"
                         required
-                        value={formData.email}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.emailPlaceholder}
                       />
@@ -121,8 +90,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="phone"
                         name="phone"
                         required
-                        value={formData.phone}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.phonePlaceholder}
                       />
@@ -138,8 +105,6 @@ const Contact = ({ lang }: ContactProps) => {
                       id="address"
                       name="address"
                       required
-                      value={formData.address}
-                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                       placeholder={t.contact.form.addressPlaceholder}
                     />
@@ -166,16 +131,10 @@ const Contact = ({ lang }: ContactProps) => {
                             type="radio"
                             name="eventType"
                             value={type}
-                            checked={formData.eventType === type}
-                            onChange={handleChange}
                             required
-                            className="sr-only"
+                            className="sr-only peer"
                           />
-                          <div className={`w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 ${
-                            formData.eventType === type 
-                              ? 'bg-bronze text-white border-bronze' 
-                              : 'bg-white/10 text-white border-white/20 hover:border-bronze/50'
-                          }`}>
+                          <div className="w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 bg-white/10 text-white border-white/20 hover:border-bronze/50 peer-checked:bg-bronze peer-checked:text-white peer-checked:border-bronze">
                             {t.contact.form[type as keyof typeof t.contact.form]}
                           </div>
                         </label>
@@ -195,16 +154,10 @@ const Contact = ({ lang }: ContactProps) => {
                             type="radio"
                             name="performanceType"
                             value={type}
-                            checked={formData.performanceType === type}
-                            onChange={handleChange}
                             required
-                            className="sr-only"
+                            className="sr-only peer"
                           />
-                          <div className={`w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 ${
-                            formData.performanceType === type 
-                              ? 'bg-bronze text-white border-bronze' 
-                              : 'bg-white/10 text-white border-white/20 hover:border-bronze/50'
-                          }`}>
+                          <div className="w-full px-3 py-2 text-center text-sm border-2 transition-all duration-300 bg-white/10 text-white border-white/20 hover:border-bronze/50 peer-checked:bg-bronze peer-checked:text-white peer-checked:border-bronze">
                             {t.contact.form[type as keyof typeof t.contact.form]}
                           </div>
                         </label>
@@ -223,8 +176,6 @@ const Contact = ({ lang }: ContactProps) => {
                         name="guests"
                         min="1"
                         required
-                        value={formData.guests}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.guestsPlaceholder}
                       />
@@ -239,8 +190,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="place"
                         name="place"
                         required
-                        value={formData.place}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                         placeholder={t.contact.form.placePlaceholder}
                       />
@@ -256,8 +205,6 @@ const Contact = ({ lang }: ContactProps) => {
                       id="eventAddress"
                       name="eventAddress"
                       required
-                      value={formData.eventAddress}
-                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white placeholder-white/50 min-h-[48px]"
                       placeholder={t.contact.form.eventAddressPlaceholder}
                     />
@@ -274,8 +221,6 @@ const Contact = ({ lang }: ContactProps) => {
                           id="eventDate"
                           name="eventDate"
                           required
-                          value={formData.eventDate}
-                          onChange={handleChange}
                           className="w-full px-4 py-3 pr-12 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white min-h-[48px] h-[48px] [&::-webkit-calendar-picker-indicator]:opacity-0 appearance-none"
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -294,8 +239,6 @@ const Contact = ({ lang }: ContactProps) => {
                         id="durationType"
                         name="durationType"
                         required
-                        value={formData.durationType}
-                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 text-white min-h-[48px] h-[48px] appearance-none"
                         style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23cd7f32' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 0.75rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1rem' }}
                       >
@@ -317,8 +260,6 @@ const Contact = ({ lang }: ContactProps) => {
                       id="message"
                       name="message"
                       rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/10 border-2 border-white/20 focus:ring-2 focus:ring-bronze focus:border-bronze transition-all duration-300 resize-none text-white placeholder-white/50"
                       placeholder={t.contact.form.messagePlaceholder}
                     ></textarea>
@@ -326,13 +267,10 @@ const Contact = ({ lang }: ContactProps) => {
                 </div>
               </div>
 
-                            <button 
-                type="submit"
-                className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
-              >
+              <SubmitButton className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white py-3 px-6 font-medium transition-all duration-300 transform hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center text-sm sm:text-base">
                 {t.contact.form.sendMessage}
-              </button>
-            </form>
+              </SubmitButton>
+            </Form>
           </div>
         </div>
       </div>
