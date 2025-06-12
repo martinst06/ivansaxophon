@@ -58,7 +58,7 @@ const About = ({ lang }: AboutProps) => {
               {t.about.trialLessonBtn}
             </Link>
             <Link 
-              href="#offers"
+              href="/offer"
               className="inline-flex items-center border-2 border-charcoal text-charcoal hover:bg-charcoal hover:text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold transition-all duration-300 transform hover:-translate-y-0.5 text-base sm:text-lg min-w-[180px] sm:min-w-[200px] justify-center touch-manipulation"
             >
               {t.about.performanceBtn}

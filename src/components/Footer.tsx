@@ -10,16 +10,16 @@ const Footer = ({ lang }: FooterProps) => {
   const t = translations[lang] || translations.en;
 
   return (
-    <footer className="bg-charcoal text-white py-8 sm:py-12 lg:py-16">
+    <footer className="bg-charcoal text-white py-4 sm:py-6 lg:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
           
           {/* Brand Section */}
           <div className="text-center lg:text-left">
-            <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4">
-              Ivan <span className="text-bronze">Saxophone</span>
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-3 sm:mb-4">
+              IVAN <span className="text-bronze">SAXOPHON</span>
             </h3>
-            <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base max-w-md mx-auto lg:mx-0">
+            <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg max-w-md mx-auto lg:mx-0">
               {t.footer.description}
             </p>
             
@@ -63,7 +63,7 @@ const Footer = ({ lang }: FooterProps) => {
 
           {/* Partners Section */}
           <div className="text-center">
-            <h4 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-bronze">
+            <h4 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-bronze">
               {t.footer.partners}
             </h4>
             <div className="space-y-6 sm:space-y-8">
@@ -93,15 +93,16 @@ const Footer = ({ lang }: FooterProps) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block hover:opacity-80 transition-opacity duration-300 touch-manipulation"
-                  aria-label="Visit Matchspace Music profile"
+                  aria-label="Visit Ivan's Matchspace Music profile"
                 >
-                  <Image
-                    src="/matchspace_music_logo.svg"
-                    alt="Matchspace Music Partner"
-                    width={90}
-                    height={36}
-                    className="h-7 sm:h-8 w-auto filter brightness-0 invert"
-                  />
+                  <div>
+                    <div className="font-roboto font-bold text-white text-2xl leading-tight">
+                      matchspace
+                    </div>
+                    <div className="text-left font-roboto font-normal text-white text-2xl leading-tight -mt-2">
+                      music
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
@@ -109,29 +110,29 @@ const Footer = ({ lang }: FooterProps) => {
 
           {/* Contact Section */}
           <div className="text-center lg:text-right">
-            <h4 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-bronze">
+            <h4 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-bronze">
               {t.footer.connect}
             </h4>
             <div className="space-y-4 sm:space-y-5">
               <div>
-                <p className="text-white/60 text-sm sm:text-base mb-1 font-medium">
+                <p className="text-white/60 text-base sm:text-lg mb-1 font-medium">
                   {t.footer.email}:
                 </p>
                 <a 
                   href="mailto:info@ivansaxophon.ch"
-                  className="text-white hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation inline-block"
+                  className="text-white hover:text-bronze text-base sm:text-lg transition-colors duration-300 touch-manipulation inline-block"
                   aria-label="Send email to Ivan Saxophon"
                 >
                   info@ivansaxophon.ch
                 </a>
               </div>
               <div>
-                <p className="text-white/60 text-sm sm:text-base mb-1 font-medium">
+                <p className="text-white/60 text-base sm:text-lg mb-1 font-medium">
                   {t.footer.phone}:
                 </p>
                 <a 
                   href="tel:+41763761906"
-                  className="text-white hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation inline-block"
+                  className="text-white hover:text-bronze text-base sm:text-lg transition-colors duration-300 touch-manipulation inline-block"
                   aria-label="Call Ivan Saxophon"
                 >
                   +41 (76) 376 19 06
@@ -144,20 +145,20 @@ const Footer = ({ lang }: FooterProps) => {
         {/* Divider */}
         <div className="border-t border-white/20 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
-            <p className="text-white/60 text-xs sm:text-sm text-center sm:text-left order-2 sm:order-1">
+            <p className="text-white/60 text-sm sm:text-base text-center sm:text-left order-2 sm:order-1">
               © 2025 {t.footer.copyright}
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 order-1 sm:order-2">
               <a 
                 href="#" 
-                className="text-white/60 hover:text-bronze text-xs sm:text-sm transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
+                className="text-white/60 hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
                 aria-label="Privacy Policy"
               >
                 {t.footer.privacyPolicy}
               </a>
               <a 
                 href="#" 
-                className="text-white/60 hover:text-bronze text-xs sm:text-sm transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
+                className="text-white/60 hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
                 aria-label="Terms of Service"
               >
                 {t.footer.termsOfService}
