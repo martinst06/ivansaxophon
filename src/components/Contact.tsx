@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Form from 'next/form';
 import { translations, Language } from '@/lib/translations';
 import { submitContactForm } from '@/lib/actions';
@@ -12,6 +13,39 @@ interface ContactProps {
 
 const Contact = ({ lang }: ContactProps) => {
   const t = translations[lang] || translations.en;
+  const searchParams = useSearchParams();
+  const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  useEffect(() => {
+    const success = searchParams.get('success');
+    const error = searchParams.get('error');
+
+    if (success === 'true') {
+      setNotification({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully. I will get back to you within 24 hours.'
+      });
+      // Clear the URL parameters after showing the message
+      window.history.replaceState({}, '', window.location.pathname);
+    } else if (error === 'true') {
+      setNotification({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again or contact me directly.'
+      });
+      // Clear the URL parameters after showing the message
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, [searchParams]);
+
+  // Auto-hide notification after 8 seconds
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification(null);
+      }, 8000);
+      return () => clearTimeout(timer);
+    }
+  }, [notification]);
 
   return (
     <section id="contact" className="py-16 sm:py-20 bg-charcoal">
@@ -23,6 +57,40 @@ const Contact = ({ lang }: ContactProps) => {
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-bronze mx-auto"></div>
         </div>
+
+        {/* Notification */}
+        {notification && (
+          <div className={`max-w-3xl mx-auto mb-8 p-4 rounded-lg border-2 transition-all duration-500 ${
+            notification.type === 'success' 
+              ? 'bg-green-900/20 border-green-500/50 text-green-100' 
+              : 'bg-red-900/20 border-red-500/50 text-red-100'
+          }`}>
+            <div className="flex items-center space-x-3">
+              <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center ${
+                notification.type === 'success' ? 'bg-green-500' : 'bg-red-500'
+              }`}>
+                {notification.type === 'success' ? (
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                )}
+              </div>
+              <p className="text-sm sm:text-base font-medium">{notification.message}</p>
+              <button 
+                onClick={() => setNotification(null)}
+                className="ml-auto flex-shrink-0 text-white/70 hover:text-white transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Contact Form - Centered */}
         <div className="max-w-3xl mx-auto">

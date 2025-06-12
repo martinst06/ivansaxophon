@@ -1,5 +1,6 @@
 'use server'
 
+import { redirect } from 'next/navigation'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -36,12 +37,12 @@ export async function submitContactForm(formData: FormData) {
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
       <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <h1 style="color: #cd7f32; text-align: center; margin-bottom: 30px; font-size: 28px;">
-          🎷 New Contact Form Submission
+          New Contact Form Submission
         </h1>
         
         <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
           <h2 style="color: #333; margin-top: 0; border-bottom: 2px solid #cd7f32; padding-bottom: 10px;">
-            👤 Personal Information
+            Personal Information
           </h2>
           <p><strong>Name:</strong> ${contactData.firstName} ${contactData.lastName}</p>
           <p><strong>Email:</strong> <a href="mailto:${contactData.email}">${contactData.email}</a></p>
@@ -51,7 +52,7 @@ export async function submitContactForm(formData: FormData) {
 
         <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
           <h2 style="color: #333; margin-top: 0; border-bottom: 2px solid #cd7f32; padding-bottom: 10px;">
-            🎉 Event Details
+            Event Details
           </h2>
           <p><strong>Event Type:</strong> ${contactData.eventType}</p>
           <p><strong>Performance Type:</strong> ${contactData.performanceType}</p>
@@ -87,32 +88,29 @@ export async function submitContactForm(formData: FormData) {
   `
 
   try {
-    // Send email using Resend
-    const { data, error } = await resend.emails.send({
+    // Send notification email to business
+    const { error } = await resend.emails.send({
       from: process.env.EMAIL_FROM || 'contact@ivansaxophon.ch',
       to: [process.env.EMAIL_TO || 'info@ivansaxophon.ch'],
-      subject: `🎷 New Booking Inquiry from ${contactData.firstName} ${contactData.lastName}`,
+      subject: `New Booking Inquiry from ${contactData.firstName} ${contactData.lastName}`,
       html: emailHtml,
       replyTo: contactData.email,
     })
 
     if (error) {
-      console.error('Error sending email:', error)
       throw new Error('Failed to send email')
     }
-
-    console.log('Email sent successfully:', data)
     
     // Optionally send a confirmation email to the customer
     await resend.emails.send({
       from: process.env.EMAIL_FROM || 'contact@ivansaxophon.ch',
       to: [contactData.email],
-      subject: '🎷 Thank you for your inquiry - Ivan Saxophon',
+      subject: 'Thank you for your inquiry - Ivan Saxophon',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
           <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <h1 style="color: #cd7f32; text-align: center; margin-bottom: 30px;">
-              🎷 Thank You for Your Inquiry!
+              Thank You for Your Inquiry!
             </h1>
             
             <p>Dear ${contactData.firstName} ${contactData.lastName},</p>
@@ -148,7 +146,7 @@ export async function submitContactForm(formData: FormData) {
             
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
               <p style="color: #666; font-size: 14px;">
-                🎷 Creating unforgettable musical experiences for your special events
+                Creating unforgettable musical experiences for your special events
               </p>
             </div>
           </div>
@@ -156,8 +154,11 @@ export async function submitContactForm(formData: FormData) {
       `,
     })
 
-  } catch (error) {
-    console.error('Failed to send email:', error)
-    throw new Error('Failed to send email. Please try again.')
+    // Redirect with success message
+    redirect(`/en/offer?success=true`)
+
+  } catch {
+    // Redirect with error message
+    redirect(`/en/offer?error=true`)
   }
 } 
