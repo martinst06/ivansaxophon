@@ -1,8 +1,10 @@
 const config = {
   plugins: [
     ["@tailwindcss/postcss", {
-      // Force use of PostCSS instead of LightningCSS
+      // Explicitly disable lightningcss and use PostCSS instead
       lightningcss: false,
+      // Add fallback configuration
+      optimize: false,
     }],
   ],
 };
