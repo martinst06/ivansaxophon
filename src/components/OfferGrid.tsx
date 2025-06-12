@@ -272,8 +272,8 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
               </p>
 
               {/* CTA Button */}
-              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-medium py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
-                Learn More About {offer.title}
+              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-bold text-lg py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
+                {t.offers.downloadRepertoire}
               </button>
             </div>
           ))}
