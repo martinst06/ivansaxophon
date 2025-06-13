@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
@@ -127,7 +127,7 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
                 spaceBetween: 60,
               },
             }}
-            onSlideChange={(swiper) => {}}
+            onSlideChange={() => {}}
             className="pb-16 sm:pb-20"
           >
             {carouselImages.map((image, index) => (
