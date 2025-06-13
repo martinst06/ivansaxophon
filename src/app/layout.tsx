@@ -23,7 +23,6 @@ export const metadata: Metadata = {
       { url: '/favicon.ico' }
     ],
     shortcut: '/icon.svg',
-    apple: '/icon.svg',
   },
   keywords: [
     // Primary Keywords - German
