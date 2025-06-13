@@ -6,6 +6,11 @@ import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function submitContactForm(formData: FormData) {
+  // Validate environment variables
+  if (!process.env.NEXT_PUBLIC_EMAIL_FROM || !process.env.NEXT_PUBLIC_EMAIL_TO) {
+    throw new Error('Email configuration is missing')
+  }
+
   // Extract form data
   const contactData = {
     firstName: formData.get('firstName') as string,
@@ -90,8 +95,8 @@ export async function submitContactForm(formData: FormData) {
   try {
     // Send notification email to business
     const { error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM || 'contact@ivansaxophon.ch',
-      to: [process.env.EMAIL_TO || 'info@ivansaxophon.ch'],
+      from: process.env.NEXT_PUBLIC_EMAIL_FROM || 'info@ivansaxophon.ch',
+      to: [process.env.NEXT_PUBLIC_EMAIL_TO || 'info@ivansaxophon.ch'],
       subject: `New Booking Inquiry from ${contactData.firstName} ${contactData.lastName}`,
       html: emailHtml,
       replyTo: contactData.email,
