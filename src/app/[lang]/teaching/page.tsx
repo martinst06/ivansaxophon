@@ -1,7 +1,6 @@
 'use server';
 
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { translations, Language } from '@/lib/translations';
