@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'website',
         images: [
           {
-            url: '/ivan.png',
+            url: '/bg-hero.jpg',
             width: 1200,
             height: 630,
             alt: 'Ivan Saxophon Medien Galerie',
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: '/ivan.png',
+          url: '/bg-hero.jpg',
           width: 1200,
           height: 630,
           alt: 'Ivan Saxophon Media Gallery',

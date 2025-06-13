@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'website',
         images: [
           {
-            url: '/ivan.png',
+            url: '/bg-hero.jpg',
             width: 1200,
             height: 630,
             alt: 'Ivan Saxophon - Professioneller Saxophonist in Baselland, Schweiz',
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'website',
       images: [
         {
-          url: '/ivan.png',
+          url: '/bg-hero.jpg',
           width: 1200,
           height: 630,
           alt: 'Ivan Saxophon - Professional Saxophonist performing in Baselland, Switzerland',

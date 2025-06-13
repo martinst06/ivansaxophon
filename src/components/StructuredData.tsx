@@ -11,17 +11,16 @@ export default function StructuredData({ lang }: StructuredDataProps) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "MusicTeacher",
-    "@id": "https://ivansaxophon.ch/#business",
-    "name": "Ivan Saxophon - Professional Saxophonist",
+    "@id": "https://ivansaxophon.ch",
+    "name": isGerman ? "Ivan Saxophon - Professioneller Saxophonist" : "Ivan Saxophon - Professional Saxophonist",
     "alternateName": "Ivan Saxophon",
     "description": isGerman 
       ? "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus."
       : "Professional saxophonist in Baselland, Switzerland. Premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all levels.",
     "image": [
-      "https://ivansaxophon.ch/ivan.png"
-      // "https://ivansaxophon.ch/ivan-saxophon-performance.jpg" // TODO: Add when photo available
+      "https://ivansaxophon.ch/bg-hero.jpg"
     ],
-    // "logo": "https://ivansaxophon.ch/logo.png", // TODO: Add when logo available
+    "logo": "https://ivansaxophon.ch/icon.svg",
     "url": "https://ivansaxophon.ch",
     "telephone": "+41763761906",
     "email": "info@ivansaxophon.ch",
@@ -30,7 +29,7 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       "streetAddress": "Baselland",
       "addressLocality": "Baselland",
       "addressRegion": "Basel-Landschaft", 
-      "postalCode": "4000",
+      "postalCode": "4410",
       "addressCountry": "CH"
     },
     "geo": {
@@ -57,15 +56,6 @@ export default function StructuredData({ lang }: StructuredDataProps) {
         "address": {
           "@type": "PostalAddress",
           "postalCode": "4000",
-          "addressCountry": "CH"
-        }
-      },
-      {
-        "@type": "City",
-        "name": "Baselland",
-        "address": {
-          "@type": "PostalAddress",
-          "postalCode": "4410",
           "addressCountry": "CH"
         }
       },
@@ -99,24 +89,27 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Professional Saxophone Services",
+      "name": isGerman ? "Professionelle Saxophon-Dienstleistungen" : "Professional Saxophone Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Hochzeits-Saxophon Auftritte",
-            "description": "Elegante Saxophon-Musik für Hochzeitszeremonien, Cocktailstunden und Empfänge in der ganzen Schweiz",
+            "name": isGerman ? "Hochzeits-Saxophon Auftritte" : "Wedding Saxophone Performances",
+            "description": isGerman 
+              ? "Elegante Saxophon-Musik für Hochzeitszeremonien, Cocktailstunden und Empfänge in der ganzen Schweiz"
+              : "Elegant saxophone music for wedding ceremonies, cocktail hours, and receptions throughout Switzerland",
             "category": "Entertainment Services"
-            // wedding pricing was here
           }
         },
         {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "Service",
-            "name": "Firmenveranstaltung Musik",
-            "description": "Professionelle Saxophon-Unterhaltung für Firmenveranstaltungen, Konferenzen und Geschäftstreffen",
+            "name": isGerman ? "Firmenveranstaltung Musik" : "Corporate Event Music",
+            "description": isGerman 
+              ? "Professionelle Saxophon-Unterhaltung für Firmenveranstaltungen, Konferenzen und Geschäftstreffen"
+              : "Professional saxophone entertainment for corporate events, conferences, and business meetings",
             "category": "Corporate Entertainment"
           }
         },
@@ -124,9 +117,13 @@ export default function StructuredData({ lang }: StructuredDataProps) {
           "@type": "Offer",
           "itemOffered": {
             "@type": "EducationalService",
-            "name": "Professioneller Saxophon-Unterricht",
-            "description": "Expertensaxophon-Unterricht für alle Niveaus von Anfänger bis Fortgeschritten",
-            "educationalLevel": ["Anfänger", "Mittelstufe", "Fortgeschritten"],
+            "name": isGerman ? "Professioneller Saxophon-Unterricht" : "Professional Saxophone Lessons",
+            "description": isGerman 
+              ? "Expertensaxophon-Unterricht für alle Niveaus von Anfänger bis Fortgeschritten"
+              : "Expert saxophone lessons for all levels from beginner to advanced",
+            "educationalLevel": isGerman 
+              ? ["Anfänger", "Mittelstufe", "Fortgeschritten"]
+              : ["Beginner", "Intermediate", "Advanced"],
             "category": "Music Education"
           },
           "priceRange": "50-80 CHF",
@@ -138,8 +135,6 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       "Mo-Fr 18:00-21:00",
       "Sa 10:00-16:00"
     ],
-    // "paymentAccepted": ["Cash", "Bank Transfer", "Credit Card"],
-    // "currenciesAccepted": "CHF",
     "serviceArea": {
       "@type": "GeoCircle",
       "geoMidpoint": {
@@ -151,43 +146,24 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     },
     "sameAs": [
       "https://www.instagram.com/ivan.saxophon/"
-    ]
-    // TODO: Add real reviews after setting up Google Business Profile
-    // "aggregateRating": {
-    //   "@type": "AggregateRating",
-    //   "ratingValue": "4.9",
-    //   "reviewCount": "27",
-    //   "bestRating": "5",
-    //   "worstRating": "1"
-    // },
-    // "review": [
-    //   {
-    //     "@type": "Review",
-    //     "author": {
-    //       "@type": "Person",
-    //       "name": "Real Customer Name"
-    //     },
-    //     "reviewRating": {
-    //       "@type": "Rating",
-    //       "ratingValue": "5",
-    //       "bestRating": "5"
-    //     },
-    //     "reviewBody": "Real customer review here..."
-    //   }
-    // ]
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ivansaxophon.ch"
+    }
   };
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://ivansaxophon.ch/about-me",
+    "@id": "https://ivansaxophon.ch/about",
     "name": "Ivan Saxophon",
     "givenName": "Ivan",
     "jobTitle": isGerman ? "Professioneller Saxophonist & Musiklehrer" : "Professional Saxophonist & Music Teacher",
     "description": isGerman 
       ? "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa."
       : "Professional saxophonist specializing in jazz, classical, and contemporary music. Based in Baselland, Switzerland, with performances across Europe.",
-    "image": "https://ivansaxophon.ch/ivan.png",
+    "image": "https://ivansaxophon.ch/bg-hero.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Baselland",
@@ -214,7 +190,7 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     ],
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Professioneller Saxophonist",
+      "name": isGerman ? "Professioneller Saxophonist" : "Professional Saxophonist",
       "occupationLocation": {
         "@type": "City",
         "name": "Baselland, Switzerland"
@@ -232,20 +208,26 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     "performerIn": {
       "@type": "MusicGroup",
       "name": "Saxocoustics Unplugged"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ivansaxophon.ch/about"
     }
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://ivansaxophon.ch/#service",
-    "name": "Professionelle Saxophon-Dienstleistungen",
-    "serviceType": "Musik-Auftritte und -Unterricht",
-    "description": "Premium Saxophon Musik und Saxophon Unterricht in der ganzen Schweiz",
+    "@id": "https://ivansaxophon.ch/offer",
+    "name": isGerman ? "Professionelle Saxophon-Dienstleistungen" : "Professional Saxophone Services",
+    "serviceType": isGerman ? "Musik-Auftritte und -Unterricht" : "Music Performances and Lessons",
+    "description": isGerman 
+      ? "Premium Saxophon Musik und Saxophon Unterricht in der ganzen Schweiz"
+      : "Premium saxophone music and saxophone lessons throughout Switzerland",
     "provider": {
       "@type": "Person",
       "name": "Ivan Saxophon",
-      "@id": "https://ivansaxophon.ch/#person"
+      "@id": "https://ivansaxophon.ch/about"
     },
     "areaServed": {
       "@type": "Country",
@@ -254,51 +236,61 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     "category": "Entertainment & Music Education",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Saxophone Services",
+      "name": isGerman ? "Saxophon-Dienstleistungen" : "Saxophone Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Wedding Saxophone Performance",
-            "description": "Elegant saxophone music for wedding ceremonies, cocktail hours, and receptions"
+            "name": isGerman ? "Hochzeits-Saxophon Auftritte" : "Wedding Saxophone Performances",
+            "description": isGerman 
+              ? "Elegante Saxophon-Musik für Hochzeitszeremonien, Cocktailstunden und Empfänge"
+              : "Elegant saxophone music for wedding ceremonies, cocktail hours, and receptions"
           }
         },
         {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "EducationalService",
-            "name": "Private Saxophone Lessons",
-            "description": "One-on-one saxophone instruction tailored to your skill level and musical goals",
-            "educationalLevel": ["Beginner", "Intermediate", "Advanced"]
+            "name": isGerman ? "Privater Saxophon-Unterricht" : "Private Saxophone Lessons",
+            "description": isGerman 
+              ? "Einzelunterricht im Saxophon, angepasst an Ihr Können und Ihre musikalischen Ziele"
+              : "One-on-one saxophone instruction tailored to your skill level and musical goals",
+            "educationalLevel": isGerman 
+              ? ["Anfänger", "Mittelstufe", "Fortgeschritten"]
+              : ["Beginner", "Intermediate", "Advanced"]
           }
         }
       ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ivansaxophon.ch/offer"
     }
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://ivansaxophon.ch/#website",
-    "name": "Ivan Saxophon - Professioneller Saxophonist Schweiz",
+    "@id": "https://ivansaxophon.ch",
+    "name": isGerman 
+      ? "Ivan Saxophon - Professioneller Saxophonist Schweiz"
+      : "Ivan Saxophon - Professional Saxophonist Switzerland",
     "url": "https://ivansaxophon.ch",
-    "description": "Professioneller Saxophonist in Baselland, Schweiz bietet Premium Live-Auftritte und Expertensaxophon-Unterricht",
+    "description": isGerman 
+      ? "Professioneller Saxophonist in Baselland, Schweiz bietet Premium Live-Auftritte und Expertensaxophon-Unterricht"
+      : "Professional saxophonist in Baselland, Switzerland offering premium live performances and expert saxophone lessons",
     "publisher": {
       "@type": "Person",
       "name": "Ivan Saxophon",
-      "@id": "https://ivansaxophon.ch/#person"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://ivansaxophon.ch/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
+      "@id": "https://ivansaxophon.ch/about"
     },
     "mainEntity": {
-      "@id": "https://ivansaxophon.ch/#business"
+      "@id": "https://ivansaxophon.ch"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ivansaxophon.ch"
     }
   };
 
@@ -309,16 +301,86 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
+        "name": isGerman ? "Startseite" : "Home",
         "item": "https://ivansaxophon.ch"
-      },
+      }
+    ]
+  };
+
+  // Add additional breadcrumb items based on the current page
+  if (lang === 'de') {
+    breadcrumbSchema.itemListElement.push(
       {
         "@type": "ListItem",
         "position": 2,
+        "name": "Über Mich",
+        "item": "https://ivansaxophon.ch/about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Angebot",
+        "item": "https://ivansaxophon.ch/offer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Unterricht",
+        "item": "https://ivansaxophon.ch/teaching"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Medien",
+        "item": "https://ivansaxophon.ch/media"
+      }
+    );
+  } else {
+    breadcrumbSchema.itemListElement.push(
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://ivansaxophon.ch/about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Offer",
+        "item": "https://ivansaxophon.ch/offer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
         "name": "Lessons",
         "item": "https://ivansaxophon.ch/teaching"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Media",
+        "item": "https://ivansaxophon.ch/media"
       }
-    ]
+    );
+  }
+
+  const mediaGallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "MediaGallery",
+    "@id": "https://ivansaxophon.ch/media",
+    "name": isGerman ? "Saxophon Auftritte und Medien" : "Saxophone Performances and Media",
+    "description": isGerman 
+      ? "Eine Sammlung von Saxophon-Auftritten, Videos und Fotos von Live-Performances"
+      : "A collection of saxophone performances, videos, and photos from live shows",
+    "publisher": {
+      "@type": "Person",
+      "name": "Ivan Saxophon",
+      "@id": "https://ivansaxophon.ch/about"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ivansaxophon.ch/media"
+    }
   };
 
   return (
@@ -351,6 +413,12 @@ export default function StructuredData({ lang }: StructuredDataProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(mediaGallerySchema),
         }}
       />
     </>

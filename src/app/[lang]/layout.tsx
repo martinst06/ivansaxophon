@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         siteName: 'Ivan Saxophon - Professioneller Saxophonist',
         locale: 'de_CH',
         type: 'website',
-        images: [{ url: '/ivan.png', width: 1200, height: 630, alt: 'Ivan Saxophon - Professioneller Saxophonist in Baselland, Schweiz' }],
+        images: [{ url: '/bg-hero.jpg', width: 1200, height: 630, alt: 'Ivan Saxophon - Professioneller Saxophonist in Baselland, Schweiz' }],
       },
       other: {
         'geo.region': 'CH-BL',
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: 'Ivan Saxophon - Professional Saxophonist',
       locale: 'en_US',
       type: 'website',
-      images: [{ url: '/ivan.png', width: 1200, height: 630, alt: 'Ivan Saxophon - Professional Saxophonist in Baselland, Switzerland' }],
+      images: [{ url: '/bg-hero.jpg', width: 1200, height: 630, alt: 'Ivan Saxophon - Professional Saxophonist in Baselland, Switzerland' }],
     },
     other: {
       'geo.region': 'CH-BL',
