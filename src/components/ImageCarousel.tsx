@@ -17,8 +17,6 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel = ({ lang }: ImageCarouselProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   // Array of all carousel images - memoized for performance
   const carouselImages = useMemo(() => [
     {
@@ -129,7 +127,7 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
                 spaceBetween: 60,
               },
             }}
-            onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
+            onSlideChange={(swiper) => {}}
             className="pb-16 sm:pb-20"
           >
             {carouselImages.map((image, index) => (
