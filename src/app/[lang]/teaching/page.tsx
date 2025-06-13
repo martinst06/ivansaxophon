@@ -11,16 +11,6 @@ type Props = {
   params: Promise<{ lang: string }>
 }
 
-// Price calculation function
-const calculatePrice = (packageSize: string, duration: string): number => {
-  const basePrice = {
-    '5': { '30': 40, '60': 70, '90': 100 },
-    '10': { '30': 35, '60': 65, '90': 95 },
-    '20': { '30': 30, '60': 60, '90': 90 }
-  };
-  return basePrice[packageSize as keyof typeof basePrice][duration as keyof typeof basePrice['5']];
-};
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const isGerman = lang === 'de';

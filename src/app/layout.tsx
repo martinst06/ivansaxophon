@@ -177,6 +177,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={bodoniModa.variable} prefix="og: http://ogp.me/ns#">
       <head>
+        {/* Preload favicon */}
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="preload" as="image" href="/icon.svg" type="image/svg+xml" />
+        
         {/* Preload critical hero images */}
         <link rel="preload" as="image" href="/bg-hero.jpg" />
         <link rel="preload" as="image" href="/main-1.jpg" />

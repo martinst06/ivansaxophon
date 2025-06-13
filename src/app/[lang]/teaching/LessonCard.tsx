@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import type { Language } from '@/lib/translations';
+import type { Language, translations } from '@/lib/translations';
 
 // Price calculation function
 const calculatePrice = (packageSize: string, duration: string): number => {
@@ -17,7 +17,7 @@ const calculatePrice = (packageSize: string, duration: string): number => {
 type LessonCardProps = {
   type: 'kids' | 'adults';
   lang: Language;
-  translations: any; // TODO: Add proper type
+  translations: typeof translations.en;
 }
 
 export default function LessonCard({ type, lang, translations: t }: LessonCardProps) {
