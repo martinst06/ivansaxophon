@@ -19,10 +19,34 @@ export default function LessonCard({ type, lang, translations: t }: LessonCardPr
     }
   };
 
+  // Create email body based on lesson type
+  const getEmailBody = () => {
+    if (lang === 'de') {
+      const lessonType = type === 'kids' ? 'Kinder' : 'Erwachsene';
+      return `Hallo Ivan
+
+Ich interessiere mich für Saxophonunterricht für ${lessonType}.
+
+Bitte kontaktieren Sie mich.
+
+Freundliche Grüsse`;
+    } else {
+      const lessonType = type === 'kids' ? 'kids' : 'adults';
+      return `Hi Ivan
+
+I'm interested in saxophone lessons for ${lessonType}.
+
+Please contact me.
+
+Kind regards`;
+    }
+  };
+
   // Get email from environment variable or fallback
   const contactEmail = process.env.NEXT_PUBLIC_EMAIL_TO;
   const subject = encodeURIComponent(getSubject());
-  const mailtoLink = `mailto:${contactEmail}?subject=${subject}`;
+  const body = encodeURIComponent(getEmailBody());
+  const mailtoLink = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 
   return (
     <div className="bg-white border-2 border-bronze p-6 sm:p-8 shadow-sm hover:shadow-md hover:border-bronze/50 transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
