@@ -271,10 +271,12 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
                 {offer.description}
               </p>
 
-              {/* CTA Button */}
-              <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-bold text-lg py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
-                {t.offers.downloadRepertoire}
-              </button>
+              {/* CTA Button - Only show for cards with audioFiles */}
+              {offer.audioFiles && (
+                <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-bold text-lg py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
+                  {t.offers.downloadRepertoire}
+                </button>
+              )}
             </div>
           ))}
         </div>
