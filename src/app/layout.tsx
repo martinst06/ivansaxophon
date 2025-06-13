@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   description: "Professioneller Saxophonist in Basel & Baselland. ✓ Saxophon-Unterricht ✓ Live-Musik für Hochzeiten & Events ✓ 10+ Jahre Erfahrung ✓ Flexible Termine. Jetzt Saxophon-Stunden buchen!",
   icons: {
     icon: [
-      { url: '/app/icon.svg', type: 'image/svg+xml' },
-      { url: '/app/favicon.ico' }
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' }
     ],
-    shortcut: '/app/icon.svg',
-    apple: '/app/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
   keywords: [
     // Primary Keywords - German
