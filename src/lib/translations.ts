@@ -20,32 +20,25 @@ export const translations = {
       titleAccent: "Lessons",
       subtitle: "Learn from a professional saxophonist with personalized instruction tailored to your skill level and musical goals.",
       types: {
-        beginner: {
-          title: "Beginner Lessons",
-          description: "Perfect for those just starting their saxophone journey. Learn proper breathing, posture, and basic techniques.",
-          features: ["Instrument basics", "Reading music", "First songs", "Proper technique"],
+        kids: {
+          title: "Kids Lessons",
+          description: "During this course, we learn how to properly blow into the saxophone, hold it correctly, and occasionally some music theory so we can play the right notes. For those who already master these basics, we play the first etude, the first scale, and desired pieces.",
+          features: ["Age-appropriate teaching methods", "Basic music theory", "First songs", "Performance opportunities"],
+          duration: "30 minutes",
+          price: "From 40 CHF"
+        },
+        adults: {
+          title: "Adult Lessons",
+          description: "Whether as a hobby, a break from everyday life, preparation for performances, or simply for the love of music – the saxophone fits every occasion. This course is for everyone who wants to start a new adventure today and reach their goals.",
+          features: ["Flexible scheduling", "All skill levels welcome", "Multiple musical styles", "Performance coaching"],
           duration: "45 minutes",
-          price: "From 50 CHF"
-        },
-        intermediate: {
-          title: "Intermediate Lessons", 
-          description: "For students ready to expand their skills and explore different musical styles and techniques.",
-          features: ["Advanced techniques", "Jazz improvisation", "Music theory", "Performance skills"],
-          duration: "60 minutes",
           price: "From 60 CHF"
-        },
-        advanced: {
-          title: "Advanced Lessons",
-          description: "Professional-level instruction for serious musicians looking to master the saxophone.",
-          features: ["Master techniques", "Performance coaching", "Recording preparation", "Career guidance"],
-          duration: "60 minutes", 
-          price: "From 80 CHF"
         }
       },
       whatYoullLearn: "What You'll Learn",
       duration: "Duration",
       price: "Price",
-      bookNow: "Book Now",
+      bookNow: "Contact for Private Lessons",
       whyChoose: {
         title: "Why Choose My Lessons?",
         reasons: [
@@ -187,32 +180,25 @@ export const translations = {
       titleAccent: "Unterricht",
       subtitle: "Lernen Sie von einem professionellen Saxophonisten mit personalisiertem Unterricht, der auf Ihr Spielniveau und Ihre musikalischen Ziele zugeschnitten ist.",
       types: {
-        beginner: {
-          title: "Anfänger-Unterricht",
-          description: "Perfekt für diejenigen, die gerade ihre Saxophon-Reise beginnen. Lernen Sie richtige Atmung, Haltung und grundlegende Techniken.",
-          features: ["Instrument-Grundlagen", "Notenlesen", "Erste Lieder", "Richtige Technik"],
+        kids: {
+          title: "Kinder-Unterricht",
+          description: "Während dieses Kurses lernen wir, wie man richtig ins Saxophon bläst, es korrekt hält und ab und zu etwas Musiktheorie, damit wir die richtigen Noten spielen können. Für alle, die das bereits beherrschen, spielen wir die erste Etüde, die erste Tonleiter und gewünschte Stücke.",
+          features: ["Altersgerechte Lehrmethoden", "Grundlegende Musiktheorie", "Erste Lieder", "Aufführungsmöglichkeiten"],
+          duration: "30 Minuten",
+          price: "Ab 40 CHF"
+        },
+        adults: {
+          title: "Erwachsenen-Unterricht",
+          description: "Ob als Hobby, Abwechslung vom Alltag, Vorbereitung für Auftritte oder einfach aus Liebe zur Musik – das Saxophon passt zu jeder Gelegenheit. Dieser Kurs ist für alle, die ab heute ein neues Abenteuer beginnen und ihr Ziel erreichen möchten.",
+          features: ["Flexible Terminplanung", "Alle Niveaus willkommen", "Verschiedene Musikstile", "Aufführungs-Coaching"],
           duration: "45 Minuten",
-          price: "Ab 50 CHF"
-        },
-        intermediate: {
-          title: "Fortgeschrittenen-Unterricht",
-          description: "Für Schüler, die bereit sind, ihre Fähigkeiten zu erweitern und verschiedene musikalische Stile und Techniken zu erkunden.",
-          features: ["Erweiterte Techniken", "Jazz-Improvisation", "Musiktheorie", "Aufführungsfähigkeiten"],
-          duration: "60 Minuten",
           price: "Ab 60 CHF"
-        },
-        advanced: {
-          title: "Profi-Unterricht",
-          description: "Unterricht auf professionellem Niveau für ernsthafte Musiker, die das Saxophon meistern möchten.",
-          features: ["Meister-Techniken", "Aufführungs-Coaching", "Aufnahme-Vorbereitung", "Karriere-Beratung"],
-          duration: "60 Minuten",
-          price: "Ab 80 CHF"
         }
       },
       whatYoullLearn: "Was Sie lernen werden",
       duration: "Dauer",
       price: "Preis",
-      bookNow: "Jetzt buchen",
+      bookNow: "Kontakt für Privatunterricht",
       whyChoose: {
         title: "Warum meinen Unterricht wählen?",
         reasons: [

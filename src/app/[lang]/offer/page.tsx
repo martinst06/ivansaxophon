@@ -38,7 +38,7 @@ export default async function OfferPage({ params }: Props) {
         {/* Hero Section */}
         <section className="min-h-screen flex items-start justify-center relative overflow-hidden hero-optimized above-fold">
           <Image
-            src="/main-4.jpg"
+            src="/main-3.jpg"
             alt="Ivan Saxophon professional performance"
             fill
             className="object-cover object-center hero-image"

@@ -71,14 +71,14 @@ export async function submitContactForm(formData: FormData) {
         ${contactData.message ? `
         <div style="background-color: #f8f8f8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
           <h2 style="color: #333; margin-top: 0; border-bottom: 2px solid #cd7f32; padding-bottom: 10px;">
-            💬 Additional Message
+            Additional Message
           </h2>
           <p style="font-style: italic; line-height: 1.6;">"${contactData.message}"</p>
         </div>
         ` : ''}
 
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-          <p style="color: #666; font-size: 14px;">
+          <p style="color: #665; font-size: 14px;">
             This inquiry was submitted through the Ivan Saxophon contact form.<br>
             Please respond promptly to provide excellent customer service.
           </p>
@@ -145,7 +145,7 @@ export async function submitContactForm(formData: FormData) {
             </p>
             
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-              <p style="color: #666; font-size: 14px;">
+              <p style="color: #665; font-size: 14px;">
                 Creating unforgettable musical experiences for your special events
               </p>
             </div>
