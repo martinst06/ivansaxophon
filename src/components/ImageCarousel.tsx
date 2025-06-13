@@ -181,7 +181,9 @@ const ImageCarousel = ({ lang }: ImageCarouselProps) => {
         {/* Image Counter */}
         <div className="text-center mt-6 sm:mt-8">
           <span className="text-sm sm:text-base text-charcoal/60">
-            {currentSlide + 1} {lang === 'de' ? 'von' : 'of'} {carouselImages.length}
+            {lang === 'de' 
+              ? 'Für mehr Fotos und Videos folge mir auf meinen Social Media Kanälen!'
+              : 'For more photos and videos follow me on my social media accounts!'}
           </span>
         </div>
       </div>
