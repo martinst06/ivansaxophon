@@ -69,7 +69,7 @@ export default async function TeachingPage({ params }: Props) {
         </section>
 
         {/* Lesson Types */}
-        <section className="py-8 sm:py-12 bg-white">
+        <section className="bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <LessonCard 
@@ -85,27 +85,7 @@ export default async function TeachingPage({ params }: Props) {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-16 sm:py-20 bg-charcoal">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4 sm:mb-6 leading-tight">
-              {t.lessons.cta.title}
-            </h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto">
-              {t.lessons.cta.subtitle}
-            </p>
-            <Link
-              href={`/${typedLang}#contact`}
-              className="inline-flex items-center border-2 border-bronze text-bronze hover:bg-bronze hover:text-white px-8 sm:px-12 py-4 font-medium transition-all duration-300 transform hover:-translate-y-0.5 text-lg"
-            >
-              {t.lessons.cta.button}
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </section>
+        <div className="bg-white py-12 sm:py-16"></div>
       </main>
       <Footer lang={typedLang} />
     </>
