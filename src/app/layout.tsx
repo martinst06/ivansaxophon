@@ -89,14 +89,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://ivansaxophon.ch'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en': '/en',
-      'de': '/de',
-      'x-default': '/'
-    },
-  },
   openGraph: {
     title: "Saxophon Basel & Baselland | Professioneller Saxophonist & Unterricht",
     description: "Professioneller Saxophonist & Saxophon-Lehrer in Basel. ✓ Individueller Unterricht ✓ Live-Musik für Events ✓ Langjährige Erfahrung. Kontaktieren Sie mich für Ihr Event oder Saxophon-Unterricht!",

@@ -11,18 +11,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const isGerman = lang === 'de';
+  const baseUrl = 'https://ivansaxophon.ch';
   
   if (isGerman) {
     return {
       title: 'Über Ivan | Professioneller Saxophonist aus Baselland',
       description: 'Erfahren Sie mehr über Ivans musikalische Reise - von seinem Abschluss in Skopje bis zu seinen Auftritten in der Schweiz.',
+      metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de/about`,
+        languages: {
+          'en': `${baseUrl}/en/about`,
+          'de': `${baseUrl}/de/about`,
+          'x-default': `${baseUrl}/en/about`
+        },
+      },
       openGraph: {
         title: 'Über Ivan | Professioneller Saxophonist aus Baselland',
         description: 'Erfahren Sie mehr über Ivans musikalische Reise - von seinem Abschluss in Skopje bis zu seinen Auftritten in der Schweiz.',
-        url: '/de/about',
-      },
-      alternates: {
-        canonical: '/de/about',
+        url: `${baseUrl}/de/about`,
       },
     };
   }
@@ -30,13 +37,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'About Ivan | Professional Saxophonist from Baselland',
     description: 'Learn about Ivan\'s musical journey - from his degree in Skopje to performing in Switzerland.',
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en/about`,
+      languages: {
+        'en': `${baseUrl}/en/about`,
+        'de': `${baseUrl}/de/about`,
+        'x-default': `${baseUrl}/en/about`
+      },
+    },
     openGraph: {
       title: 'About Ivan | Professional Saxophonist from Baselland',
       description: 'Learn about Ivan\'s musical journey - from his degree in Skopje to performing in Switzerland.',
-      url: '/en/about',
-    },
-    alternates: {
-      canonical: '/en/about',
+      url: `${baseUrl}/en/about`,
     },
   };
 }

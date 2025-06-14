@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: "Nr. 1 Professioneller Saxophonist in Baselland & Schweiz! Premium Live-Saxophon-Auftritte für Hochzeiten, Firmenveranstaltungen & private Feiern. Experten-Unterricht für alle Stufen. Jetzt buchen - 076 376 19 06",
       metadataBase: new URL(baseUrl),
       alternates: {
-        canonical: `/de`,
+        canonical: `${baseUrl}/de`,
         languages: {
-          'en': '/en',
-          'de': '/de',
-          'x-default': '/en'
+          'en': `${baseUrl}/en`,
+          'de': `${baseUrl}/de`,
+          'x-default': `${baseUrl}/en`
         },
       },
       openGraph: {
@@ -68,11 +68,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: "#1 Professional Saxophonist in Baselland & Switzerland! Premium live saxophone performances for weddings, corporate events & private parties. Expert lessons for all levels. Book today - 076 376 19 06",
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `/en`,
+      canonical: `${baseUrl}/en`,
       languages: {
-        'en': '/en',
-        'de': '/de',
-        'x-default': '/en'
+        'en': `${baseUrl}/en`,
+        'de': `${baseUrl}/de`,
+        'x-default': `${baseUrl}/en`
       },
     },
     openGraph: {

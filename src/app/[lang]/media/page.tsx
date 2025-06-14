@@ -11,15 +11,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const isGerman = lang === 'de';
+  const baseUrl = 'https://ivansaxophon.ch';
   
   if (isGerman) {
     return {
       title: 'Medien Galerie - Ivan Saxophon | Professionelle Auftritte & Events',
       description: 'Entdecken Sie Bilder von Ivan Saxophons professionellen Auftritten bei Hochzeiten, Firmenveranstaltungen und privaten Feiern in der Schweiz.',
+      metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de/media`,
+        languages: {
+          'en': `${baseUrl}/en/media`,
+          'de': `${baseUrl}/de/media`,
+          'x-default': `${baseUrl}/en/media`
+        },
+      },
       openGraph: {
         title: 'Medien Galerie - Ivan Saxophon | Professionelle Auftritte & Events',
         description: 'Entdecken Sie Bilder von Ivan Saxophons professionellen Auftritten bei Hochzeiten, Firmenveranstaltungen und privaten Feiern.',
-        url: '/de/media',
+        url: `${baseUrl}/de/media`,
         type: 'website',
         images: [
           {
@@ -36,10 +46,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'Media Gallery - Ivan Saxophon | Professional Performances & Events',
     description: 'Explore photos from Ivan Saxophon\'s professional performances at weddings, corporate events, and private celebrations in Switzerland.',
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en/media`,
+             languages: {
+         'en': `${baseUrl}/en/media`,
+         'de': `${baseUrl}/de/media`,
+         'x-default': `${baseUrl}/en/media`
+       },
+    },
     openGraph: {
       title: 'Media Gallery - Ivan Saxophon | Professional Performances & Events',
       description: 'Explore photos from Ivan Saxophon\'s professional performances at weddings, corporate events, and private celebrations.',
-      url: '/en/media',
+      url: `${baseUrl}/en/media`,
       type: 'website',
       images: [
         {

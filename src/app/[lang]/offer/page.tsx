@@ -12,15 +12,50 @@ type Props = {
 
 // Metadata generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  await params; // Ensure params is awaited but we don't need the destructured value
+  const { lang } = await params;
+  const isGerman = lang === 'de';
+  const baseUrl = 'https://ivansaxophon.ch';
+  
+  if (isGerman) {
+    return {
+      title: 'Saxophon Services | Premium Angebote - Ivan Saxophon Baselland',
+      description: 'Entdecken Sie unsere komplette Palette an Saxophon-Services: Akustische Auftritte, Hit-Songs, Jazz-Sessions und Sax/DJ-Kombinationen für unvergessliche Events.',
+      keywords: ['Saxophon Services', 'Akustikmusik', 'Jazz Auftritte', 'Saxophon DJ', 'Live-Musik', 'Event Entertainment'],
+      metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de/offer`,
+        languages: {
+          'en': `${baseUrl}/en/offer`,
+          'de': `${baseUrl}/de/offer`,
+          'x-default': `${baseUrl}/en/offer`
+        },
+      },
+      openGraph: {
+        title: 'Saxophon Services | Premium Angebote - Ivan Saxophon Baselland',
+        description: 'Komplette Palette an Saxophon-Services für jeden Anlass',
+        url: `${baseUrl}/de/offer`,
+        images: ['/main-3.jpg'],
+      },
+    };
+  }
   
   return {
-    title: `Professional Saxophone Services - Ivan Saxophon`,
+    title: 'Professional Saxophone Services - Ivan Saxophon',
     description: 'Discover our complete range of saxophone services: Acoustic performances, Hit songs, Jazz sessions, and Sax/DJ combinations for unforgettable events.',
     keywords: ['saxophone services', 'acoustic music', 'jazz performances', 'saxophone DJ', 'live music', 'event entertainment'],
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en/offer`,
+             languages: {
+         'en': `${baseUrl}/en/offer`,
+         'de': `${baseUrl}/de/offer`,
+         'x-default': `${baseUrl}/en/offer`
+       },
+    },
     openGraph: {
-      title: `Professional Saxophone Services - Ivan Saxophon`,
+      title: 'Professional Saxophone Services - Ivan Saxophon',
       description: 'Complete range of saxophone services for every occasion',
+      url: `${baseUrl}/en/offer`,
       images: ['/main-3.jpg'],
     },
   };

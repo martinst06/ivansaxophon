@@ -13,18 +13,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const isGerman = lang === 'de';
+  const baseUrl = 'https://ivansaxophon.ch';
   
   if (isGerman) {
     return {
       title: 'Saxophon-Unterricht Baselland | Professioneller Musiklehrer - Ivan Saxophon',
       description: 'Professioneller Saxophon-Unterricht in Baselland für alle Niveaus. Personalisierte Lektionen von erfahrenem Musiklehrer. Jazz, Klassik & zeitgenössische Musik. Jetzt buchen!',
+      metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de/teaching`,
+        languages: {
+          'en': `${baseUrl}/en/teaching`,
+          'de': `${baseUrl}/de/teaching`,
+          'x-default': `${baseUrl}/en/teaching`
+        },
+      },
       openGraph: {
         title: 'Saxophon-Unterricht Baselland | Professioneller Musiklehrer - Ivan Saxophon',
         description: 'Professioneller Saxophon-Unterricht in Baselland für alle Niveaus. Personalisierte Lektionen von erfahrenem Musiklehrer.',
-        url: '/de/teaching',
-      },
-      alternates: {
-        canonical: '/de/teaching',
+        url: `${baseUrl}/de/teaching`,
       },
     };
   }
@@ -32,13 +39,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'Saxophone Lessons Baselland | Professional Music Teacher - Ivan Saxophon',
     description: 'Professional saxophone lessons in Baselland for all skill levels. Personalized instruction from experienced music teacher. Jazz, classical & contemporary styles. Book now!',
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en/teaching`,
+             languages: {
+         'en': `${baseUrl}/en/teaching`,
+         'de': `${baseUrl}/de/teaching`,
+         'x-default': `${baseUrl}/en/teaching`
+       },
+    },
     openGraph: {
       title: 'Saxophone Lessons Baselland | Professional Music Teacher - Ivan Saxophon',
       description: 'Professional saxophone lessons in Baselland for all skill levels. Personalized instruction from experienced music teacher.',
-      url: '/en/teaching',
-    },
-    alternates: {
-      canonical: '/en/teaching',
+      url: `${baseUrl}/en/teaching`,
     },
   };
 }

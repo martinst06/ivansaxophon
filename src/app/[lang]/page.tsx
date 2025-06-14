@@ -13,15 +13,25 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const isGerman = lang === 'de';
+  const baseUrl = 'https://ivansaxophon.ch';
   
   if (isGerman) {
     return {
       title: 'Professioneller Saxophonist Baselland Schweiz - Ivan Saxophon | Basel Hochzeits- & Eventmusik',
       description: 'Nr. 1 Professioneller Saxophonist in Baselland & Schweiz! Premium Live-Saxophon-Auftritte für Hochzeiten, Firmenveranstaltungen & private Feiern. Experten-Unterricht für alle Stufen. Jetzt buchen - 076 376 19 06',
+      metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de`,
+        languages: {
+          'en': `${baseUrl}/en`,
+          'de': `${baseUrl}/de`,
+          'x-default': `${baseUrl}/en`
+        },
+      },
       openGraph: {
         title: 'Professioneller Saxophonist Baselland Schweiz - Ivan Saxophon | Basel Hochzeits- & Eventmusik',
         description: 'Nr. 1 Professioneller Saxophonist in Baselland & Schweiz! Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen & private Feiern. Experten-Unterricht für alle Stufen.',
-        url: '/de',
+        url: `${baseUrl}/de`,
         type: 'website',
         images: [
           {
@@ -36,19 +46,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: 'Professioneller Saxophonist Baselland Schweiz - Ivan Saxophon',
         description: 'Nr. 1 Professioneller Saxophonist in Baselland & Schweiz! Premium Auftritte & Experten-Unterricht.',
       },
-      alternates: {
-        canonical: '/de',
-      },
     };
   }
   
   return {
     title: 'Professional Saxophonist Baselland Switzerland - Ivan Saxophon | Basel Wedding & Event Music',
     description: '#1 Professional Saxophonist in Baselland & Switzerland! Premium live saxophone performances for weddings, corporate events & private parties. Expert lessons for all levels. Book today - 076 376 19 06',
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en`,
+             languages: {
+         'en': `${baseUrl}/en`,
+         'de': `${baseUrl}/de`,
+         'x-default': `${baseUrl}/en`
+       },
+    },
     openGraph: {
       title: 'Professional Saxophonist Baselland Switzerland - Ivan Saxophon | Basel Wedding & Event Music',
       description: '#1 Professional Saxophonist in Baselland & Switzerland! Premium live performances for weddings, corporate events & private parties. Expert lessons for all levels.',
-      url: '/en',
+      url: `${baseUrl}/en`,
       type: 'website',
       images: [
         {
@@ -62,9 +78,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       title: 'Professional Saxophonist Baselland Switzerland - Ivan Saxophon',
       description: '#1 Professional Saxophonist in Baselland & Switzerland! Premium performances & expert lessons.',
-    },
-    alternates: {
-      canonical: '/en',
     },
   };
 }
