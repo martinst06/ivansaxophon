@@ -20,8 +20,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   })
 
-  // Removed root redirect from sitemap to avoid GSC "Page with redirect" issues
-  // The root URL redirects to /en, so we don't include it in the sitemap
-
   return sitemapEntries
 } 
