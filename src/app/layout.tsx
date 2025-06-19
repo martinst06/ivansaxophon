@@ -154,10 +154,6 @@ export default function RootLayout({
     <html lang="en" className={bodoniModa.variable} prefix="og: http://ogp.me/ns#">
       <head>
         {/* Preload critical hero images */}
-        <link rel="preload" as="image" href="/bg-hero.jpg" />
-        <link rel="preload" as="image" href="/main-1.jpg" />
-        <link rel="preload" as="image" href="/main-2.jpg" />
-        <link rel="preload" as="image" href="/main-3.jpg" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://deindj.ch" />
       </head>

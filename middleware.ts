@@ -5,32 +5,29 @@ const locales = ['en', 'de']
 const defaultLocale = 'en'
 
 function getLocale(request: NextRequest): string {
-  // Check if there is any supported locale in the pathname
-  const pathname = request.nextUrl.pathname
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
-
-  // If pathname is missing locale, detect from headers
-  if (pathnameIsMissingLocale) {
-    // Check Accept-Language header
-    const acceptLanguage = request.headers.get('accept-language')
-    if (acceptLanguage) {
-      // Simple language detection - check if German is preferred
-      if (acceptLanguage.includes('de') && !acceptLanguage.includes('en')) {
-        return 'de'
-      }
+  const acceptLanguage = request.headers.get('accept-language')
+  if (acceptLanguage) {
+    const preferredLocales = acceptLanguage.split(',').map(lang => lang.split(';')[0].trim())
+    for (const locale of preferredLocales) {
+      if (locale.startsWith('de')) return 'de'
+      if (locale.startsWith('en')) return 'en'
     }
-    return defaultLocale
   }
-
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1]
-  return locales.includes(locale) ? locale : defaultLocale
+  return defaultLocale
 }
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
+  const { pathname, host, protocol } = request.nextUrl
+
+  // Enforce canonical domain (https://ivansaxophon.ch)
+  const isWww = host.startsWith('www.')
+  const isHttp = protocol === 'http:'
+  
+  if (isWww || isHttp) {
+    const newHost = isWww ? host.replace('www.', '') : host
+    const newUrl = new URL(pathname, `https://` + newHost)
+    return NextResponse.redirect(newUrl.toString(), 301)
+  }
 
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = locales.every(
@@ -41,25 +38,9 @@ export function middleware(request: NextRequest) {
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
     
-    // Handle root path
-    if (pathname === '/') {
-      return NextResponse.redirect(
-        new URL(`/${locale}`, request.url)
-      )
-    }
-    
-    // Handle other paths
-    return NextResponse.redirect(
-      new URL(`/${locale}${pathname}`, request.url)
-    )
-  }
-
-  // Check if the locale in the pathname is valid
-  const locale = pathname.split('/')[1]
-  if (!locales.includes(locale)) {
-    return NextResponse.redirect(
-      new URL(`/${defaultLocale}${pathname}`, request.url)
-    )
+    // Construct new URL with the detected locale
+    const newUrl = new URL(`/${locale}${pathname}`, request.url)
+    return NextResponse.redirect(newUrl)
   }
 }
 
