@@ -121,6 +121,72 @@ const nextConfig: NextConfig = {
   
   // Trailing slash handling
   trailingSlash: false,
+
+  async redirects() {
+    return [
+      // Redirects for old pages
+      {
+        source: '/lesson',
+        destination: '/en/teaching',
+        permanent: true,
+      },
+      {
+        source: '/lessons',
+        destination: '/en/teaching',
+        permanent: true,
+      },
+      {
+        source: '/performances',
+        destination: '/en/media',
+        permanent: true,
+      },
+      {
+        source: '/about-me',
+        destination: '/en/about',
+        permanent: true,
+      },
+      {
+        source: '/en/lesson',
+        destination: '/en/teaching',
+        permanent: true,
+      },
+      {
+        source: '/en/lessons',
+        destination: '/en/teaching',
+        permanent: true,
+      },
+      {
+        source: '/de/lesson',
+        destination: '/de/teaching',
+        permanent: true,
+      },
+      {
+        source: '/de/lessons',
+        destination: '/de/teaching',
+        permanent: true,
+      },
+      {
+        source: '/en/performances',
+        destination: '/en/media',
+        permanent: true,
+      },
+      {
+        source: '/de/performances',
+        destination: '/de/media',
+        permanent: true,
+      },
+      {
+        source: '/en/about-me',
+        destination: '/en/about',
+        permanent: true,
+      },
+      {
+        source: '/de/about-me',
+        destination: '/de/about',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
