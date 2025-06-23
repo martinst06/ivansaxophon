@@ -2,7 +2,8 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';  
+import type { SwiperRef } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Language } from '@/lib/translations';
 
@@ -16,7 +17,7 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel = ({ lang }: ImageCarouselProps) => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperRef>(null);
 
   const carouselImages = [
     '/ivan-carousel/IMG_9067.jpg',
