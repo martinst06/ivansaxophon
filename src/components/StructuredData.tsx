@@ -15,8 +15,8 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     "name": isGerman ? "Ivan Saxophon - Professioneller Saxophonist" : "Ivan Saxophon - Professional Saxophonist",
     "alternateName": "Ivan Saxophon",
     "description": isGerman 
-      ? "Professioneller Saxophonist in Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus."
-      : "Professional saxophonist in Baselland, Switzerland. Premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all levels.",
+      ? "Professioneller Saxophonist in Basel und Baselland, Schweiz. Premium Live-Auftritte für Hochzeiten, Firmenveranstaltungen und private Feiern. Expertensaxophon-Unterricht für alle Niveaus."
+      : "Professional saxophonist in Basel and Baselland, Switzerland. Premium live performances for weddings, corporate events, and private parties. Expert saxophone lessons for all levels.",
     "image": [
       "https://ivansaxophon.ch/bg-hero.jpg"
     ],
@@ -39,18 +39,6 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     },
     "areaServed": [
       {
-        "@type": "Country",
-        "name": "Switzerland"
-      },
-      {
-        "@type": "State", 
-        "name": "Basel-Landschaft"
-      },
-      {
-        "@type": "State", 
-        "name": "Basel-Stadt"
-      },
-      {
         "@type": "City",
         "name": "Basel",
         "address": {
@@ -58,6 +46,18 @@ export default function StructuredData({ lang }: StructuredDataProps) {
           "postalCode": "4000",
           "addressCountry": "CH"
         }
+      },
+      {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      {
+        "@type": "State", 
+        "name": "Basel-Stadt"
+      },
+      {
+        "@type": "State", 
+        "name": "Basel-Landschaft"
       },
       {
         "@type": "City",
@@ -161,8 +161,8 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     "givenName": "Ivan",
     "jobTitle": isGerman ? "Professioneller Saxophonist & Musiklehrer" : "Professional Saxophonist & Music Teacher",
     "description": isGerman 
-      ? "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Baselland, Schweiz, mit Auftritten in ganz Europa."
-      : "Professional saxophonist specializing in jazz, classical, and contemporary music. Based in Baselland, Switzerland, with performances across Europe.",
+      ? "Professioneller Saxophonist spezialisiert auf Jazz, klassische und zeitgenössische Musik. Ansässig in Basel und Baselland, Schweiz, mit Auftritten in ganz Europa."
+      : "Professional saxophonist specializing in jazz, classical, and contemporary music. Based in Basel and Baselland, Switzerland, with performances across Europe.",
     "image": "https://ivansaxophon.ch/bg-hero.jpg",
     "address": {
       "@type": "PostalAddress",
@@ -191,9 +191,23 @@ export default function StructuredData({ lang }: StructuredDataProps) {
     "hasOccupation": {
       "@type": "Occupation",
       "name": isGerman ? "Professioneller Saxophonist" : "Professional Saxophonist",
+      "description": isGerman 
+        ? "Professioneller Saxophonist spezialisiert auf Live-Auftritte und Musikunterricht. Bietet Premium-Unterhaltung für Hochzeiten, Firmenveranstaltungen und private Feiern."
+        : "Professional saxophonist specializing in live performances and music instruction. Providing premium entertainment for weddings, corporate events, and private celebrations.",
       "occupationLocation": {
         "@type": "City",
         "name": "Baselland, Switzerland"
+      },
+      "estimatedSalary": {
+        "@type": "MonetaryAmountDistribution",
+        "name": isGerman ? "Geschätztes Gehalt" : "Estimated Salary",
+        "currency": "CHF",
+        "duration": "P1H",
+        "median": 65
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ivansaxophon.ch/about"
       }
     },
     "alumniOf": {
@@ -228,6 +242,14 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       "@type": "Person",
       "name": "Ivan Saxophon",
       "@id": "https://ivansaxophon.ch/about"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Füllinsdorf",
+      "addressLocality": "Füllinsdorf",
+      "addressRegion": "Basel-Landschaft", 
+      "postalCode": "4414",
+      "addressCountry": "CH"
     },
     "areaServed": {
       "@type": "Country",
@@ -278,8 +300,8 @@ export default function StructuredData({ lang }: StructuredDataProps) {
       : "Ivan Saxophon - Professional Saxophonist Switzerland",
     "url": "https://ivansaxophon.ch",
     "description": isGerman 
-      ? "Professioneller Saxophonist in Baselland, Schweiz bietet Premium Live-Auftritte und Expertensaxophon-Unterricht"
-      : "Professional saxophonist in Baselland, Switzerland offering premium live performances and expert saxophone lessons",
+      ? "Professioneller Saxophonist in Basel und Baselland, Schweiz bietet Premium Live-Auftritte und Expertensaxophon-Unterricht"
+      : "Professional saxophonist in Basel and Baselland, Switzerland offering premium live performances and expert saxophone lessons",
     "publisher": {
       "@type": "Person",
       "name": "Ivan Saxophon",
