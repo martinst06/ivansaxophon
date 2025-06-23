@@ -79,9 +79,9 @@ const Footer = ({ lang }: FooterProps) => {
                   <Image
                     src="https://deindj.ch/wp-content/uploads/2022/02/DeinDJ-Logo-Dark-2.svg"
                     alt="DeinDJ Partner"
-                    width={140}
-                    height={56}
-                    className="h-10 sm:h-12 w-auto filter brightness-0 invert"
+                    width={84}
+                    height={34}
+                    className="h-6 sm:h-8 filter brightness-0 invert"
                   />
                 </a>
               </div>
@@ -96,10 +96,10 @@ const Footer = ({ lang }: FooterProps) => {
                   aria-label="Visit Ivan's Matchspace Music profile"
                 >
                   <div>
-                    <div className="font-roboto font-bold text-white text-2xl leading-tight">
+                    <div className="font-roboto font-bold text-white text-lg leading-tight">
                       matchspace
                     </div>
-                    <div className="text-left font-roboto font-normal text-white text-2xl leading-tight -mt-2">
+                    <div className="text-left font-roboto font-normal text-white text-lg leading-tight -mt-2">
                       music
                     </div>
                   </div>
