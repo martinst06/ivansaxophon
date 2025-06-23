@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { translations, Language } from '@/lib/translations';
 
 interface OfferGridProps {
@@ -273,9 +274,14 @@ const OfferGrid = ({ lang }: OfferGridProps) => {
 
               {/* CTA Button - Only show for cards with audioFiles */}
               {offer.audioFiles && (
-                <button className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-bold text-lg py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto">
+                <Link
+                  href="/documents/Repertoire_Ivan_Saxophon.pdf"
+                  download="Repertoire_Ivan_Saxophon.pdf"
+                  target="_blank"
+                  className="w-full border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-bold text-lg py-4 px-6 transition-all duration-300 transform hover:-translate-y-0.5 mt-auto block text-center"
+                >
                   {t.offers.downloadRepertoire}
-                </button>
+                </Link>
               )}
             </div>
           ))}

@@ -145,7 +145,7 @@ export const translations = {
         title: 'SAX / DJ',
         description: 'As part of the DeinDJ agency, I offer a DJ & Sax duo tailored to your event. Just share your wishes with me — and together with the right DJ, we\'ll create the perfect atmosphere for your celebration! Whether you\'re planning a wedding, birthday, corporate event, or private party, we bring energy, elegance, and live performance that make your event unforgettable. Let\'s make your vision come to life with the unique blend of saxophone and DJ beats!'
       },
-      downloadRepertoire: 'Repertoire PDF — Coming Soon'
+      downloadRepertoire: 'Repertoire PDF'
     },
     footer: {
       description: 'Saxophonist for Events & Private Lessons',
@@ -305,7 +305,7 @@ export const translations = {
         title: 'SAX / DJ',
         description: 'Als Teil der DeinDJ-Agentur biete ich ein DJ & Sax-Duo, das individuell auf Ihr Event abgestimmt ist. Teilen Sie mir einfach Ihre Wünsche mit – und gemeinsam mit dem passenden DJ schaffen wir die perfekte Atmosphäre für Ihre Feier! Ob Hochzeit, Geburtstag, Firmenanlass oder private Party – wir bringen Energie, Eleganz und Live-Performance, die Ihr Event unvergesslich machen. Lassen Sie uns Ihre Vorstellungen mit der einzigartigen Kombination aus Saxophon und DJ zum Leben erwecken!'
       },
-      downloadRepertoire: 'Repertoire PDF — Bald verfügbar'
+      downloadRepertoire: 'Repertoire PDF'
     },
     footer: {
       description: 'Saxophonist für Events & Privatunterricht',
