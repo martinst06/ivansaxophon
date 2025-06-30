@@ -20,6 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
       description: "Nr. 1 Professioneller Saxophonist in Baselland & Schweiz! Premium Live-Saxophon-Auftritte für Hochzeiten, Firmenveranstaltungen & private Feiern. Experten-Unterricht für alle Stufen. Jetzt buchen - 076 376 19 06",
       metadataBase: new URL(baseUrl),
+      alternates: {
+        canonical: `${baseUrl}/de`,
+        languages: {
+          'en': `${baseUrl}/en`,
+          'de': `${baseUrl}/de`,
+          'x-default': `${baseUrl}/en`
+        },
+      },
       openGraph: {
         title: "Ivan Saxophon - Professioneller Saxophonist Baselland | Basel Schweiz",
         description: "Nr. 1 Professioneller Saxophonist in Baselland mit Premium Live-Auftritten für Hochzeiten, Firmenveranstaltungen & private Feiern.",
@@ -59,6 +67,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     description: "#1 Professional Saxophonist in Baselland & Switzerland! Premium live saxophone performances for weddings, corporate events & private parties. Expert lessons for all levels. Book today - 076 376 19 06",
     metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/en`,
+      languages: {
+        'en': `${baseUrl}/en`,
+        'de': `${baseUrl}/de`,
+        'x-default': `${baseUrl}/en`
+      },
+    },
     openGraph: {
       title: "Ivan Saxophon - Professional Saxophonist Baselland | Basel Switzerland",
       description: "#1 Professional Saxophonist in Baselland offering premium live performances for weddings, corporate events & private parties.",
