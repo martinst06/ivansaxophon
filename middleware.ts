@@ -19,28 +19,35 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const { pathname, host, protocol } = request.nextUrl
 
-  // Enforce canonical domain (https://ivansaxophon.ch)
+  // Check if we need to enforce canonical domain
   const isWww = host.startsWith('www.')
   const isHttp = protocol === 'http:'
   
+  // Check if there is any supported locale in the pathname
+  const pathnameIsMissingLocale = locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  )
+
+  // If we need to fix domain/protocol AND add locale, do it in one redirect
+  if ((isWww || isHttp) && pathnameIsMissingLocale) {
+    const locale = getLocale(request)
+    const newHost = isWww ? host.replace('www.', '') : host
+    const newUrl = new URL(`/${locale}${pathname}`, `https://` + newHost)
+    return NextResponse.redirect(newUrl.toString(), 301)
+  }
+  
+  // Only fix domain/protocol if needed
   if (isWww || isHttp) {
     const newHost = isWww ? host.replace('www.', '') : host
     const newUrl = new URL(pathname, `https://` + newHost)
     return NextResponse.redirect(newUrl.toString(), 301)
   }
 
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
-
-  // Redirect if there is no locale
+  // Only add locale if needed
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
-    
-    // Construct new URL with the detected locale
     const newUrl = new URL(`/${locale}${pathname}`, request.url)
-    return NextResponse.redirect(newUrl)
+    return NextResponse.redirect(newUrl, 301)
   }
 }
 
