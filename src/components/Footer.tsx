@@ -150,14 +150,14 @@ const Footer = ({ lang }: FooterProps) => {
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 order-1 sm:order-2">
               <a 
-                href="#" 
+                href={`/${lang}/privacy`}
                 className="text-white/60 hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
                 aria-label="Privacy Policy"
               >
                 {t.footer.privacyPolicy}
               </a>
               <a 
-                href="#" 
+                href={`/${lang}/terms`}
                 className="text-white/60 hover:text-bronze text-sm sm:text-base transition-colors duration-300 touch-manipulation min-h-[44px] flex items-center justify-center px-2"
                 aria-label="Terms of Service"
               >
